@@ -16,7 +16,12 @@
   border-radius: 8px;
   padding: 20px;
   text-align: center;
-  transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+  /* Added background position/size and ensured transition applies to background */
+  background-position: center; 
+  background-size: 0; /* Start with size 0 */
+  transition: transform 0.2s, box-shadow 0.2s, background-size 0.5s ease-out;
+  overflow: hidden; /* Ensures image fill stays within border-radius */
+  position: relative; /* Needed for content layering */
   
   /* Color settings */
   background-color: var(--color-white, #ffffff);
@@ -26,27 +31,51 @@
 
 .buttonLink:hover {
   transform: translateY(-5px); /* Lift button on hover */
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
-  background-color: var(--color-primary-light, #eaf4ff); /* Light background on hover */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+  border-color: transparent; /* Hide border when image is showing */
+  
+  /* Set background to image with a dark overlay for text contrast */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), var(--bg-image);
+  background-size: cover; /* Fill the button with the image */
+  color: var(--color-white, #ffffff); /* Change default text color to white */
 }
+
+/* --- Hover Text Colors --- */
+.buttonLink:hover .buttonContent {
+    color: var(--color-white, #ffffff);
+}
+
+.buttonLink:hover .buttonLabel {
+    color: var(--color-white, #ffffff); /* Text is white on hover */
+}
+
+.buttonLink:hover .buttonDescription {
+    color: var(--color-light-gray, #ccc); /* Description text is lighter gray on hover */
+}
+
+/* --- Default Content Styles (kept for structure) --- */
 
 .buttonContent {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative; /* Keep content on top of background image */
+  z-index: 10;
 }
 
 .buttonLabel {
   font-size: 1.5rem;
   font-weight: bold;
-  color: var(--color-primary, #007bff); /* Use primary color for the label */
+  color: var(--color-primary, #007bff); 
   margin-bottom: 5px;
+  transition: color 0.2s; /* Transition label color */
 }
 
 .buttonDescription {
   font-size: 0.9rem;
   color: var(--color-text-secondary, #666);
   margin: 0;
+  transition: color 0.2s; /* Transition description color */
 }
 
 /* Responsive adjustments */

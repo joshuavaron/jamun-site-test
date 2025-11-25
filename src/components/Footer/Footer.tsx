@@ -65,7 +65,7 @@ const Footer: React.FC = () => {
                     </a>
                     <p className={styles.tagline}>Making learning fun, competitive, and accessible.</p>
                     <p className={styles.taxStatus}>
-                        JAMUN is a registered 501(c)(3) nonprofit organization.
+                        The Junior Assembly of the Model United Nations is a registered 501(c)(3) nonprofit organization.
                     </p>
                 </div>
 
@@ -112,7 +112,7 @@ const Footer: React.FC = () => {
             {/* 3. Bottom Bar: Socials and Copyright */}
             <div className={styles.bottomBar}>
                 <p className={styles.copyright}>
-                    &copy; {currentYear} JAMUN, Inc. All rights reserved.
+                    &copy; {currentYear} The Junior Assembly of the Model United Nations. All rights reserved.
                 </p>
                 
                 <div className={styles.socials}>
