@@ -1,0 +1,90 @@
+/* --- Showcase Container (Main Layout) --- */
+.showcaseContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 60px 0; /* Vertical padding between showcase items */
+    max-width: 1200px;
+    margin: 0 auto; /* Center the container on the page */
+}
+
+/* Class to reverse the order (for imageOnLeft=true) */
+.reverse {
+    flex-direction: row-reverse;
+}
+
+/* --- Text Block Styling --- */
+.textBlock {
+    flex: 1; /* Allows it to grow and take up space */
+    max-width: 50%;
+    padding: 20px 0;
+}
+
+.title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.description {
+    font-size: 1.15rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* --- Image Block Styling --- */
+.imageBlock {
+    flex: 1; /* Allows it to grow and take up space */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 50%;
+}
+
+.imageWrapper {
+    /* Use a fixed aspect ratio or max-size for the image wrapper */
+    width: 100%;
+    max-width: 500px; 
+    height: auto;
+}
+
+.featureImage {
+    width: 100%;
+    height: auto;
+    display: block;
+    /* Optional: subtle shadow for depth, common with transparent backgrounds */
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.1)); 
+}
+
+/* --- Responsive Layout (Mobile) --- */
+@media (max-width: 900px) {
+    .showcaseContainer {
+        /* Stack the image and text vertically on smaller screens */
+        flex-direction: column;
+        padding: 40px 1rem;
+        gap: 20px;
+    }
+
+    /* Override the reverse class on mobile so the image is always first */
+    .reverse {
+        flex-direction: column;
+    }
+
+    .textBlock,
+    .imageBlock {
+        max-width: 100%;
+        text-align: center; /* Center text for mobile */
+    }
+    
+    .title {
+        font-size: 1.8rem;
+    }
+
+    /* On mobile, reduce the image size a bit so it doesn't dominate */
+    .imageWrapper {
+        max-width: 350px;
+    }
+}

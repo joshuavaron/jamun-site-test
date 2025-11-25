@@ -1,0 +1,292 @@
+/* --- NEW TWO-COLUMN LAYOUT WRAPPER --- */
+.leaderboardTwoColumnWrapper {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Space between the main board and the sidebar */
+  max-width: 1200px; /* Increased max width to accommodate the sidebar */
+  margin: 40px auto;
+}
+
+/* --- MAIN LEADERBOARD CONTAINER (70% width) --- */
+.leaderboardContainer {
+  width: 70%; /* Takes up 70% of the available space */
+  background: #ffffff;
+  border: 1px solid #e0e0e0; 
+  border-radius: 12px;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif; /* Modern, professional font */
+}
+
+/* Header section for the title and toggles */
+.leaderboardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  background: #497bce; /* Fixed color as requested */
+  color: white;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  position: sticky; 
+  top: 0;
+  z-index: 10;
+}
+
+.leaderboardTitle {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.toggleButton {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.3rem;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.toggleButton:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.toggleButton:active {
+  transform: translateY(1px);
+}
+
+/* Table styling */
+.leaderboardTableWrapper {
+  padding: 0 20px 20px;
+  
+  /* --- KEY FIX: MAX HEIGHT IS NOW PRECISELY 5 ROWS --- */
+  max-height: 288px; /* 5 rows * 48px row height = 240px */
+  overflow-y: auto; 
+}
+
+.leaderboardTable {
+  width: 100%;
+  border-collapse: collapse; 
+}
+
+/* FIX: Sticky table header */
+.leaderboardTable thead th {
+  padding: 15px 10px;
+  text-align: left;
+  font-weight: 600;
+  color: #000;
+  border-bottom: 1px solid #e9e9e9;
+  font-size: 0.95rem;
+  position: sticky; 
+  top: 0; 
+  background-color: #ffffff; 
+  z-index: 5;
+}
+
+.leaderboardTable thead th:nth-child(1) {
+  width: 15%; /* Rank column width */
+}
+.leaderboardTable thead th:nth-child(2) {
+  width: 65%; /* School column width */
+}
+.leaderboardTable thead th:nth-child(3) {
+  width: 20%; /* Score column width */
+  text-align: right;
+}
+
+/* Row styling */
+.leaderboardRow {
+  transition: background-color 0.2s ease;
+  border-bottom: 1px solid #f9f9f9;
+}
+
+.leaderboardRow:hover {
+  background-color: #f7f7f7; 
+}
+
+.leaderboardTable td {
+  /* --- KEY FIX: DEFINING CELL HEIGHT FOR PRECISE SCROLLING --- */
+  height: 48px; /* Fixed height for 5 rows * 48px = 240px max-height */
+  padding: 12px 10px;
+  box-sizing: border-box; /* Include padding/border in the 48px height */
+  /* ----------------------------------------------------------- */
+  color: #333;
+  font-weight: 500;
+  vertical-align: middle;
+  font-size: 0.9rem;
+}
+
+.leaderboardTable td:nth-child(3) {
+  text-align: right;
+}
+
+/* Highlighted Row for the current user's school */
+.highlightedRow {
+  background-color: #f5f8fd; /* Subtle blue highlight */
+  font-weight: 600;
+  color: #000;
+}
+
+/* Rank Badge styling (Base style for all ranks) */
+.rankBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #497bce; 
+  background: #f0f4f9;
+  border: 1px solid #d4e0ed;
+}
+
+/* 🏆 GOLD: Special styling for the 1st Rank (row 1) */
+.leaderboardRow:nth-child(1) .rankBadge {
+  color: white;
+  background: #ffc107; /* Gold */
+  border-color: #ff9800;
+}
+
+/* 🥈 SILVER: Special styling for the 2nd Rank (row 2) */
+.leaderboardRow:nth-child(2) .rankBadge {
+  color: white;
+  background: #9e9e9e; /* Silver */
+  border-color: #757575;
+}
+
+/* 🥉 BRONZE: Special styling for the 3rd Rank (row 3) */
+.leaderboardRow:nth-child(3) .rankBadge {
+  color: white;
+  background: #795548; /* Bronze */
+  border-color: #5d4037;
+}
+
+.trophyIcon {
+  margin-right: 3px;
+  font-size: 0.9em;
+}
+
+.schoolName {
+  color: #333;
+}
+
+.scoreValue {
+  font-family: 'Monospace', sans-serif;
+  font-weight: 600;
+  color: #497bce;
+  font-size: 1rem;
+}
+
+.noData {
+  text-align: center;
+  padding: 50px;
+  font-size: 1.1rem;
+  color: #999;
+}
+
+/* --- CHANGE LOG SIDEBAR STYLES --- */
+.changeLogContainer {
+  width: 30%; 
+  min-width: 250px; 
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); 
+}
+
+.changeLogTitle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 8px;
+}
+
+.changeGroup {
+    margin-bottom: 15px;
+}
+
+.groupHeader {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #497bce;
+  margin: 15px 0 10px 0;
+}
+
+.changeList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.changeList li {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px dashed #f0f0f0;
+}
+
+.changeList li:last-child {
+  border-bottom: none;
+}
+
+.changeIcon {
+  font-size: 0.9rem;
+  margin-right: 8px;
+}
+
+.changeValue {
+  font-weight: 700;
+  font-family: 'Monospace', sans-serif;
+  width: 45px;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.moverSchool {
+  font-size: 0.9rem;
+  color: #555;
+  flex-grow: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Color coding for movement */
+.increase .changeIcon {
+  color: #28a745; /* Green for up */
+}
+.increase .changeValue {
+    color: #28a745;
+}
+
+/* --- SCROLLBAR STYLING FOR CHROME, SAFARI, AND EDGE (Webkit) --- */
+
+/* Width of the scrollbar (narrow and rectangular) */
+.leaderboardTableWrapper::-webkit-scrollbar {
+  width: 8px;
+  height: 6px;
+}
+
+/* Track background (makes the track transparent/hidden) */
+.leaderboardTableWrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle (the moving part - Pale Blue and rectangular) */
+.leaderboardTableWrapper::-webkit-scrollbar-thumb {
+  background: #AEC6E3; /* Pale Blue handle */
+  border-radius: 0; /* Makes it rectangular */
+}
+
+/* Handle on hover (slightly darker blue on hover) */
+.leaderboardTableWrapper::-webkit-scrollbar-thumb:hover {
+  background: #9BB7D8; 
+}
