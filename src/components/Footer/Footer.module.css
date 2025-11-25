@@ -1,0 +1,156 @@
+.footer {
+  background-color: var(--color-footer-bg, #1e293b); /* Dark, professional background */
+  color: var(--color-footer-text, #cbd5e1); /* Light text color */
+  padding: 40px 20px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.contentWrapper {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+  padding-bottom: 30px;
+}
+
+/* --- 1. Brand/Logo Column --- */
+.brandColumn {
+  flex: 1; /* Takes up one part of the flexible space */
+  min-width: 200px;
+}
+
+.logoLink {
+    text-decoration: none;
+}
+
+/* NEW RULE for the image */
+.actualLogoImage {
+  /* Set the size appropriate for your footer */
+  height: 40px; /* Adjust height to your liking */
+  width: auto; 
+  margin-bottom: 10px;
+}
+
+.tagline {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  color: var(--color-footer-text, #cbd5e1);
+}
+
+.taxStatus {
+    font-size: 0.8rem;
+    color: var(--color-footer-secondary, #64748b);
+    margin: 0;
+}
+
+/* --- 2. Links Grid --- */
+.linksGrid {
+  display: flex;
+  flex: 2; /* Takes up two parts of the flexible space */
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.linkColumn {
+    min-width: 120px;
+}
+
+.columnTitle {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--color-white, #ffffff);
+  margin-bottom: 15px;
+}
+
+.linkColumn ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.linkColumn li {
+  margin-bottom: 8px;
+}
+
+.footerLink {
+  color: var(--color-footer-text, #cbd5e1);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+.footerLink:hover {
+  color: var(--color-primary-light, #93c5fd);
+}
+
+/* --- Separator and Bottom Bar --- */
+.divider {
+  border: 0;
+  border-top: 1px solid var(--color-footer-divider, #374151);
+  margin: 20px auto;
+  max-width: 1200px;
+}
+
+.bottomBar {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.copyright {
+  font-size: 0.85rem;
+  color: var(--color-footer-secondary, #64748b);
+  margin: 0;
+}
+
+.socials {
+  display: flex;
+  gap: 15px;
+}
+
+.socialIcon {
+  color: var(--color-footer-text, #cbd5e1);
+  transition: color 0.2s;
+}
+
+.socialIcon:hover {
+  color: var(--color-primary-light, #93c5fd);
+}
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+  .contentWrapper {
+    flex-direction: column; /* Stack columns vertically */
+    gap: 30px;
+    text-align: center;
+  }
+  
+  .brandColumn {
+      min-width: auto;
+  }
+
+  .linksGrid {
+    flex-direction: column; /* Stack link columns */
+    gap: 30px;
+    text-align: center;
+  }
+
+  .linkColumn ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+  }
+  
+  .linkColumn li {
+      margin: 0 10px 8px; /* Add horizontal spacing */
+  }
+
+  .bottomBar {
+    flex-direction: column-reverse; /* Put copyright above socials */
+    gap: 15px;
+  }
+}

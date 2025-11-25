@@ -1,0 +1,63 @@
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Space between buttons */
+  padding: 40px 20px;
+  background-color: var(--color-background-secondary, #f4f7f9); /* Use a light background color */
+}
+
+.buttonLink {
+  /* Inherit styles from the primary button style of your app, or define a new look */
+  text-decoration: none; /* Remove underline from link */
+  flex: 1; /* Allow buttons to grow and fill space */
+  max-width: 300px; /* Limit maximum width */
+  
+  border: 1px solid var(--color-primary, #007bff);
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+  
+  /* Color settings */
+  background-color: var(--color-white, #ffffff);
+  color: var(--color-text-primary, #333);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.buttonLink:hover {
+  transform: translateY(-5px); /* Lift button on hover */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+  background-color: var(--color-primary-light, #eaf4ff); /* Light background on hover */
+}
+
+.buttonContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.buttonLabel {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color-primary, #007bff); /* Use primary color for the label */
+  margin-bottom: 5px;
+}
+
+.buttonDescription {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary, #666);
+  margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Stack buttons vertically on small screens */
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .buttonLink {
+    max-width: 90%; /* Take up more width on small screens */
+  }
+}

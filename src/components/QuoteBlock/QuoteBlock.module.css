@@ -1,0 +1,78 @@
+.quoteSection {
+  /* CHANGED: Background color switched to a light blue variable */
+  background-color: var(--color-light-blue, #eaf4ff); 
+  padding: 60px 20px;
+  text-align: center;
+  /* REMOVED: border-top and border-bottom lines */
+}
+
+.quoteBlock {
+  max-width: 900px;
+  margin: 0 auto;
+  font-style: italic;
+  position: relative;
+}
+
+.quoteText {
+  font-size: 1.8rem;
+  line-height: 1.4;
+  color: var(--color-text-dark, #1c1c1c);
+  margin: 0;
+  padding: 0 40px; /* Space for the large quote symbols */
+}
+
+.quoteSymbol {
+  font-size: 5rem;
+  color: var(--color-primary, #007bff);
+  position: absolute;
+  top: -10px;
+}
+
+.quoteSymbol:first-child {
+  left: 0;
+  top: -20px;
+}
+
+.quoteSymbol:last-child {
+  right: 0;
+  bottom: -40px;
+}
+
+.sourceContainer {
+  margin-top: 20px;
+}
+
+.sourceName {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--color-text-primary, #333);
+  margin: 0;
+}
+
+.sourceTitle {
+  font-size: 1rem;
+  color: var(--color-text-secondary, #666);
+  margin-top: 5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .quoteText {
+    font-size: 1.4rem;
+    padding: 0 10px;
+  }
+  
+  .quoteSymbol {
+    font-size: 3rem;
+  }
+
+  .quoteSymbol:first-child {
+    left: 0;
+    top: 0;
+  }
+  
+  .quoteSymbol:last-child {
+    right: 0;
+    bottom: -15px;
+  }
+}

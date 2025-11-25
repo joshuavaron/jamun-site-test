@@ -4,6 +4,11 @@ import Banner from "../../components/Banner/Banner";
 // Import the new component
 import FeatureShowcase from "../../components/FeatureShowcase/FeatureShowcase"; 
 import NavBar from "../../components/NavBar/NavBar";
+import CompetitionButtons from "../../components/CompetitionButtons/CompetitionButtons"; 
+// --- NEW IMPORT ---
+import QuoteBlock from "../../components/QuoteBlock/QuoteBlock";
+import Footer from "../../components/Footer/Footer"
+// ------------------
 import styles from "./Home.module.css";
 
 const Home: React.FC = () => {
@@ -38,8 +43,6 @@ const Home: React.FC = () => {
 
       {/* --- REPLACED FEATURE CARDS WITH FEATURE SHOWCASE --- */}
    <section className={styles.featuresSection}>
-    <h2>Why Us?</h2>
-
         {/* Feature 2: Image on Left, Text on Right (reversed) */}
         <FeatureShowcase
             title="Interactive Extracurricular Experiences"
@@ -67,12 +70,23 @@ const Home: React.FC = () => {
         />
         
    </section>
-
-   <section className={styles.ctaSection}>
-    <h2>Ready to Dive In?</h2>
-    <p>Start building your application today with modern React.</p>
-    <button className={styles.secondaryButton}>Learn More</button>
+   
+   <section className={styles.ctaSection} style={{ paddingBottom: '0' }}>
+    <h2>Our Competitions</h2>
+    <p>Click on any competition below to learn more and sign up!</p>
    </section>
+   <CompetitionButtons /> 
+
+      {/* --- NEW QUOTE BLOCK COMPONENT --- */}
+   <QuoteBlock
+      quote="This was something they were passionate about, and they put in an extraordinary amount of time and care into putting together a learning experience our students will not forget."
+      source="Mr. Komie and Ms. Mastin"
+      title="Middle School Social Studies Teachers"
+   />
+   {/* ---------------------------------- */}
+
+    <Footer />
+
   </div>
  );
 };
