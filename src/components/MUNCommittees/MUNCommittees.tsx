@@ -1,7 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
+import { COMMITTEES } from "../../data/committees";
 import styles from "./MUNCommittees.module.css";
 
 interface Committee {
+  id: string;
   name: string;
   topic: string;
   description: string;
@@ -20,36 +23,40 @@ interface MUNCommitteesProps {
 
 const DEFAULT_COMMITTEES: Committee[] = [
   {
-    name: "General Assembly",
-    topic: "Climate Change and Sustainable Development",
+    id: "unicef",
+    name: "UNICEF",
+    topic: "Access to Primary Education in Conflict Zones",
     description:
-      "Discuss global strategies for combating climate change while promoting economic growth in developing nations.",
+      "Address the challenges of providing quality primary education to children living in conflict-affected regions worldwide.",
     difficulty: "Beginner",
-    delegateCount: 120,
+    delegateCount: 40,
   },
   {
-    name: "Security Council",
-    topic: "Cybersecurity and International Peace",
+    id: "disec",
+    name: "DISEC",
+    topic: "Nuclear Weaponry",
     description:
-      "Address the growing threats of cyber warfare and establish frameworks for digital security cooperation.",
+      "Negotiate frameworks for nuclear disarmament and non-proliferation in the modern era.",
     difficulty: "Advanced",
-    delegateCount: 15,
+    delegateCount: 50,
   },
   {
-    name: "Human Rights Council",
-    topic: "Refugee Rights and Migration",
+    id: "cuban-missile-crisis",
+    name: "Cuban Missile Crisis",
+    topic: "Thirteen Days on the Brink",
     description:
-      "Examine policies to protect the rights of refugees and create sustainable solutions for global migration.",
-    difficulty: "Intermediate",
-    delegateCount: 47,
+      "Experience the tension of the closest the world came to nuclear war and make decisions that could save or destroy civilization.",
+    difficulty: "Advanced",
+    delegateCount: 18,
   },
   {
-    name: "Economic and Social Council",
-    topic: "Global Economic Inequality",
+    id: "european-union",
+    name: "European Union",
+    topic: "Border Security and Refugees",
     description:
-      "Develop strategies to bridge the wealth gap and promote inclusive economic policies worldwide.",
+      "Balance border security concerns with humanitarian obligations toward refugees seeking safety in Europe.",
     difficulty: "Intermediate",
-    delegateCount: 54,
+    delegateCount: 27,
   },
 ];
 
@@ -104,7 +111,7 @@ const MUNCommittees: React.FC<MUNCommitteesProps> = ({
   subtitle = "Each committee offers unique challenges and opportunities for delegates to engage with pressing global issues.",
   committees = DEFAULT_COMMITTEES,
   viewAllHref = "/modelun/committees",
-  totalCommittees = 16,
+  totalCommittees = COMMITTEES.length,
 }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -150,8 +157,9 @@ const MUNCommittees: React.FC<MUNCommitteesProps> = ({
         {/* Committees Grid */}
         <div className={styles.grid}>
           {committees.map((committee, index) => (
-            <article
-              key={committee.name}
+            <Link
+              to={`/modelun/committees/${committee.id}`}
+              key={committee.id}
               className={`${styles.card} ${hoveredIndex === index ? styles.cardHovered : ""}`}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
@@ -191,7 +199,7 @@ const MUNCommittees: React.FC<MUNCommitteesProps> = ({
                   </span>
                 </span>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
 

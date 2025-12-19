@@ -1,0 +1,248 @@
+@import "../../components/variables.css";
+
+.page {
+  min-height: 100vh;
+  background: #f8fafc;
+}
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+/* Two Column Layout */
+.twoColumn {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+
+.leftColumn,
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Section Styles */
+.section {
+}
+
+.sectionTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0 0 12px 0;
+}
+
+.sectionSubtitle {
+  font-size: 0.95rem;
+  color: #64748b;
+  margin: 0 0 16px 0;
+  line-height: 1.5;
+}
+
+
+/* Info Values (Delegation Size, Number of Delegates) */
+.infoValue {
+  font-size: 1.1rem;
+  color: #64748b;
+  margin: 0;
+}
+
+/* Letter Card */
+.letterCard {
+  padding: 0;
+}
+
+.letterText {
+  font-family: inherit;
+  font-size: 1.1rem;
+  color: #64748b;
+  line-height: 1.7;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+/* Executives List */
+.executivesList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.executiveItem {
+  font-size: 1.1rem;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+.executiveName {
+  color: #64748b;
+}
+
+.executivePronouns {
+  color: #94a3b8;
+  margin-left: 4px;
+}
+
+.executiveRole {
+  color: #64748b;
+}
+
+/* Documents List */
+.documentsList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.documentCard {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: #f8fafc;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.documentCard:hover {
+  background: #f1f5f9;
+}
+
+.documentIcon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #497bce;
+  flex-shrink: 0;
+}
+
+.documentIcon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.documentInfo {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.documentTitle {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1a1a2e;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.documentType {
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+.downloadIcon {
+  width: 18px;
+  height: 18px;
+  color: #94a3b8;
+  flex-shrink: 0;
+  transition: color 0.2s ease;
+}
+
+.downloadIcon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.documentCard:hover .downloadIcon {
+  color: #497bce;
+}
+
+/* Countries Section - Full Width */
+.countriesSection {
+  margin-top: 32px;
+}
+
+.countriesGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px 32px;
+}
+
+.countryItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+}
+
+.countryFlag {
+  width: 40px;
+  height: 30px;
+  object-fit: cover;
+  border-radius: 3px;
+  flex-shrink: 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.countryName {
+  font-size: 1.1rem;
+  color: #64748b;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .twoColumn {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .countriesGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .content {
+    padding: 32px 16px 60px;
+  }
+
+  .sectionTitle {
+    font-size: 1.1rem;
+  }
+
+  .letterText {
+    font-size: 0.9rem;
+  }
+
+  .countriesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .countriesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .countryName {
+    font-size: 1rem;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .documentCard,
+  .downloadIcon {
+    transition: none;
+  }
+}
