@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import Search from "../Search/Search";
 import styles from "./NavBar.module.css";
 
 export interface NavBarButton {
@@ -13,6 +14,7 @@ export interface NavBarProps {
   searchValue: string;
   onSearchChange: (value: string) => void;
   rightButtons?: NavBarButton[];
+  grantsHref?: string;
 }
 
 function NavButton({ label, onClick, href }: NavBarButton) {
@@ -40,26 +42,6 @@ function HamburgerIcon({ isOpen }: { isOpen: boolean }) {
   );
 }
 
-function SearchIcon() {
-  return (
-    <svg
-      className={styles.searchIcon}
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
-      stroke="currentColor"
-      aria-hidden="true"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
-      />
-    </svg>
-  );
-}
-
 function ChevronIcon({ isOpen }: { isOpen: boolean }) {
   return (
     <svg
@@ -84,12 +66,14 @@ export default function NavBar({
   searchValue,
   onSearchChange,
   rightButtons = [],
+  grantsHref = "/grants",
 }: NavBarProps) {
   const [exploreOpen, setExploreOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileExploreOpen, setMobileExploreOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [searchExpanded, setSearchExpanded] = useState(false);
 
-  const inputRef = useRef<HTMLInputElement>(null);
   const exploreRef = useRef<HTMLDivElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const hamburgerRef = useRef<HTMLButtonElement>(null);
@@ -105,12 +89,10 @@ export default function NavBar({
     function handleClickOutside(e: MouseEvent) {
       const target = e.target as Node;
 
-      // Close explore dropdown if clicked outside
       if (exploreOpen && exploreRef.current && !exploreRef.current.contains(target)) {
         setExploreOpen(false);
       }
 
-      // Close mobile menu if clicked outside (but not on hamburger)
       if (
         mobileMenuOpen &&
         mobileMenuRef.current &&
@@ -140,17 +122,32 @@ export default function NavBar({
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Close mobile menu on escape
+  // Close on escape
   useEffect(() => {
     function handleEscape(e: KeyboardEvent) {
       if (e.key === "Escape") {
         closeAllMenus();
+        setSearchExpanded(false);
       }
     }
 
     document.addEventListener("keydown", handleEscape);
     return () => document.removeEventListener("keydown", handleEscape);
   }, [closeAllMenus]);
+
+  // Detect scroll for collapsible search
+  useEffect(() => {
+    function handleScroll() {
+      const scrolled = window.scrollY > 50;
+      setIsScrolled(scrolled);
+      if (scrolled && !searchValue) {
+        setSearchExpanded(false);
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [searchValue]);
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
@@ -164,60 +161,19 @@ export default function NavBar({
     };
   }, [mobileMenuOpen]);
 
-  const handleClearSearch = () => {
-    onSearchChange("");
-    inputRef.current?.focus();
-  };
-
   const handleExploreItemClick = () => {
     setExploreOpen(false);
     setMobileMenuOpen(false);
     setMobileExploreOpen(false);
   };
 
+  const showCollapsedSearch = isScrolled && !searchExpanded && !searchValue;
+
   return (
     <>
       <nav className={styles.navbar}>
-        {/* Logo */}
-        <a href="/" className={styles.logoLink}>
-          <img src={`/images/${title}.webp`} alt={`${title} logo`} />
-        </a>
-
-        {/* Desktop Search Bar */}
-        <div className={styles.searchContainer}>
-          <div className={styles.searchWrapper}>
-            <SearchIcon />
-            <input
-              ref={inputRef}
-              className={styles.searchInput}
-              type="text"
-              placeholder="Search..."
-              value={searchValue}
-              onChange={(e) => onSearchChange(e.target.value)}
-              aria-label="Search"
-            />
-            {searchValue && (
-              <button
-                className={styles.clearSearch}
-                onClick={handleClearSearch}
-                aria-label="Clear search"
-                type="button"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  aria-hidden="true"
-                >
-                  <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
-                </svg>
-              </button>
-            )}
-          </div>
-        </div>
-
-        {/* Desktop Navigation */}
-        <div className={styles.desktopNav}>
+        {/* Left Section: Explore + Search */}
+        <div className={styles.leftSection}>
           {/* Explore Dropdown */}
           {exploreItems.length > 0 && (
             <div className={styles.exploreContainer} ref={exploreRef}>
@@ -249,7 +205,25 @@ export default function NavBar({
             </div>
           )}
 
-          {/* Right Buttons */}
+          {/* Search */}
+          <Search
+            value={searchValue}
+            onChange={onSearchChange}
+            collapsed={showCollapsedSearch}
+            onExpand={() => setSearchExpanded(true)}
+          />
+        </div>
+
+        {/* Center: Logo */}
+        <a href="/" className={styles.logoLink}>
+          <img src={`/images/${title}.webp`} alt={`${title} logo`} />
+        </a>
+
+        {/* Right Section: Grants + Login */}
+        <div className={styles.rightSection}>
+          <a href={grantsHref} className={styles.textLink}>
+            Grants
+          </a>
           {rightButtons.map((btn, i) => (
             <NavButton key={i} {...btn} />
           ))}
@@ -278,33 +252,8 @@ export default function NavBar({
         className={`${styles.mobileMenu} ${mobileMenuOpen ? styles.mobileMenuOpen : ""}`}
       >
         {/* Mobile Search */}
-        <div className={styles.mobileSearchWrapper}>
-          <SearchIcon />
-          <input
-            className={styles.mobileSearchInput}
-            type="text"
-            placeholder="Search..."
-            value={searchValue}
-            onChange={(e) => onSearchChange(e.target.value)}
-            aria-label="Search"
-          />
-          {searchValue && (
-            <button
-              className={styles.clearSearch}
-              onClick={handleClearSearch}
-              aria-label="Clear search"
-              type="button"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                aria-hidden="true"
-              >
-                <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
-              </svg>
-            </button>
-          )}
+        <div className={styles.mobileSearchContainer}>
+          <Search value={searchValue} onChange={onSearchChange} />
         </div>
 
         {/* Mobile Explore */}
@@ -338,6 +287,13 @@ export default function NavBar({
 
         {/* Mobile Buttons */}
         <div className={styles.mobileButtons}>
+          <a
+            className={styles.mobileButton}
+            href={grantsHref}
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Grants
+          </a>
           {rightButtons.map((btn, i) => (
             <a
               key={i}

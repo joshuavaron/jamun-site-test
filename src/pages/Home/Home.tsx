@@ -29,7 +29,7 @@ const Home: React.FC = () => {
       <Banner
         title="JAMUN makes learning fun!"
         subtitle="Join our community of students, parents, and teachers today."
-        backgroundImage="/images/mainbackground.webp"
+        backgroundImage="/images/homebackground.webp"
       />
 
       <section className={styles.featuresSection}>

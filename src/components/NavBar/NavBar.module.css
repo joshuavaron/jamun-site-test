@@ -5,15 +5,15 @@
 /* CSS Custom Properties */
 :root {
   --navbar-height: 64px;
-  --navbar-bg: rgba(255, 255, 255, 0.45);
+  --navbar-bg: rgba(255, 255, 255, 0.6);
   --navbar-bg-solid: rgba(255, 255, 255, 0.85);
   --navbar-blur: 24px;
-  --navbar-border: rgba(255, 255, 255, 0.12);
-  --navbar-shadow: 0 1px 2px rgba(0, 0, 0, 0.02), 0 4px 12px rgba(0, 0, 0, 0.04);
+  --navbar-border: rgba(0, 0, 0, 0.06);
+  --navbar-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.03);
   --primary-color: #2563eb;
   --primary-hover: #1d4ed8;
   --primary-light: rgba(37, 99, 235, 0.08);
-  --text-primary: #111827;
+  --text-primary: #1f2937;
   --text-secondary: #6b7280;
   --bg-hover: rgba(0, 0, 0, 0.04);
   --border-radius: 10px;
@@ -22,10 +22,11 @@
   --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-spring: 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  --font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 /* ===================================
-   NAVBAR CONTAINER - Glass Effect
+   NAVBAR CONTAINER
    =================================== */
 
 .navbar {
@@ -35,146 +36,82 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1.5rem;
   height: var(--navbar-height);
-  padding: 0 2rem;
+  padding: 0 24px;
   background: var(--navbar-bg);
   backdrop-filter: saturate(180%) blur(var(--navbar-blur));
   -webkit-backdrop-filter: saturate(180%) blur(var(--navbar-blur));
   border-bottom: 1px solid var(--navbar-border);
   box-shadow: var(--navbar-shadow);
+  font-family: var(--font-family);
 }
 
 /* ===================================
-   LOGO
+   LEFT SECTION (Explore + Search)
+   =================================== */
+
+.leftSection {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
+}
+
+/* ===================================
+   CENTER LOGO
    =================================== */
 
 .logoLink {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   align-items: center;
   flex-shrink: 0;
   text-decoration: none;
-  border-radius: var(--border-radius);
   padding: 4px;
-  margin: -4px;
-  transition: transform var(--transition-fast), opacity var(--transition-fast);
+  border-radius: var(--border-radius);
+  transition: opacity var(--transition-fast);
 }
 
 .logoLink:hover {
-  opacity: 0.8;
-  transform: scale(0.98);
-}
-
-.logoLink:active {
-  transform: scale(0.95);
+  opacity: 0.85;
 }
 
 .logoLink img {
-  height: 34px;
+  height: 32px;
   width: auto;
   display: block;
 }
 
 /* ===================================
-   SEARCH BAR - Pill Style
+   RIGHT SECTION (Grants + Buttons)
    =================================== */
 
-.searchContainer {
+.rightSection {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   flex: 1;
-  max-width: 520px;
-  margin: 0 0.5rem;
+  justify-content: flex-end;
 }
 
-.searchWrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.searchIcon {
-  position: absolute;
-  left: 14px;
-  width: 18px;
-  height: 18px;
-  color: var(--text-secondary);
-  pointer-events: none;
-  transition: color var(--transition-fast);
-}
-
-.searchInput {
-  width: 100%;
-  height: 42px;
-  padding: 0 44px;
+/* Text Link (Grants) */
+.textLink {
+  padding: 8px 14px;
+  font-family: var(--font-family);
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 500;
   color: var(--text-primary);
-  background: rgba(0, 0, 0, 0.04);
-  border: 1.5px solid transparent;
+  text-decoration: none;
   border-radius: var(--border-radius-full);
-  outline: none;
-  transition: all var(--transition-normal);
-}
-
-.searchInput::placeholder {
-  color: var(--text-secondary);
-  font-weight: 400;
-}
-
-.searchInput:hover {
-  background: rgba(0, 0, 0, 0.06);
-}
-
-.searchInput:focus {
-  background: rgba(255, 255, 255, 0.9);
-  border-color: var(--primary-color);
-  box-shadow: 0 0 0 4px var(--primary-light), 0 2px 8px rgba(37, 99, 235, 0.12);
-}
-
-.searchWrapper:focus-within .searchIcon {
-  color: var(--primary-color);
-}
-
-.clearSearch {
-  position: absolute;
-  right: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 26px;
-  height: 26px;
-  padding: 0;
-  background: rgba(0, 0, 0, 0.06);
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  color: var(--text-secondary);
   transition: all var(--transition-fast);
 }
 
-.clearSearch svg {
-  width: 14px;
-  height: 14px;
-}
-
-.clearSearch:hover {
-  background: rgba(0, 0, 0, 0.1);
-  color: var(--text-primary);
-  transform: scale(1.05);
-}
-
-.clearSearch:active {
-  transform: scale(0.95);
-}
-
-/* ===================================
-   DESKTOP NAVIGATION
-   =================================== */
-
-.desktopNav {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  flex-shrink: 0;
+.textLink:hover {
+  background: var(--bg-hover);
+  color: var(--primary-color);
 }
 
 /* ===================================
@@ -183,6 +120,7 @@
 
 .exploreContainer {
   position: relative;
+  flex-shrink: 0;
 }
 
 .exploreButton {
@@ -190,6 +128,7 @@
   align-items: center;
   gap: 4px;
   padding: 8px 14px;
+  font-family: var(--font-family);
   font-size: 14px;
   font-weight: 500;
   color: var(--text-primary);
@@ -217,12 +156,12 @@
 .dropdownMenu {
   position: absolute;
   top: calc(100% + 8px);
-  right: 0;
-  min-width: 200px;
+  left: 0;
+  min-width: 180px;
   padding: 6px;
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: var(--border-radius-lg);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.04), 0 10px 40px rgba(0, 0, 0, 0.1);
@@ -232,19 +171,20 @@
 @keyframes dropdownSlideIn {
   from {
     opacity: 0;
-    transform: translateY(-10px) scale(0.96);
+    transform: translateY(-8px);
   }
   to {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: translateY(0);
   }
 }
 
 .dropdownItem {
   display: block;
   padding: 10px 14px;
+  font-family: var(--font-family);
   font-size: 14px;
-  font-weight: 450;
+  font-weight: 500;
   color: var(--text-primary);
   text-decoration: none;
   border-radius: var(--border-radius);
@@ -257,19 +197,20 @@
 }
 
 /* ===================================
-   NAV BUTTONS - Modern Pill Style
+   NAV BUTTONS
    =================================== */
 
 .button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 9px 18px;
+  padding: 8px 16px;
+  font-family: var(--font-family);
   font-size: 14px;
   font-weight: 500;
-  color: var(--primary-color);
+  color: white;
   text-decoration: none;
-  background: var(--primary-light);
+  background: var(--primary-color);
   border: none;
   border-radius: var(--border-radius-full);
   cursor: pointer;
@@ -278,14 +219,12 @@
 }
 
 .button:hover {
-  color: #ffffff;
-  background: var(--primary-color);
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  background: var(--primary-hover);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
   transform: translateY(-1px);
 }
 
 .button:active {
-  background: var(--primary-hover);
   transform: translateY(0);
   box-shadow: none;
 }
@@ -298,8 +237,8 @@
   display: none;
   align-items: center;
   justify-content: center;
-  width: 42px;
-  height: 42px;
+  width: 40px;
+  height: 40px;
   padding: 0;
   background: transparent;
   border: none;
@@ -341,7 +280,6 @@
   bottom: 0;
 }
 
-/* Hamburger to X animation */
 .hamburgerOpen span:nth-child(1) {
   top: 50%;
   transform: translateY(-50%) rotate(45deg);
@@ -366,23 +304,19 @@
   position: fixed;
   inset: 0;
   z-index: 998;
-  background: rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
   animation: fadeIn var(--transition-normal) ease;
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 /* ===================================
-   MOBILE MENU - Glass Style
+   MOBILE MENU
    =================================== */
 
 .mobileMenu {
@@ -391,16 +325,16 @@
   top: var(--navbar-height);
   right: 0;
   z-index: 999;
-  width: 300px;
+  width: 280px;
   max-height: calc(100vh - var(--navbar-height));
   overflow-y: auto;
   background: var(--navbar-bg-solid);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-left: 1px solid rgba(0, 0, 0, 0.06);
-  box-shadow: -8px 0 30px rgba(0, 0, 0, 0.08);
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.06);
   transform: translateX(100%);
-  transition: transform 350ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .mobileMenuOpen {
@@ -408,43 +342,14 @@
 }
 
 /* Mobile Search */
-.mobileSearchWrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-  margin: 20px 16px;
-}
-
-.mobileSearchInput {
-  width: 100%;
-  height: 48px;
-  padding: 0 44px;
-  font-size: 16px;
-  color: var(--text-primary);
-  background: rgba(0, 0, 0, 0.04);
-  border: 1.5px solid transparent;
-  border-radius: var(--border-radius-full);
-  outline: none;
-  transition: all var(--transition-fast);
-}
-
-.mobileSearchInput::placeholder {
-  color: var(--text-secondary);
-}
-
-.mobileSearchInput:focus {
-  background: #ffffff;
-  border-color: var(--primary-color);
-  box-shadow: 0 0 0 4px var(--primary-light);
+.mobileSearchContainer {
+  padding: 16px;
 }
 
 /* Mobile Explore */
 .mobileExplore {
   border-top: 1px solid rgba(0, 0, 0, 0.06);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-  margin: 0 12px;
-  border-radius: var(--border-radius);
-  overflow: hidden;
+  margin: 0 16px;
 }
 
 .mobileExploreButton {
@@ -452,27 +357,24 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 16px;
+  padding: 14px 0;
+  font-family: var(--font-family);
   font-size: 15px;
   font-weight: 500;
   color: var(--text-primary);
   background: transparent;
   border: none;
   cursor: pointer;
-  transition: background var(--transition-fast);
-}
-
-.mobileExploreButton:hover {
-  background: var(--bg-hover);
 }
 
 .mobileExploreItems {
-  padding: 0 8px 12px;
+  padding-bottom: 12px;
 }
 
 .mobileExploreItem {
   display: block;
-  padding: 12px 16px;
+  padding: 10px 12px;
+  font-family: var(--font-family);
   font-size: 14px;
   color: var(--text-secondary);
   text-decoration: none;
@@ -487,17 +389,19 @@
 
 /* Mobile Buttons */
 .mobileButtons {
-  padding: 20px 16px;
+  padding: 16px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .mobileButton {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 14px 20px;
+  padding: 12px 16px;
+  font-family: var(--font-family);
   font-size: 15px;
   font-weight: 500;
   color: var(--primary-color);
@@ -509,7 +413,7 @@
 }
 
 .mobileButton:hover {
-  color: #ffffff;
+  color: white;
   background: var(--primary-color);
 }
 
@@ -519,28 +423,28 @@
 
 /* Tablet */
 @media (max-width: 1024px) {
-  .searchContainer {
-    max-width: 380px;
-  }
-
   .navbar {
-    padding: 0 1.5rem;
+    padding: 0 20px;
   }
 }
 
 /* Mobile */
 @media (max-width: 768px) {
   .navbar {
-    padding: 0 1rem;
-    gap: 1rem;
+    padding: 0 16px;
   }
 
-  .searchContainer {
+  .leftSection {
     display: none;
   }
 
-  .desktopNav {
+  .rightSection {
     display: none;
+  }
+
+  .logoLink {
+    position: static;
+    transform: none;
   }
 
   .hamburgerButton {
@@ -564,6 +468,19 @@
   }
 
   .logoLink img {
-    height: 30px;
+    height: 28px;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .navbar,
+  .button,
+  .exploreButton,
+  .mobileMenu,
+  .dropdownMenu,
+  .hamburgerIcon span,
+  .chevronIcon {
+    transition: none;
   }
 }

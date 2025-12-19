@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { RESOURCES } from "../../data/resources";
 import styles from "./MUNResources.module.css";
 
 interface Resource {
@@ -16,44 +17,13 @@ interface MUNResourcesProps {
   viewAllHref?: string;
 }
 
-const DEFAULT_RESOURCES: Resource[] = [
-  {
-    title: "Delegate Handbook",
-    description: "Complete guide to rules of procedure and parliamentary debate.",
-    icon: "book",
-    href: "#",
-  },
-  {
-    title: "Background Guides",
-    description: "In-depth research materials for each committee topic.",
-    icon: "document",
-    href: "#",
-  },
-  {
-    title: "Position Paper Template",
-    description: "Official template for writing winning position papers.",
-    icon: "template",
-    href: "#",
-  },
-  {
-    title: "Country Matrix",
-    description: "View available countries and committee assignments.",
-    icon: "globe",
-    href: "#",
-  },
-  {
-    title: "Video Tutorials",
-    description: "Step-by-step guides on MUN procedures and speeches.",
-    icon: "video",
-    href: "#",
-  },
-  {
-    title: "Resolution Samples",
-    description: "Study award-winning resolutions from past conferences.",
-    icon: "download",
-    href: "#",
-  },
-];
+// Map resources from data file to the format expected by this component
+const DEFAULT_RESOURCES: Resource[] = RESOURCES.map((r) => ({
+  title: r.name,
+  description: r.shortDescription,
+  icon: r.icon,
+  href: `/modelun/resources/${r.id}`,
+}));
 
 const BookIcon: React.FC = () => (
   <svg
