@@ -1,94 +1,100 @@
 import { useState } from "react";
 import React from "react";
 import Banner from "../../components/Banner/Banner";
-// Import the new component
-import FeatureShowcase from "../../components/FeatureShowcase/FeatureShowcase"; 
+import FeatureShowcase from "../../components/FeatureShowcase/FeatureShowcase";
 import NavBar from "../../components/NavBar/NavBar";
-import CompetitionButtons from "../../components/CompetitionButtons/CompetitionButtons"; 
-// --- NEW IMPORT ---
+import CompetitionButtons from "../../components/CompetitionButtons/CompetitionButtons";
 import QuoteBlock from "../../components/QuoteBlock/QuoteBlock";
-import Footer from "../../components/Footer/Footer"
-// ------------------
+import Footer from "../../components/Footer/Footer";
 import styles from "./Home.module.css";
 
 const Home: React.FC = () => {
- const [query, setQuery] = useState("");
+  const [query, setQuery] = useState("");
 
- return (
-  <div>
-   <NavBar
+  return (
+    <div>
+      <NavBar
         title="jamun-blue-side-logo"
-        // CHANGED: Now using objects with 'label' and 'href'
         exploreItems={[
           { label: "Leaderboards", href: "/leaderboards" },
           { label: "Model UN", href: "/modelun" },
           { label: "Mock Trial", href: "/mocktrial" },
           { label: "Mathletes", href: "/mathletes" },
         ]}
-        // REMOVED: The onExploreSelect prop is no longer needed
-
         searchValue={query}
         onSearchChange={setQuery}
-        rightButtons={[
-          { label: "Login", href: "/login" },
-        ]}
+        rightButtons={[{ label: "Login", href: "/login" }]}
       />
 
-   <Banner
-    title="JAMUN makes learning fun!"
-    subtitle="Join our community of students, parents, and teachers today."
-    backgroundImage="/images/mainbackground.webp"
-   >
-   </Banner>
+      <Banner
+        title="JAMUN makes learning fun!"
+        subtitle="Join our community of students, parents, and teachers today."
+        backgroundImage="/images/mainbackground.webp"
+      />
 
-      {/* --- REPLACED FEATURE CARDS WITH FEATURE SHOWCASE --- */}
-   <section className={styles.featuresSection}>
-        {/* Feature 2: Image on Left, Text on Right (reversed) */}
+      <section className={styles.featuresSection}>
+        <div className={styles.sectionHeader}>
+          <span className={styles.sectionTagline}>Why Choose JAMUN</span>
+          <h2 className={styles.sectionTitle}>
+            Everything You Need to Excel
+          </h2>
+          <p className={styles.sectionSubtitle}>
+            Comprehensive tools and resources designed to help students succeed
+            in competitive academics.
+          </p>
+        </div>
+
         <FeatureShowcase
-            title="Interactive Extracurricular Experiences"
-            description="Access expertly curated material for Model UN, Mock Trial, and Mathletes. Our modules are designed to be engaging, practical, and highly effective for test prep."
-            imageUrl="/images/shape_tomorrow.webp" // **Update path to your image**
-            imageOnLeft={false}
+          tagline="Engaging Content"
+          title="Interactive Extracurricular Experiences"
+          description="Access expertly curated material for Model UN, Mock Trial, and Mathletes. Our modules are designed to be engaging, practical, and highly effective for competition prep."
+          imageUrl="/images/shape_tomorrow.webp"
+          imageOnLeft={false}
+          highlights={[
+            "Expert-designed curriculum",
+            "Practice scenarios & simulations",
+            "Progress tracking dashboards",
+          ]}
         />
 
-        {/* Feature 1: Text on Left, Image on Right (default) */}
         <FeatureShowcase
-            title="Real-Time Leaderboards"
-            description="Compete with peers globally! Our dynamic leaderboards track progress across multiple subjects and competitions, offering recognition for top performers."
-            imageUrl="/images/leaderboard.webp" // **Update path to your image**
-            imageOnLeft={true}
+          tagline="Compete & Grow"
+          title="Real-Time Leaderboards"
+          description="Compete with peers globally! Our dynamic leaderboards track progress across multiple subjects and competitions, offering recognition for top performers."
+          imageUrl="/images/leaderboard.webp"
+          imageOnLeft={true}
+          highlights={[
+            "Global & local rankings",
+            "Achievement badges & rewards",
+            "Weekly competition cycles",
+          ]}
         />
 
-        
-        
-        {/* Feature 3: Text on Left, Image on Right (default) */}
         <FeatureShowcase
-            title="No Experience Required"
-            description="It doesn't matter whether this is your first tournament or your hundreth! Our library of prep materials will make sure you are ready to compete at your best!"
-            imageUrl="/images/teacher_dashboard.webp" // **Update path to your image**
-            imageOnLeft={false}
+          tagline="Start Today"
+          title="No Experience Required"
+          description="It doesn't matter whether this is your first tournament or your hundredth! Our library of prep materials will make sure you are ready to compete at your best."
+          imageUrl="/images/shape_tomorrow.webp"
+          imageOnLeft={false}
+          highlights={[
+            "Beginner-friendly tutorials",
+            "Step-by-step learning paths",
+            "Mentor support available",
+          ]}
         />
-        
-   </section>
-   
-   <section className={styles.ctaSection} style={{ paddingBottom: '0' }}>
-    <h2>Our Competitions</h2>
-    <p>Click on any competition below to learn more and sign up!</p>
-   </section>
-   <CompetitionButtons /> 
+      </section>
 
-      {/* --- NEW QUOTE BLOCK COMPONENT --- */}
-   <QuoteBlock
-      quote="This was something they were passionate about, and they put in an extraordinary amount of time and care into putting together a learning experience our students will not forget."
-      source="Mr. Komie and Ms. Mastin"
-      title="Middle School Social Studies Teachers"
-   />
-   {/* ---------------------------------- */}
+      <CompetitionButtons />
 
-    <Footer />
+      <QuoteBlock
+        quote="This was something they were passionate about, and they put in an extraordinary amount of time and care into putting together a learning experience our students will not forget."
+        source="Mr. Komie and Ms. Mastin"
+        title="Middle School Social Studies Teachers"
+      />
 
-  </div>
- );
+      <Footer />
+    </div>
+  );
 };
 
 export default Home;

@@ -1,78 +1,127 @@
 .quoteSection {
-  /* CHANGED: Background color switched to a light blue variable */
-  background-color: var(--color-light-blue, #eaf4ff); 
-  padding: 60px 20px;
+  background: linear-gradient(135deg, #497bce 0%, #3a62a8 100%);
+  padding: 60px 24px;
   text-align: center;
-  /* REMOVED: border-top and border-bottom lines */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle decorative background */
+.quoteSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.container {
+  max-width: 750px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Scroll animation states */
+.container.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.container.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s ease-out,
+              transform 0.6s ease-out;
+}
+
+/* Small decorative quote icon */
+.quoteIcon {
+  width: 32px;
+  height: 32px;
+  margin: 0 auto 20px;
+  opacity: 0.4;
+  color: white;
+}
+
+.quoteIcon svg {
+  width: 100%;
+  height: 100%;
 }
 
 .quoteBlock {
-  max-width: 900px;
-  margin: 0 auto;
-  font-style: italic;
-  position: relative;
+  margin: 0;
+  padding: 0;
 }
 
 .quoteText {
-  font-size: 1.8rem;
-  line-height: 1.4;
-  color: var(--color-text-dark, #1c1c1c);
-  margin: 0;
-  padding: 0 40px; /* Space for the large quote symbols */
-}
-
-.quoteSymbol {
-  font-size: 5rem;
-  color: var(--color-primary, #007bff);
-  position: absolute;
-  top: -10px;
-}
-
-.quoteSymbol:first-child {
-  left: 0;
-  top: -20px;
-}
-
-.quoteSymbol:last-child {
-  right: 0;
-  bottom: -40px;
+  font-size: 1.35rem;
+  line-height: 1.6;
+  color: white;
+  margin: 0 0 24px 0;
+  font-weight: 400;
+  font-style: italic;
 }
 
 .sourceContainer {
-  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
 }
 
 .sourceName {
-  font-size: 1.25rem;
-  font-weight: bold;
-  color: var(--color-text-primary, #333);
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
   margin: 0;
 }
 
 .sourceTitle {
-  font-size: 1rem;
-  color: var(--color-text-secondary, #666);
-  margin-top: 5px;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .quoteText {
-    font-size: 1.4rem;
-    padding: 0 10px;
-  }
-  
-  .quoteSymbol {
-    font-size: 3rem;
+  .quoteSection {
+    padding: 48px 20px;
   }
 
-  .quoteSymbol:first-child {
-    left: 0;
-    top: 0;
+  .quoteText {
+    font-size: 1.15rem;
   }
-  
-  .quoteSymbol:last-child {
-    right: 0;
-    bottom: -15px;
+
+  .quoteIcon {
+    width: 28px;
+    height: 28px;
+    margin-bottom: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .quoteSection {
+    padding: 40px 16px;
+  }
+
+  .quoteText {
+    font-size: 1.05rem;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .container.hidden,
+  .container.visible {
+    transition: none;
+  }
+
+  .container.hidden {
+    opacity: 1;
+    transform: none;
   }
 }

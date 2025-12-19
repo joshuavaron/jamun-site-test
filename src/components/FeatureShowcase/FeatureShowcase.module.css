@@ -1,90 +1,301 @@
-/* --- Showcase Container (Main Layout) --- */
+/* --- Showcase Container --- */
 .showcaseContainer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-    padding: 60px 0; /* Vertical padding between showcase items */
-    max-width: 1200px;
-    margin: 0 auto; /* Center the container on the page */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  padding: 80px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
 }
 
-/* Class to reverse the order (for imageOnLeft=true) */
 .reverse {
-    flex-direction: row-reverse;
+  flex-direction: row-reverse;
+}
+
+/* --- Scroll Animation States --- */
+.showcaseContainer.hidden {
+  opacity: 0;
+}
+
+.showcaseContainer.hidden .textBlock {
+  opacity: 0;
+  transform: translateX(-60px);
+}
+
+.showcaseContainer.hidden.reverse .textBlock {
+  transform: translateX(60px);
+}
+
+.showcaseContainer.hidden .imageBlock {
+  opacity: 0;
+  transform: translateX(60px) scale(0.95);
+}
+
+.showcaseContainer.hidden.reverse .imageBlock {
+  transform: translateX(-60px) scale(0.95);
+}
+
+.showcaseContainer.visible {
+  opacity: 1;
+}
+
+.showcaseContainer.visible .textBlock {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.showcaseContainer.visible .imageBlock {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s,
+              transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s;
 }
 
 /* --- Text Block Styling --- */
 .textBlock {
-    flex: 1; /* Allows it to grow and take up space */
-    max-width: 50%;
-    padding: 20px 0;
+  flex: 1;
+  max-width: 50%;
+  padding: 20px 0;
+}
+
+.tagline {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #667eea;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+  padding: 6px 14px;
+  border-radius: 20px;
+  margin-bottom: 16px;
 }
 
 .title {
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: #333;
-    margin-bottom: 15px;
-    line-height: 1.2;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  margin: 0 0 20px 0;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
 }
 
 .description {
-    font-size: 1.15rem;
-    color: #555;
-    line-height: 1.6;
+  font-size: 1.125rem;
+  color: #4a5568;
+  line-height: 1.75;
+  margin: 0 0 28px 0;
+}
+
+/* Feature highlights list */
+.highlights {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.highlightItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.95rem;
+  color: #2d3748;
+  font-weight: 500;
+}
+
+.checkIcon {
+  width: 22px;
+  height: 22px;
+  min-width: 22px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.checkIcon svg {
+  width: 12px;
+  height: 12px;
 }
 
 /* --- Image Block Styling --- */
 .imageBlock {
-    flex: 1; /* Allows it to grow and take up space */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 50%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 50%;
+  position: relative;
 }
 
 .imageWrapper {
-    /* Use a fixed aspect ratio or max-size for the image wrapper */
-    width: 100%;
-    max-width: 500px; 
-    height: auto;
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+}
+
+/* Decorative background shape */
+.imageWrapper::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: 20px;
+  bottom: 20px;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.15) 0%, rgba(118, 75, 162, 0.15) 100%);
+  border-radius: 24px;
+  z-index: -1;
+  transition: transform 0.4s ease;
+}
+
+.imageBlock:hover .imageWrapper::before {
+  transform: translate(-8px, -8px);
 }
 
 .featureImage {
-    width: 100%;
-    height: auto;
-    display: block;
-    /* Optional: subtle shadow for depth, common with transparent backgrounds */
-    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.1)); 
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              box-shadow 0.4s ease;
 }
 
-/* --- Responsive Layout (Mobile) --- */
+.imageBlock:hover .featureImage {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.18);
+}
+
+/* Floating accent elements */
+.floatingAccent {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  opacity: 0.2;
+  z-index: -1;
+  animation: float 6s ease-in-out infinite;
+}
+
+.floatingAccent.top {
+  top: -30px;
+  right: -20px;
+  animation-delay: 0s;
+}
+
+.floatingAccent.bottom {
+  bottom: -20px;
+  left: -30px;
+  width: 60px;
+  height: 60px;
+  animation-delay: 3s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(5deg);
+  }
+}
+
+/* --- Alternating background colors for sections --- */
+.showcaseContainer:nth-of-type(even) {
+  background: linear-gradient(180deg, rgba(102, 126, 234, 0.03) 0%, rgba(118, 75, 162, 0.03) 100%);
+}
+
+/* --- Responsive Layout --- */
 @media (max-width: 900px) {
-    .showcaseContainer {
-        /* Stack the image and text vertically on smaller screens */
-        flex-direction: column;
-        padding: 40px 1rem;
-        gap: 20px;
-    }
+  .showcaseContainer {
+    flex-direction: column;
+    padding: 60px 24px;
+    gap: 40px;
+    text-align: center;
+  }
 
-    /* Override the reverse class on mobile so the image is always first */
-    .reverse {
-        flex-direction: column;
-    }
+  .reverse {
+    flex-direction: column;
+  }
 
-    .textBlock,
-    .imageBlock {
-        max-width: 100%;
-        text-align: center; /* Center text for mobile */
-    }
-    
-    .title {
-        font-size: 1.8rem;
-    }
+  /* On mobile, animate from bottom instead of sides */
+  .showcaseContainer.hidden .textBlock,
+  .showcaseContainer.hidden.reverse .textBlock {
+    transform: translateY(40px);
+  }
 
-    /* On mobile, reduce the image size a bit so it doesn't dominate */
-    .imageWrapper {
-        max-width: 350px;
-    }
+  .showcaseContainer.hidden .imageBlock,
+  .showcaseContainer.hidden.reverse .imageBlock {
+    transform: translateY(40px) scale(0.95);
+  }
+
+  .textBlock,
+  .imageBlock {
+    max-width: 100%;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .imageWrapper {
+    max-width: 400px;
+  }
+
+  .highlights {
+    align-items: center;
+  }
+
+  .floatingAccent {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .showcaseContainer {
+    padding: 48px 16px;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .tagline {
+    font-size: 0.7rem;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .showcaseContainer.hidden .textBlock,
+  .showcaseContainer.hidden .imageBlock,
+  .showcaseContainer.visible .textBlock,
+  .showcaseContainer.visible .imageBlock,
+  .featureImage,
+  .imageWrapper::before,
+  .floatingAccent {
+    transition: none;
+    animation: none;
+  }
+
+  .showcaseContainer.hidden .textBlock,
+  .showcaseContainer.hidden .imageBlock {
+    opacity: 1;
+    transform: none;
+  }
 }

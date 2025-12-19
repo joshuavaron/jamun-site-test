@@ -1,165 +1,152 @@
-import React, { useState } from "react";
-import styles from "./ToggleableLeaderboard.module.css";
-import { FaChevronLeft, FaChevronRight, FaTrophy, FaArrowUp } from "react-icons/fa"; // Removed FaArrowDown
+import React, { useState } from 'react';
+import { FaChevronLeft, FaChevronRight, FaTrophy, FaArrowUp } from 'react-icons/fa';
+import styles from './ToggleableLeaderboard.module.css';
 
-// --- Data Interfaces ---
+// --- Types ---
 
-// Define the shape of a single leaderboard entry (row)
 interface LeaderboardEntry {
   rank: number;
   school: string;
   score: number;
+  previousRank: number;
   isCurrentUserSchool?: boolean;
-  previousRank: number; // Crucial for calculating movement
 }
 
-// Define the shape of a full leaderboard (a specific category)
 interface Leaderboard {
   title: string;
   data: LeaderboardEntry[];
 }
 
-// Props for the ToggleableLeaderboard component
 interface ToggleableLeaderboardProps {
   leaderboards: Leaderboard[];
 }
 
-// Interface for the calculated mover data
-interface Mover {
-  school: string;
-  change: number; // Negative means rank improved
-}
+// --- Helper Components ---
 
-// --- Leaderboard Row Component (Helper) ---
+const RankBadge: React.FC<{ rank: number }> = ({ rank }) => {
+  const getRankClass = () => {
+    if (rank === 1) return styles.rankGold;
+    if (rank === 2) return styles.rankSilver;
+    if (rank === 3) return styles.rankBronze;
+    return '';
+  };
+
+  return (
+    <span className={`${styles.rank} ${getRankClass()}`}>
+      {rank <= 3 && <FaTrophy className={styles.trophy} />}
+      {rank}
+    </span>
+  );
+};
 
 const LeaderboardRow: React.FC<LeaderboardEntry> = ({
   rank,
   school,
   score,
   isCurrentUserSchool,
-}) => {
-  const rowClass = isCurrentUserSchool
-    ? styles.highlightedRow
-    : styles.leaderboardRow;
+}) => (
+  <tr className={isCurrentUserSchool ? styles.rowHighlighted : styles.row}>
+    <td>
+      <RankBadge rank={rank} />
+    </td>
+    <td className={styles.school}>{school}</td>
+    <td className={styles.score}>{score.toLocaleString()}</td>
+  </tr>
+);
+
+const Sidebar: React.FC<{ data: LeaderboardEntry[] }> = ({ data }) => {
+  const topMovers = data
+    .map((entry) => ({
+      school: entry.school,
+      change: entry.previousRank - entry.rank,
+    }))
+    .filter((m) => m.change > 0)
+    .sort((a, b) => b.change - a.change)
+    .slice(0, 5);
 
   return (
-    <tr className={rowClass}>
-      <td>
-        <span className={styles.rankBadge}>
-          {rank <= 3 && <FaTrophy className={styles.trophyIcon} />}
-          {rank}
-        </span>
-      </td>
-      <td className={styles.schoolName}>{school}</td>
-      <td className={styles.scoreValue}>{score.toLocaleString()}</td>
-    </tr>
-  );
-};
+    <aside className={styles.sidebar}>
+      <h3 className={styles.sidebarTitle}>Recent Movement</h3>
 
-// --- ChangeLog Component (Sidebar) ---
-
-const ChangeLog: React.FC<{ data: LeaderboardEntry[] }> = ({ data }) => {
-  // 1. Calculate the rank change for each school
-  const movers: Mover[] = data.map(entry => ({
-    school: entry.school,
-    // Negative change means rank improved (moved up the list)
-    change: entry.rank - entry.previousRank,
-  }));
-
-  // 2. Filter for increases (change < 0) and sort by the largest gain (most negative value)
-  const topImprovers = movers
-    .filter(m => m.change < 0)
-    // Sort by largest absolute increase (e.g., -10 is bigger than -5)
-    .sort((a, b) => a.change - b.change) 
-    .slice(0, 6); // Take top 6 improvers
-
-  // Helper function to render a single mover item
-  const renderMoverItem = (mover: Mover) => {
-    // Only use the up arrow since we are only showing improvers
-    const icon = <FaArrowUp />;
-    const sign = '+'; 
-    
-    // Use Math.abs for display
-    const displayChange = Math.abs(mover.change);
-
-    return (
-      <li key={mover.school} className={styles.increase}>
-        <span className={styles.changeIcon}>{icon}</span>
-        <span className={styles.changeValue}>{sign}{displayChange}</span>
-        <span className={styles.moverSchool}>{mover.school}</span>
-      </li>
-    );
-  };
-
-  return (
-    <div className={styles.changeLogContainer}>
-      <h3 className={styles.changeLogTitle}>Top 6 Movers</h3>
-      
-      {topImprovers.length > 0 ? (
-        <div className={styles.changeGroup}>
-          <h4 className={styles.groupHeader}>Top Gains</h4>
-          <ul className={styles.changeList}>
-            {topImprovers.map(renderMoverItem)}
+      {topMovers.length > 0 ? (
+        <>
+          <h4 className={styles.sidebarSubtitle}>Top Gains</h4>
+          <ul className={styles.moversList}>
+            {topMovers.map((mover) => (
+              <li key={mover.school} className={styles.moverItem}>
+                <span className={styles.moverIcon}>
+                  <FaArrowUp />
+                </span>
+                <span className={styles.moverChange}>+{mover.change}</span>
+                <span className={styles.moverSchool}>{mover.school}</span>
+              </li>
+            ))}
           </ul>
-        </div>
+        </>
       ) : (
-          <p className={styles.noChanges}>No rank improvements this period.</p>
+        <p className={styles.noMovers}>No rank changes this period.</p>
       )}
-    </div>
+    </aside>
   );
 };
 
-// --- Main ToggleableLeaderboard Component ---
+// --- Main Component ---
 
 const ToggleableLeaderboard: React.FC<ToggleableLeaderboardProps> = ({
   leaderboards,
 }) => {
-  const [currentBoardIndex, setCurrentBoardIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   if (!leaderboards || leaderboards.length === 0) {
-    return <div className={styles.noData}>No leaderboard data available.</div>;
+    return <div className={styles.emptyState}>No leaderboard data available.</div>;
   }
 
-  const currentBoard = leaderboards[currentBoardIndex];
-  const totalBoards = leaderboards.length;
+  const currentBoard = leaderboards[currentIndex];
+  const total = leaderboards.length;
 
-  const goToNextBoard = () => {
-    setCurrentBoardIndex((prevIndex) => (prevIndex + 1) % totalBoards);
-  };
-
-  const goToPrevBoard = () => {
-    setCurrentBoardIndex((prevIndex) =>
-      prevIndex === 0 ? totalBoards - 1 : prevIndex - 1
-    );
-  };
+  const goNext = () => setCurrentIndex((i) => (i + 1) % total);
+  const goPrev = () => setCurrentIndex((i) => (i === 0 ? total - 1 : i - 1));
+  const goTo = (index: number) => setCurrentIndex(index);
 
   return (
-    <div className={styles.leaderboardTwoColumnWrapper}> 
-      
-      {/* 1. MAIN LEADERBOARD COLUMN */}
-      <div className={styles.leaderboardContainer}>
-        <div className={styles.leaderboardHeader}>
+    <div className={styles.wrapper}>
+      <div className={styles.mainPanel}>
+        {/* Header */}
+        <header className={styles.header}>
           <button
-            className={styles.toggleButton}
-            onClick={goToPrevBoard}
-            aria-label="Previous Leaderboard"
+            className={styles.navButton}
+            onClick={goPrev}
+            aria-label="Previous leaderboard"
           >
             <FaChevronLeft />
           </button>
-
-          <h2 className={styles.leaderboardTitle}>{currentBoard.title}</h2>
-
+          <h2 className={styles.title}>{currentBoard.title}</h2>
           <button
-            className={styles.toggleButton}
-            onClick={goToNextBoard}
-            aria-label="Next Leaderboard"
+            className={styles.navButton}
+            onClick={goNext}
+            aria-label="Next leaderboard"
           >
             <FaChevronRight />
           </button>
-        </div>
+        </header>
 
-        <div className={styles.leaderboardTableWrapper}>
-          <table className={styles.leaderboardTable}>
+        {/* Pagination dots */}
+        {total > 1 && (
+          <div className={styles.pagination}>
+            {leaderboards.map((_, index) => (
+              <button
+                key={index}
+                className={`${styles.dot} ${index === currentIndex ? styles.dotActive : ''}`}
+                onClick={() => goTo(index)}
+                aria-label={`Go to leaderboard ${index + 1}`}
+              />
+            ))}
+          </div>
+        )}
+
+        {/* Table */}
+        <div className={styles.tableContainer}>
+          <table className={styles.table}>
             <thead>
               <tr>
                 <th>Rank</th>
@@ -169,16 +156,14 @@ const ToggleableLeaderboard: React.FC<ToggleableLeaderboardProps> = ({
             </thead>
             <tbody>
               {currentBoard.data.map((entry) => (
-                <LeaderboardRow key={entry.school} {...entry} /> 
+                <LeaderboardRow key={`${entry.school}-${entry.rank}`} {...entry} />
               ))}
             </tbody>
           </table>
         </div>
       </div>
-      
-      {/* 2. CHANGE LOG SIDEBAR COLUMN */}
-      <ChangeLog data={currentBoard.data} />
-      
+
+      <Sidebar data={currentBoard.data} />
     </div>
   );
 };

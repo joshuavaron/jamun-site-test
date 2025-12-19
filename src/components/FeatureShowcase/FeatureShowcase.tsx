@@ -1,49 +1,100 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styles from './FeatureShowcase.module.css';
 
-/**
- * Defines the props for the FeatureShowcase component.
- * @property {string} title - The main title of the feature.
- * @property {string} description - The detailed explanation of the feature.
- * @property {string} imageUrl - The path to the transparent background image (e.g., PNG).
- * @property {boolean} [imageOnLeft=false] - If true, the image is on the left; otherwise, text is on the left.
- */
 export interface FeatureShowcaseProps {
   title: string;
   description: string;
   imageUrl: string;
   imageOnLeft?: boolean;
+  tagline?: string;
+  highlights?: string[];
 }
+
+const CheckIcon: React.FC = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    strokeWidth={3}
+  >
+    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+  </svg>
+);
 
 const FeatureShowcase: React.FC<FeatureShowcaseProps> = ({
   title,
   description,
   imageUrl,
-  imageOnLeft = false, // Default: image on the right (text on the left)
+  imageOnLeft = false,
+  tagline,
+  highlights,
 }) => {
-  // Use a class to conditionally reverse the order using flex-direction-reverse in CSS
-  const containerClass = imageOnLeft
-    ? `${styles.showcaseContainer} ${styles.reverse}`
-    : styles.showcaseContainer;
+  const [isVisible, setIsVisible] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      {
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px',
+      }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  const containerClasses = [
+    styles.showcaseContainer,
+    imageOnLeft ? styles.reverse : '',
+    isVisible ? styles.visible : styles.hidden,
+  ]
+    .filter(Boolean)
+    .join(' ');
 
   return (
-    <div className={containerClass}>
-      {/* 1. IMAGE BLOCK */}
+    <div ref={containerRef} className={containerClasses}>
+      {/* Image Block */}
       <div className={styles.imageBlock}>
         <div className={styles.imageWrapper}>
-          <img 
-            src={imageUrl} 
-            alt={`Illustration of ${title}`} 
+          <img
+            src={imageUrl}
+            alt={`Illustration of ${title}`}
             className={styles.featureImage}
+            loading="lazy"
           />
+          <div className={`${styles.floatingAccent} ${styles.top}`} />
+          <div className={`${styles.floatingAccent} ${styles.bottom}`} />
         </div>
       </div>
 
-      {/* 2. TEXT BLOCK */}
+      {/* Text Block */}
       <div className={styles.textBlock}>
+        {tagline && <span className={styles.tagline}>{tagline}</span>}
         <h3 className={styles.title}>{title}</h3>
         <p className={styles.description}>{description}</p>
-        {/* Optional: Add a button here if needed */}
+        {highlights && highlights.length > 0 && (
+          <ul className={styles.highlights}>
+            {highlights.map((item, index) => (
+              <li key={index} className={styles.highlightItem}>
+                <span className={styles.checkIcon}>
+                  <CheckIcon />
+                </span>
+                {item}
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </div>
   );

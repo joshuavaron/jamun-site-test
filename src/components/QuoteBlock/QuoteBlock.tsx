@@ -1,23 +1,65 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styles from './QuoteBlock.module.css';
 
 interface QuoteBlockProps {
   quote: string;
   source: string;
-  title?: string; // Optional title/role of the source
+  title?: string;
 }
 
+const QuoteIcon: React.FC = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="currentColor"
+    viewBox="0 0 24 24"
+  >
+    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+  </svg>
+);
+
 const QuoteBlock: React.FC<QuoteBlockProps> = ({ quote, source, title }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      {
+        threshold: 0.3,
+        rootMargin: '0px 0px -30px 0px',
+      }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section className={styles.quoteSection}>
-      <blockquote className={styles.quoteBlock}>
-        <span className={styles.quoteSymbol}>&ldquo;</span>
-        <p className={styles.quoteText}>{quote}</p>
-        <span className={styles.quoteSymbol}>&rdquo;</span>
-      </blockquote>
-      <div className={styles.sourceContainer}>
-        <p className={styles.sourceName}>&mdash; {source}</p>
-        {title && <p className={styles.sourceTitle}>{title}</p>}
+      <div
+        ref={containerRef}
+        className={`${styles.container} ${isVisible ? styles.visible : styles.hidden}`}
+      >
+        <div className={styles.quoteIcon}>
+          <QuoteIcon />
+        </div>
+
+        <blockquote className={styles.quoteBlock}>
+          <p className={styles.quoteText}>"{quote}"</p>
+        </blockquote>
+
+        <div className={styles.sourceContainer}>
+          <p className={styles.sourceName}>{source}</p>
+          {title && <p className={styles.sourceTitle}>{title}</p>}
+        </div>
       </div>
     </section>
   );

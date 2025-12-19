@@ -1,0 +1,330 @@
+/* --- Section Container --- */
+.section {
+  padding: 80px 24px;
+  background: #f8fafc;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* --- Animation States --- */
+.section.hidden .header,
+.section.hidden .carouselWrapper,
+.section.hidden .viewAllWrapper {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.section.visible .header {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.section.visible .carouselWrapper {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s,
+    transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s;
+}
+
+.section.visible .viewAllWrapper {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.25s,
+    transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.25s;
+}
+
+/* --- Header --- */
+.header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 48px;
+}
+
+.tagline {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #497bce;
+  margin-bottom: 12px;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  margin: 0 0 16px 0;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* --- Carousel --- */
+.carouselWrapper {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  overflow: hidden;
+  padding: 20px 0;
+  margin-top: -20px;
+  margin-bottom: -20px;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+}
+
+.carousel {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  padding: 10px 0;
+  animation: scroll 30s linear infinite;
+}
+
+.carousel.paused {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* --- Card --- */
+.card {
+  flex-shrink: 0;
+  width: 280px;
+  background: white;
+  border-radius: 16px;
+  padding: 28px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Card Icon --- */
+.cardIcon {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #497bce 0%, #3a62a8 100%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin-bottom: 16px;
+  box-shadow: 0 6px 16px rgba(73, 123, 206, 0.25);
+  transition: transform 0.3s ease;
+}
+
+.cardIcon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.card:hover .cardIcon {
+  transform: scale(1.05);
+}
+
+/* --- Card Content --- */
+.cardTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0 0 8px 0;
+  line-height: 1.3;
+}
+
+.cardDescription {
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* --- View All Button --- */
+.viewAllWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 48px;
+}
+
+.viewAllButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 32px;
+  background: linear-gradient(135deg, #497bce 0%, #3a62a8 100%);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(73, 123, 206, 0.25);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.viewAllButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(73, 123, 206, 0.35);
+}
+
+.buttonArrow {
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease;
+}
+
+.buttonArrow svg {
+  width: 100%;
+  height: 100%;
+}
+
+.viewAllButton:hover .buttonArrow {
+  transform: translateX(4px);
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .card {
+    width: 260px;
+    padding: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .section {
+    padding: 60px 16px;
+  }
+
+  .header {
+    margin-bottom: 36px;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .carousel {
+    gap: 16px;
+    animation-duration: 20s;
+  }
+
+  .card {
+    width: 240px;
+    padding: 20px;
+  }
+
+  .cardIcon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+  }
+
+  .cardIcon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .cardTitle {
+    font-size: 1rem;
+  }
+
+  .cardDescription {
+    font-size: 0.85rem;
+  }
+
+  .viewAllWrapper {
+    margin-top: 36px;
+  }
+
+  .viewAllButton {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 24px;
+  }
+}
+
+/* --- Reduced Motion --- */
+@media (prefers-reduced-motion: reduce) {
+  .section.hidden .header,
+  .section.hidden .carouselWrapper,
+  .section.hidden .viewAllWrapper,
+  .section.visible .header,
+  .section.visible .carouselWrapper,
+  .section.visible .viewAllWrapper,
+  .carousel,
+  .card,
+  .cardIcon,
+  .viewAllButton,
+  .buttonArrow {
+    transition: none;
+    animation: none;
+  }
+
+  .section.hidden .header,
+  .section.hidden .carouselWrapper,
+  .section.hidden .viewAllWrapper {
+    opacity: 1;
+    transform: none;
+  }
+
+  .carousel {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: auto;
+    gap: 16px;
+  }
+
+  .carouselWrapper {
+    width: 100%;
+    margin-left: 0;
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+}

@@ -1,92 +1,212 @@
 .container {
-  display: flex;
-  justify-content: center;
-  gap: 20px; /* Space between buttons */
-  padding: 40px 20px;
-  background-color: var(--color-background-secondary, #f4f7f9); /* Use a light background color */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  padding: 60px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.buttonLink {
-  /* Inherit styles from the primary button style of your app, or define a new look */
-  text-decoration: none; /* Remove underline from link */
-  flex: 1; /* Allow buttons to grow and fill space */
-  max-width: 300px; /* Limit maximum width */
-  
-  border: 1px solid var(--color-primary, #007bff);
-  border-radius: 8px;
-  padding: 20px;
-  text-align: center;
-  /* Added background position/size and ensured transition applies to background */
-  background-position: center; 
-  background-size: 0; /* Start with size 0 */
-  transition: transform 0.2s, box-shadow 0.2s, background-size 0.5s ease-out;
-  overflow: hidden; /* Ensures image fill stays within border-radius */
-  position: relative; /* Needed for content layering */
-  
-  /* Color settings */
-  background-color: var(--color-white, #ffffff);
-  color: var(--color-text-primary, #333);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.buttonLink:hover {
-  transform: translateY(-5px); /* Lift button on hover */
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
-  border-color: transparent; /* Hide border when image is showing */
-  
-  /* Set background to image with a dark overlay for text contrast */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), var(--bg-image);
-  background-size: cover; /* Fill the button with the image */
-  color: var(--color-white, #ffffff); /* Change default text color to white */
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
-/* --- Hover Text Colors --- */
-.buttonLink:hover .buttonContent {
-    color: var(--color-white, #ffffff);
+.card:active {
+  transform: translateY(-4px) scale(1.01);
 }
 
-.buttonLink:hover .buttonLabel {
-    color: var(--color-white, #ffffff); /* Text is white on hover */
+/* Background image layer */
+.cardBackground {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.buttonLink:hover .buttonDescription {
-    color: var(--color-light-gray, #ccc); /* Description text is lighter gray on hover */
+.card:hover .cardBackground {
+  transform: scale(1.1);
 }
 
-/* --- Default Content Styles (kept for structure) --- */
+/* Gradient overlay */
+.cardOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.4) 50%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+  transition: background 0.4s ease;
+}
 
-.buttonContent {
+.card:hover .cardOverlay {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+}
+
+/* Content container */
+.cardContent {
+  position: absolute;
+  inset: 0;
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px;
+  z-index: 2;
+}
+
+/* Icon/badge area */
+.cardIcon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  display: flex;
   align-items: center;
-  position: relative; /* Keep content on top of background image */
-  z-index: 10;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.buttonLabel {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: var(--color-primary, #007bff); 
-  margin-bottom: 5px;
-  transition: color 0.2s; /* Transition label color */
+.card:hover .cardIcon {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.buttonDescription {
-  font-size: 0.9rem;
-  color: var(--color-text-secondary, #666);
+.cardIcon svg {
+  width: 20px;
+  height: 20px;
+  color: white;
+}
+
+/* Label styling */
+.cardLabel {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: white;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  transform: translateY(0);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.card:hover .cardLabel {
+  transform: translateY(-4px);
+}
+
+/* Description styling */
+.cardDescription {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.8);
   margin: 0;
-  transition: color 0.2s; /* Transition description color */
+  line-height: 1.5;
+  max-width: 90%;
+  opacity: 0.8;
+  transform: translateY(8px);
+  transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.card:hover .cardDescription {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animated underline accent */
+.cardAccent {
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  border-radius: 2px;
+  margin-bottom: 12px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.card:hover .cardAccent {
+  transform: scaleX(1);
+}
+
+/* Focus states for accessibility */
+.card:focus-visible {
+  outline: 3px solid #667eea;
+  outline-offset: 4px;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .container {
-    flex-direction: column; /* Stack buttons vertically on small screens */
-    align-items: center;
-    gap: 15px;
+    padding: 40px 20px;
+    gap: 20px;
   }
-  
-  .buttonLink {
-    max-width: 90%; /* Take up more width on small screens */
+
+  .card {
+    aspect-ratio: 16 / 10;
+  }
+
+  .cardLabel {
+    font-size: 1.5rem;
+  }
+
+  .cardDescription {
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    grid-template-columns: 1fr;
+    padding: 32px 16px;
+  }
+
+  .card {
+    aspect-ratio: 16 / 9;
+  }
+
+  .cardContent {
+    padding: 20px;
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .cardBackground,
+  .cardOverlay,
+  .cardLabel,
+  .cardDescription,
+  .cardAccent,
+  .cardIcon {
+    transition: none;
+  }
+
+  .card:hover .cardBackground {
+    transform: none;
   }
 }
