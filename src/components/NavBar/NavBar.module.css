@@ -97,7 +97,13 @@
   justify-content: flex-end;
 }
 
-/* Text Link (Grants) */
+.rightButtons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Text Links (Grants, Register) */
 .textLink {
   padding: 8px 14px;
   font-family: var(--font-family);
@@ -114,6 +120,10 @@
   color: var(--primary-color);
 }
 
+/* Individual link classes for responsive hiding */
+.grantsLink {}
+.registerLink {}
+
 /* ===================================
    EXPLORE DROPDOWN
    =================================== */
@@ -121,6 +131,12 @@
 .exploreContainer {
   position: relative;
   flex-shrink: 0;
+}
+
+.searchContainer {
+  flex: 1;
+  min-width: 0;
+  max-width: 300px;
 }
 
 .exploreButton {
@@ -431,32 +447,30 @@
    RESPONSIVE BREAKPOINTS
    =================================== */
 
-/* Tablet */
-@media (max-width: 1024px) {
+/*
+   Progressive hiding strategy (balanced from both sides):
+   1. 1100px: Shrink search + hide Grants - show hamburger
+   2. 950px: Hide search (left) + hide Register (right)
+   3. 700px: Hide Explore (left) + hide buttons (right) - logo moves left
+*/
+
+/* Step 1: Shrink search, hide Grants, show hamburger */
+@media (max-width: 1100px) {
   .navbar {
     padding: 0 20px;
   }
-}
 
-/* Mobile */
-@media (max-width: 768px) {
-  .navbar {
-    padding: 0 16px;
+  /* Shrink search */
+  .searchContainer {
+    max-width: 180px;
   }
 
-  .leftSection {
+  /* Hide Grants */
+  .grantsLink {
     display: none;
   }
 
-  .rightSection {
-    display: none;
-  }
-
-  .logoLink {
-    position: static;
-    transform: none;
-  }
-
+  /* Show hamburger menu */
   .hamburgerButton {
     display: flex;
   }
@@ -470,7 +484,51 @@
   }
 }
 
-/* Small Mobile */
+/* Step 2: Hide search (left) + Register (right) */
+@media (max-width: 950px) {
+  .searchContainer {
+    display: none;
+  }
+
+  .registerLink {
+    display: none;
+  }
+}
+
+/* Step 3: Hide Explore (left) + buttons (right) - only logo and hamburger */
+@media (max-width: 700px) {
+  .navbar {
+    padding: 0 16px;
+  }
+
+  .exploreContainer {
+    display: none;
+  }
+
+  .leftSection {
+    display: none;
+  }
+
+  .rightButtons {
+    display: none;
+  }
+
+  .rightSection {
+    display: none;
+  }
+
+  /* Logo moves to left, hamburger stays right */
+  .logoLink {
+    position: static;
+    transform: none;
+  }
+
+  .navbar {
+    justify-content: space-between;
+  }
+}
+
+/* Small Mobile - full width menu */
 @media (max-width: 480px) {
   .mobileMenu {
     width: 100%;

@@ -116,10 +116,10 @@ export default function NavBar({
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [exploreOpen, mobileMenuOpen]);
 
-  // Close mobile menu on resize to desktop
+  // Close mobile menu on resize to large desktop (where all elements are visible)
   useEffect(() => {
     function handleResize() {
-      if (window.innerWidth > 768) {
+      if (window.innerWidth > 1100) {
         setMobileMenuOpen(false);
         setMobileExploreOpen(false);
       }
@@ -213,12 +213,14 @@ export default function NavBar({
           )}
 
           {/* Search */}
-          <Search
-            value={searchValue}
-            onChange={onSearchChange}
-            collapsed={showCollapsedSearch}
-            onExpand={() => setSearchExpanded(true)}
-          />
+          <div className={styles.searchContainer}>
+            <Search
+              value={searchValue}
+              onChange={onSearchChange}
+              collapsed={showCollapsedSearch}
+              onExpand={() => setSearchExpanded(true)}
+            />
+          </div>
         </div>
 
         {/* Center: Logo */}
@@ -228,15 +230,17 @@ export default function NavBar({
 
         {/* Right Section: Grants + Register + Login */}
         <div className={styles.rightSection}>
-          <a href={grantsHref} className={styles.textLink}>
+          <a href={grantsHref} className={`${styles.textLink} ${styles.grantsLink}`}>
             Grants
           </a>
-          <a href={registerHref} className={styles.textLink}>
+          <a href={registerHref} className={`${styles.textLink} ${styles.registerLink}`}>
             Register
           </a>
-          {rightButtons.map((btn, i) => (
-            <NavButton key={i} {...btn} />
-          ))}
+          <div className={styles.rightButtons}>
+            {rightButtons.map((btn, i) => (
+              <NavButton key={i} {...btn} />
+            ))}
+          </div>
         </div>
 
         {/* Mobile Hamburger Button */}
