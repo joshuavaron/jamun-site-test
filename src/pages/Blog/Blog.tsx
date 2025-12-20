@@ -114,7 +114,7 @@ const Blog: React.FC = () => {
   return (
     <div className={styles.page}>
       <CommonHead
-        title="Blog"
+        title="Model UN Tips, Guides & Delegate Advice"
         description="Insights, tips, and news from the world of Model UN. Stay updated with the latest from JAMUN."
       />
       <NavBar

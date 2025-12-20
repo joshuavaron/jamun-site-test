@@ -6,7 +6,7 @@ export interface MUNRegisterProps {
 }
 
 export default function MUNRegister({
-  backgroundImage = "/images/mainbackground.webp",
+  backgroundImage = "/images/DSC01684.webp",
   registerUrl = "#",
 }: MUNRegisterProps) {
   return (

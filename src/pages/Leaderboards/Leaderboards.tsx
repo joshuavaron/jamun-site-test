@@ -69,7 +69,7 @@ const Leaderboards: React.FC = () => {
   return (
     <div>
       <CommonHead
-        title="Leaderboards"
+        title="School Rankings & Competition Leaderboards"
         description="Track school scores and compete with peers. View rankings for Model UN, Mock Trial, and Mathletes competitions."
       />
       <NavBar
@@ -91,7 +91,7 @@ const Leaderboards: React.FC = () => {
       <Banner
         title="Leaderboards"
         subtitle="Track school scores and help your school climb to the top!"
-        backgroundImage="/images/leaderboards.webp"
+        backgroundImage="/images/DSC02012.webp"
       >
       </Banner>
 

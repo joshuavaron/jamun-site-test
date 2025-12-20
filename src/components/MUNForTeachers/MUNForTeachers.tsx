@@ -63,8 +63,8 @@ const MUNForTeachers: React.FC = () => {
       <div className={styles.container}>
         <div className={styles.imageColumn}>
           <img
-            src="/images/main.webp"
-            alt="Educators supporting Model UN students"
+            src="/images/DSC01852.webp"
+            alt="JAMUN Model UN committee session with students and chairs"
             className={styles.image}
           />
           <div className={styles.imageOverlay}>

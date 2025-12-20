@@ -17,8 +17,8 @@ const Home: React.FC = () => {
   return (
     <div>
       <CommonHead
-        title="Model UN, Mock Trial & Math Competitions for Middle School"
-        description="JAMUN offers free Model UN, Mock Trial, and Mathletes programs for grades 5-8. Join 500+ students from 30+ schools. 100% volunteer-run nonprofit with $70,000+ raised for student programs."
+        title="Model UN & Academic Competitions for Grades 5-8"
+        description="JAMUN offers Model UN, Mock Trial, and Mathletes programs for grades 5-8. Join 500+ students from 30+ schools. 100% volunteer-run nonprofit with grants available."
       />
       <NavBar
         title="jamun-blue-side-logo"
@@ -51,19 +51,19 @@ const Home: React.FC = () => {
           </p>
           <div className={styles.statsGrid}>
             <div className={styles.statCard}>
-              <CountUp end={500} suffix="+" className={styles.statNumber} />
+              <CountUp end={500} suffix="+" baseDuration={1200} className={styles.statNumber} />
               <span className={styles.statLabel}>Students Impacted</span>
             </div>
             <div className={styles.statCard}>
-              <CountUp end={30} suffix="+" className={styles.statNumber} />
+              <CountUp end={30} suffix="+" baseDuration={1200} className={styles.statNumber} />
               <span className={styles.statLabel}>Schools Reached</span>
             </div>
             <div className={styles.statCard}>
-              <CountUp end={80} suffix="+" className={styles.statNumber} />
+              <CountUp end={80} suffix="+" baseDuration={1200} className={styles.statNumber} />
               <span className={styles.statLabel}>Volunteers</span>
             </div>
             <div className={styles.statCard}>
-              <CountUp end={70} prefix="$" suffix="K+" className={styles.statNumber} />
+              <CountUp end={70} prefix="$" suffix="K+" baseDuration={1200} className={styles.statNumber} />
               <span className={styles.statLabel}>Raised for Programs</span>
             </div>
           </div>
@@ -90,7 +90,7 @@ const Home: React.FC = () => {
               programs help you develop public speaking, critical thinking, and teamwork skills
               through Model UN conferences, Mock Trial competitions, and Mathletes challenges.
             </p>
-            <Link to="/register" className={styles.audienceLink}>
+            <Link to="/register" className={styles.audienceLink} onClick={() => window.scrollTo(0, 0)}>
               Register Now →
             </Link>
           </div>
@@ -107,7 +107,7 @@ const Home: React.FC = () => {
               JAMUN offers free and low-cost academic enrichment programs that develop leadership,
               communication, and analytical thinking in a supportive environment.
             </p>
-            <Link to="/about" className={styles.audienceLink}>
+            <Link to="/about" className={styles.audienceLink} onClick={() => window.scrollTo(0, 0)}>
               Learn About Our Programs →
             </Link>
           </div>
@@ -124,7 +124,7 @@ const Home: React.FC = () => {
               and curriculum guides. We provide training materials, competition prep, and
               ongoing support to help educators build successful programs.
             </p>
-            <Link to="/resources" className={styles.audienceLink}>
+            <Link to="/modelun/resources" className={styles.audienceLink} onClick={() => window.scrollTo(0, 0)}>
               Access Free Resources →
             </Link>
           </div>
@@ -142,7 +142,7 @@ const Home: React.FC = () => {
             label: "Model United Nations",
             href: "/modelun",
             description: "Simulate UN committees, represent countries, and debate global issues. Perfect for students interested in international relations, public speaking, and diplomacy.",
-            imageUrl: "/images/leaderboards.webp",
+            imageUrl: "/images/DSC00848.webp",
             highlights: ["Beginner-friendly", "Diplomatic skills", "Research & debate"],
             cta: "Explore Model UN →",
           },
@@ -150,7 +150,7 @@ const Home: React.FC = () => {
             label: "Mock Trial",
             href: "/mocktrial",
             description: "Experience the courtroom firsthand as attorneys and witnesses. Develop argumentation, evidence analysis, and persuasive presentation skills.",
-            imageUrl: "/images/mainbackground.webp",
+            imageUrl: "/images/DSC02088.webp",
             highlights: ["Courtroom simulation", "Legal reasoning", "Cross-examination"],
             cta: "Explore Mock Trial →",
           },
@@ -158,7 +158,7 @@ const Home: React.FC = () => {
             label: "Mathletes",
             href: "/mathletes",
             description: "Challenge yourself with competitive mathematics and problem-solving contests. Build analytical thinking and teamwork through math team competitions.",
-            imageUrl: "/images/shape_tomorrow.webp",
+            imageUrl: "/images/DSC01852.webp",
             highlights: ["Team competitions", "Problem-solving", "MATHCOUNTS-style"],
             cta: "Explore Mathletes →",
           },
@@ -181,7 +181,7 @@ const Home: React.FC = () => {
           tagline="Engaging Content"
           title="Interactive Extracurricular Experiences"
           description="Access expertly curated material for Model UN, Mock Trial, and Mathletes. Our modules are designed to be engaging, practical, and highly effective for competition prep."
-          imageUrl="/images/shape_tomorrow.webp"
+          imageUrl="/images/DSC01722.webp"
           imageOnLeft={false}
           highlights={[
             "Expert-designed curriculum",
@@ -194,7 +194,7 @@ const Home: React.FC = () => {
           tagline="Compete & Grow"
           title="Real-Time Leaderboards"
           description="Compete with peers globally! Our dynamic leaderboards track progress across multiple subjects and competitions, offering recognition for top performers."
-          imageUrl="/images/leaderboard.webp"
+          imageUrl="/images/DSC02012.webp"
           imageOnLeft={true}
           highlights={[
             "Global & local rankings",
@@ -207,7 +207,7 @@ const Home: React.FC = () => {
           tagline="Start Today"
           title="No Experience Required"
           description="It doesn't matter whether this is your first tournament or your hundredth! Our library of prep materials will make sure you are ready to compete at your best."
-          imageUrl="/images/shape_tomorrow.webp"
+          imageUrl="/images/DSC00832.webp"
           imageOnLeft={false}
           highlights={[
             "Beginner-friendly tutorials",

@@ -43,7 +43,7 @@ const About: React.FC = () => {
   return (
     <div className={styles.page}>
       <CommonHead
-        title="About Us | Middle School Model UN, Mock Trial & Math Competitions"
+        title="About JAMUN - Volunteer-Run Academic Programs"
         description="JAMUN provides Model UN, Mock Trial, and Mathletes programs for middle school and high school students. Our volunteer-run nonprofit helps students develop public speaking, critical thinking, and leadership skills that prepare them for college and beyond."
       />
       <NavBar
@@ -65,7 +65,7 @@ const About: React.FC = () => {
       <Banner
         title="Empowering Middle School Students Through Academic Competition"
         subtitle="JAMUN is a volunteer-run nonprofit bringing Model UN, Mock Trial, and Mathletes programs to middle school and high school students nationwide. We help young learners build the public speaking, critical thinking, and leadership skills they need to succeed in college and life."
-        backgroundImage="/images/homebackground.webp"
+        backgroundImage="/images/DSC00468.webp"
       />
 
       {/* Mission Section */}

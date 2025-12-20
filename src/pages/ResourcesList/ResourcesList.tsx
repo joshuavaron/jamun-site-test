@@ -193,7 +193,7 @@ const ResourcesList: React.FC = () => {
   return (
     <div className={styles.page}>
       <CommonHead
-        title="Delegate Resources"
+        title="Free Model UN Prep Guides & Templates"
         description="Everything you need to prepare for a successful Model UN experience. Browse guides, templates, and training materials."
       />
       <NavBar

@@ -231,7 +231,7 @@ const BlogPostPage: React.FC = () => {
   return (
     <div className={styles.page}>
       <CommonHead
-        title={post.title}
+        title={post.title.length <= 40 ? `${post.title} - MUN Guide` : post.title}
         description={post.excerpt}
         ogImage={post.imageUrl}
       />

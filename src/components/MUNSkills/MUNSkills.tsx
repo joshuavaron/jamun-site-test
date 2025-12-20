@@ -61,8 +61,8 @@ const MUNSkills: React.FC = () => {
       <div className={styles.container}>
         <div className={styles.imageColumn}>
           <img
-            src="/images/main.webp"
-            alt="JAMUN Model UN delegates in session"
+            src="/images/DSC01722.webp"
+            alt="JAMUN Model UN delegate presenting to audience"
             className={styles.image}
           />
           <div className={styles.imageOverlay}>

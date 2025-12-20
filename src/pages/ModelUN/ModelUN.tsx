@@ -21,7 +21,7 @@ const ModelUN: React.FC = () => {
   return (
     <div>
       <CommonHead
-        title="Model UN for Middle School | Grades 5-8"
+        title="Middle School Model UN - Accessible Beginner Programs"
         description="Model United Nations for middle school students (grades 5-8) across the USA. Build public speaking, critical thinking, and leadership skills. Beginner-friendly committees, free resources, and financial aid available."
       />
       <NavBar
@@ -43,7 +43,7 @@ const ModelUN: React.FC = () => {
       <Banner
         title="JAMUN Model United Nations"
         subtitle="Debate. Diplomacy. Discovery."
-        backgroundImage="/images/leaderboards.webp"
+        backgroundImage="/images/DSC01684.webp"
       />
 
       <MUNAbout

@@ -82,8 +82,8 @@ const MUNForParents: React.FC = () => {
 
         <div className={styles.imageColumn}>
           <img
-            src="/images/main.webp"
-            alt="Students engaging at JAMUN Model UN"
+            src="/images/DSC01362.webp"
+            alt="JAMUN students enjoying lunch together at conference"
             className={styles.image}
           />
         </div>

@@ -45,7 +45,7 @@ const Donate: React.FC = () => {
   return (
     <div className={styles.page}>
       <CommonHead
-        title="Donate"
+        title="Donate - Support Student Academic Programs"
         description="Support JAMUN's mission to empower the next generation of leaders. Your donation funds educational programs, competition resources, and student opportunities."
       />
       <NavBar

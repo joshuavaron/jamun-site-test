@@ -407,8 +407,8 @@ const Committee: React.FC = () => {
   return (
     <div className={styles.page}>
       <CommonHead
-        title={committee.name}
-        description={`${committee.name} (${committee.shorthand}) - ${committee.isAdHoc ? 'Crisis committee' : committee.topic}. Learn about this JAMUN Model UN committee.`}
+        title={committee.shorthand ? `${committee.shorthand} - Model UN Committee` : committee.name}
+        description={`${committee.name}${committee.shorthand ? ` (${committee.shorthand})` : ''} - ${committee.isAdHoc ? 'Crisis committee' : committee.topic}. Learn about this JAMUN Model UN committee.`}
       />
       <NavBar
         title="jamun-blue-side-logo"

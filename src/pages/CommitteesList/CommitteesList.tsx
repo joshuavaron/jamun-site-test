@@ -107,7 +107,7 @@ const CommitteesList: React.FC = () => {
   return (
     <div className={styles.page}>
       <CommonHead
-        title="All Committees"
+        title="Model UN Committees - Beginner to Advanced"
         description="Explore all Model UN committees available at JAMUN, including General Assembly and Crisis committees for all skill levels."
       />
       <NavBar

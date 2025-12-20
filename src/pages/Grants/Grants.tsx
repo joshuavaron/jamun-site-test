@@ -24,7 +24,7 @@ const Grants: React.FC = () => {
   return (
     <div className={styles.page}>
       <CommonHead
-        title="Grants"
+        title="Student Grants - Fund Your Competition Fees"
         description="Apply for JAMUN grants to fund your participation in academic competitions. We believe every student deserves the opportunity to excel."
       />
       <NavBar
@@ -46,7 +46,7 @@ const Grants: React.FC = () => {
       <Banner
         title="Grants That Empower Future Leaders"
         subtitle="We believe every student deserves the opportunity to excel in academic competitions."
-        backgroundImage="/images/homebackground.webp"
+        backgroundImage="/images/DSC02135.webp"
       />
 
       {/* Why Grants Matter Section */}

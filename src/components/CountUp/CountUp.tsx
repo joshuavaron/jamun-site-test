@@ -18,7 +18,7 @@ const getDurationFromLeftmostDigit = (num: number, baseDuration: number): number
 
 const CountUp: React.FC<CountUpProps> = ({
   end,
-  baseDuration = 2500,
+  baseDuration = 1200,
   prefix = "",
   suffix = "",
   className,

@@ -77,8 +77,8 @@ export default function MUNDates({ dates = DEFAULT_DATES }: MUNDatesProps) {
 
         <div className={styles.imageColumn}>
           <img
-            src="/images/main.webp"
-            alt="JAMUN conference delegates"
+            src="/images/DSC00217.webp"
+            alt="JAMUN delegates listening attentively in committee session"
             className={styles.image}
           />
           <div className={styles.imageOverlay}>
