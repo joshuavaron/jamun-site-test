@@ -8,7 +8,7 @@
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  min-height: 600px;
+  min-height: 700px;
 }
 
 /* Animation States */
@@ -73,73 +73,67 @@
   margin: 0 0 40px 0;
 }
 
-/* Timeline */
-.timeline {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  position: relative;
+/* Benefits Grid */
+.benefitsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 40px;
 }
 
-.timeline::before {
-  content: "";
-  position: absolute;
-  left: 15px;
-  top: 20px;
-  bottom: 20px;
-  width: 2px;
-  background: #e2e8f0;
-}
-
-.timelineItem {
+.benefitItem {
   display: flex;
-  gap: 20px;
+  gap: 12px;
   align-items: flex-start;
-  padding: 16px 0;
 }
 
-.timelineMarker {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #497bce 0%, #3a62a8 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.benefitNumber {
   flex-shrink: 0;
-  position: relative;
-  z-index: 1;
-}
-
-.markerNumber {
-  color: white;
   font-size: 0.875rem;
   font-weight: 700;
+  color: #497bce;
+  padding-top: 2px;
 }
 
-.timelineContent {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  padding-top: 4px;
+.benefitContent {
+  flex: 1;
 }
 
-.timelineDate {
-  font-size: 1.1rem;
+.benefitTitle {
+  font-size: 1rem;
   font-weight: 700;
   color: #1a1a2e;
+  margin: 0 0 4px 0;
 }
 
-.timelineEvent {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #497bce;
-}
-
-.timelineDescription {
+.benefitDescription {
   font-size: 0.9rem;
   color: #64748b;
-  margin-top: 2px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Testimonial */
+.testimonial {
+  background: white;
+  border-left: 4px solid #497bce;
+  padding: 24px;
+  border-radius: 0 12px 12px 0;
+}
+
+.quote {
+  font-size: 1rem;
+  font-style: italic;
+  color: #475569;
+  line-height: 1.7;
+  margin: 0 0 12px 0;
+}
+
+.cite {
+  font-size: 0.875rem;
+  color: #64748b;
+  font-style: normal;
+  font-weight: 600;
 }
 
 /* Image Column */
@@ -155,41 +149,6 @@
   object-position: center;
 }
 
-.imageOverlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 40px;
-  background: linear-gradient(to top, rgba(26, 26, 46, 0.95) 0%, rgba(26, 26, 46, 0.6) 70%, transparent 100%);
-}
-
-.nextEvent {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  color: white;
-}
-
-.nextEventLabel {
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  opacity: 0.8;
-}
-
-.nextEventDate {
-  font-size: 2rem;
-  font-weight: 800;
-  line-height: 1.2;
-}
-
-.nextEventLocation {
-  font-size: 1rem;
-  opacity: 0.9;
-}
-
 /* Responsive */
 @media (max-width: 1024px) {
   .contentColumn {
@@ -198,6 +157,11 @@
 
   .title {
     font-size: 2rem;
+  }
+
+  .benefitsGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 }
 
@@ -225,12 +189,12 @@
     margin-bottom: 32px;
   }
 
-  .nextEventDate {
-    font-size: 1.5rem;
+  .benefitsGrid {
+    margin-bottom: 32px;
   }
 
-  .imageOverlay {
-    padding: 24px;
+  .testimonial {
+    padding: 20px;
   }
 }
 

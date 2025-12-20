@@ -39,7 +39,7 @@ const Grants: React.FC = () => {
         onSearchChange={setQuery}
         rightButtons={[
           { label: "Donate", href: "/donate", variant: "donate" },
-          { label: "Login", href: "/login" },
+          { label: "Register", href: "/register" },
         ]}
       />
 

@@ -16,7 +16,6 @@ export interface NavBarProps {
   onSearchChange: (value: string) => void;
   rightButtons?: NavBarButton[];
   grantsHref?: string;
-  registerHref?: string;
 }
 
 function NavButton({ label, onClick, href, variant = "default" }: NavBarButton) {
@@ -73,7 +72,6 @@ export default function NavBar({
   onSearchChange,
   rightButtons = [],
   grantsHref = "/grants",
-  registerHref = "/register",
 }: NavBarProps) {
   const [exploreOpen, setExploreOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -233,9 +231,6 @@ export default function NavBar({
           <a href={grantsHref} className={`${styles.textLink} ${styles.grantsLink}`}>
             Grants
           </a>
-          <a href={registerHref} className={`${styles.textLink} ${styles.registerLink}`}>
-            Register
-          </a>
           <div className={styles.rightButtons}>
             {rightButtons.map((btn, i) => (
               <NavButton key={i} {...btn} />
@@ -307,13 +302,6 @@ export default function NavBar({
             onClick={() => setMobileMenuOpen(false)}
           >
             Grants
-          </a>
-          <a
-            className={styles.mobileButton}
-            href={registerHref}
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            Register
           </a>
           {rightButtons.map((btn, i) => (
             <a

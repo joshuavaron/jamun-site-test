@@ -6,10 +6,16 @@ interface Competition {
   href: string;
   description: string;
   imageUrl: string;
+  highlights?: string[];
+  cta?: string;
 }
 
 interface CompetitionButtonsProps {
   competitions: Competition[];
+  showHeader?: boolean;
+  headerTagline?: string;
+  headerTitle?: string;
+  headerSubtitle?: string;
 }
 
 const ArrowIcon: React.FC = () => (
@@ -40,6 +46,16 @@ const CompetitionCard: React.FC<{ competition: Competition }> = ({ competition }
         <div className={styles.cardAccent} />
         <h3 className={styles.cardLabel}>{competition.label}</h3>
         <p className={styles.cardDescription}>{competition.description}</p>
+        {competition.highlights && competition.highlights.length > 0 && (
+          <ul className={styles.cardHighlights}>
+            {competition.highlights.map((highlight, index) => (
+              <li key={index}>{highlight}</li>
+            ))}
+          </ul>
+        )}
+        {competition.cta && (
+          <span className={styles.cardCta}>{competition.cta}</span>
+        )}
       </div>
       <div className={styles.cardIcon}>
         <ArrowIcon />
@@ -48,39 +64,29 @@ const CompetitionCard: React.FC<{ competition: Competition }> = ({ competition }
   );
 };
 
-const CompetitionButtons: React.FC<CompetitionButtonsProps> = ({ competitions }) => {
+const CompetitionButtons: React.FC<CompetitionButtonsProps> = ({
+  competitions,
+  showHeader = false,
+  headerTagline,
+  headerTitle,
+  headerSubtitle,
+}) => {
   return (
-    <div className={styles.container}>
-      {competitions.map((comp) => (
-        <CompetitionCard key={comp.href} competition={comp} />
-      ))}
-    </div>
+    <section className={styles.section}>
+      {showHeader && (
+        <div className={styles.header}>
+          {headerTagline && <span className={styles.tagline}>{headerTagline}</span>}
+          {headerTitle && <h2 className={styles.title}>{headerTitle}</h2>}
+          {headerSubtitle && <p className={styles.subtitle}>{headerSubtitle}</p>}
+        </div>
+      )}
+      <div className={styles.container}>
+        {competitions.map((comp) => (
+          <CompetitionCard key={comp.href} competition={comp} />
+        ))}
+      </div>
+    </section>
   );
 };
 
-const COMPETITION_DATA: Competition[] = [
-  {
-    label: 'Model UN',
-    href: '/modelun',
-    description: 'Debate global issues and practice diplomacy.',
-    imageUrl: '/images/leaderboards.webp',
-  },
-  {
-    label: 'Mock Trial',
-    href: '/mocktrial',
-    description: 'Master legal advocacy and courtroom procedures.',
-    imageUrl: '/images/mainbackground.webp',
-  },
-  {
-    label: 'Mathletes',
-    href: '/mathletes',
-    description: 'Challenge your skills in competitive mathematics.',
-    imageUrl: '/images/shape_tomorrow.webp',
-  },
-];
-
-const CompetitionButtonsWithData: React.FC = () => {
-  return <CompetitionButtons competitions={COMPETITION_DATA} />;
-};
-
-export default CompetitionButtonsWithData;
+export default CompetitionButtons;

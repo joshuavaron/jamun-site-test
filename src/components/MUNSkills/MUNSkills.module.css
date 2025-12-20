@@ -1,0 +1,218 @@
+.section {
+  position: relative;
+  padding: 0;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 700px;
+}
+
+/* Animation States */
+.section.hidden .imageColumn,
+.section.hidden .contentColumn {
+  opacity: 0;
+}
+
+.section.hidden .imageColumn {
+  transform: translateX(-40px);
+}
+
+.section.hidden .contentColumn {
+  transform: translateX(40px);
+}
+
+.section.visible .imageColumn {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.section.visible .contentColumn {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s,
+    transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s;
+}
+
+/* Image Column */
+.imageColumn {
+  position: relative;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.imageOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 40px;
+  background: linear-gradient(to top, rgba(26, 26, 46, 0.9) 0%, transparent 100%);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: white;
+}
+
+.statNumber {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: 1rem;
+  opacity: 0.9;
+  max-width: 200px;
+}
+
+/* Content Column */
+.contentColumn {
+  padding: 80px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tagline {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #497bce;
+  margin-bottom: 12px;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  margin: 0 0 16px 0;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.intro {
+  font-size: 1.125rem;
+  color: #64748b;
+  line-height: 1.7;
+  margin: 0 0 40px 0;
+}
+
+/* Skills List */
+.skillsList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.skillItem {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.skillNumber {
+  flex-shrink: 0;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #497bce;
+  padding-top: 2px;
+}
+
+.skillContent {
+  flex: 1;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 24px;
+}
+
+.skillItem:last-child .skillContent {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.skillTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0 0 6px 0;
+}
+
+.skillDescription {
+  font-size: 0.95rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .contentColumn {
+    padding: 60px 40px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .imageColumn {
+    height: 350px;
+  }
+
+  .contentColumn {
+    padding: 48px 24px;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .intro {
+    margin-bottom: 32px;
+  }
+
+  .skillsList {
+    gap: 20px;
+  }
+
+  .skillContent {
+    padding-bottom: 20px;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .section.hidden .imageColumn,
+  .section.hidden .contentColumn,
+  .section.visible .imageColumn,
+  .section.visible .contentColumn {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}

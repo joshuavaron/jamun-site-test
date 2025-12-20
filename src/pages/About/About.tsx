@@ -43,8 +43,8 @@ const About: React.FC = () => {
   return (
     <div className={styles.page}>
       <CommonHead
-        title="About"
-        description="Learn about JAMUN - The Junior Assembly of Model United Nations. Meet our team and discover our mission to empower young leaders through academic competition."
+        title="About Us | Middle School Model UN, Mock Trial & Math Competitions"
+        description="JAMUN provides Model UN, Mock Trial, and Mathletes programs for middle school and high school students. Our volunteer-run nonprofit helps students develop public speaking, critical thinking, and leadership skills that prepare them for college and beyond."
       />
       <NavBar
         title="jamun-blue-side-logo"
@@ -58,13 +58,13 @@ const About: React.FC = () => {
         onSearchChange={setQuery}
         rightButtons={[
           { label: "Donate", href: "/donate", variant: "donate" },
-          { label: "Login", href: "/login" },
+          { label: "Register", href: "/register" },
         ]}
       />
 
       <Banner
-        title="About JAMUN"
-        subtitle="A student-run nonprofit dedicated to making academic competitions accessible, engaging, and transformative for middle and high school students across the country."
+        title="Empowering Middle School Students Through Academic Competition"
+        subtitle="JAMUN is a volunteer-run nonprofit bringing Model UN, Mock Trial, and Mathletes programs to middle school and high school students nationwide. We help young learners build the public speaking, critical thinking, and leadership skills they need to succeed in college and life."
         backgroundImage="/images/homebackground.webp"
       />
 
@@ -72,25 +72,27 @@ const About: React.FC = () => {
       <section className={styles.missionSection}>
         <div className={styles.missionContent}>
           <div className={styles.missionText}>
-            <h2 className={styles.sectionTitle}>Our Mission</h2>
+            <h2 className={styles.sectionTitle}>Building Future Leaders Through Academic Competition</h2>
             <p className={styles.sectionSubtitle}>
-              We believe every student deserves the opportunity to develop critical thinking,
-              public speaking, and leadership skills through academic competition.
+              We believe every middle school and high school student deserves access to programs that
+              develop critical thinking, public speaking, and leadership skills—regardless of their
+              school's resources or family income.
             </p>
             <p>
               Founded by students who experienced firsthand the transformative power of
               Model UN, Mock Trial, and Mathletes, JAMUN was created to break down barriers
-              and expand access to these life-changing programs.
+              and expand access to these life-changing academic competitions for students in grades 6-12.
             </p>
             <p>
-              Our conferences and resources are designed to nurture curiosity, encourage
-              collaboration, and build the confidence students need to tackle the challenges
-              of tomorrow. Whether you're a first-time delegate or a seasoned competitor,
-              JAMUN provides a supportive environment where everyone can thrive.
+              Research shows that students who participate in academic competitions perform better
+              academically, develop stronger communication skills, and are more likely to succeed
+              in college admissions. Our programs give your child or students the competitive edge
+              they need—while also being genuinely fun and engaging.
             </p>
             <p>
-              We're 100% volunteer-run, which means every donation goes directly toward
-              supporting students through grants, educational materials, and program expansion.
+              We're 100% volunteer-run by college students and recent graduates who are passionate
+              about mentoring the next generation. Every donation goes directly toward supporting
+              students through grants, educational materials, and program expansion.
             </p>
           </div>
 
@@ -98,19 +100,128 @@ const About: React.FC = () => {
             <div className={styles.statsGrid}>
               <div className={styles.statItem}>
                 <div className={styles.statNumber}>500+</div>
-                <div className={styles.statLabel}>Students Impacted</div>
+                <div className={styles.statLabel}>Middle & High School Students</div>
               </div>
               <div className={styles.statItem}>
                 <div className={styles.statNumber}>15+</div>
-                <div className={styles.statLabel}>Schools Reached</div>
+                <div className={styles.statLabel}>Partner Schools</div>
               </div>
               <div className={styles.statItem}>
-                <div className={styles.statNumber}>3</div>
-                <div className={styles.statLabel}>Competition Programs</div>
+                <div className={styles.statNumber}>25+</div>
+                <div className={styles.statLabel}>Dedicated Volunteers</div>
               </div>
               <div className={styles.statItem}>
                 <div className={styles.statNumber}>100%</div>
                 <div className={styles.statLabel}>Volunteer Run</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits Section - For Parents and Teachers */}
+      <section className={styles.benefitsSection}>
+        <div className={styles.benefitsContent}>
+          <h2 className={styles.sectionTitle}>Why Parents and Teachers Choose JAMUN</h2>
+          <p className={styles.sectionSubtitle}>
+            Our programs deliver measurable benefits that prepare middle school and high school
+            students for academic success and future careers.
+          </p>
+
+          <div className={styles.benefitsGrid}>
+            <div className={styles.benefitCard}>
+              <div className={styles.benefitIconWrapper}>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <path d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
+                </svg>
+              </div>
+              <div className={styles.benefitText}>
+                <h3>Strengthens College Applications</h3>
+                <p>
+                  Students who participate in academic competitions stand out to admissions officers.
+                  Model UN, Mock Trial, and math competitions demonstrate intellectual curiosity,
+                  dedication, and the ability to excel under pressure.
+                </p>
+              </div>
+            </div>
+
+            <div className={styles.benefitCard}>
+              <div className={styles.benefitIconWrapper}>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <path d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
+                </svg>
+              </div>
+              <div className={styles.benefitText}>
+                <h3>Develops Critical Thinking Skills</h3>
+                <p>
+                  Our programs challenge students to analyze complex problems, evaluate evidence,
+                  and construct logical arguments—skills that transfer directly to classroom
+                  success and standardized test performance.
+                </p>
+              </div>
+            </div>
+
+            <div className={styles.benefitCard}>
+              <div className={styles.benefitIconWrapper}>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <path d="M10.34 15.84c-.688-.06-1.386-.09-2.09-.09H7.5a4.5 4.5 0 1 1 0-9h.75c.704 0 1.402-.03 2.09-.09m0 9.18c.253.962.584 1.892.985 2.783.247.55.06 1.21-.463 1.511l-.657.38c-.551.318-1.26.117-1.527-.461a20.845 20.845 0 0 1-1.44-4.282m3.102.069a18.03 18.03 0 0 1-.59-4.59c0-1.586.205-3.124.59-4.59m0 9.18a23.848 23.848 0 0 1 8.835 2.535M10.34 6.66a23.847 23.847 0 0 0 8.835-2.535m0 0A23.74 23.74 0 0 0 18.795 3m.38 1.125a23.91 23.91 0 0 1 1.014 5.395m-1.014 8.855c-.118.38-.245.754-.38 1.125m.38-1.125a23.91 23.91 0 0 0 1.014-5.395m0-3.46c.495.413.811 1.035.811 1.73 0 .695-.316 1.317-.811 1.73m0-3.46a24.347 24.347 0 0 1 0 3.46" />
+                </svg>
+              </div>
+              <div className={styles.benefitText}>
+                <h3>Builds Public Speaking Confidence</h3>
+                <p>
+                  Students gain hands-on experience presenting ideas, debating peers, and speaking
+                  in front of audiences. These skills boost confidence in the classroom and prepare
+                  students for future job interviews and presentations.
+                </p>
+              </div>
+            </div>
+
+            <div className={styles.benefitCard}>
+              <div className={styles.benefitIconWrapper}>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <path d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
+                </svg>
+              </div>
+              <div className={styles.benefitText}>
+                <h3>Fosters Teamwork and Leadership</h3>
+                <p>
+                  Students learn to collaborate effectively, take on leadership roles, and support
+                  their teammates. These interpersonal skills are essential for success in school
+                  group projects and future careers.
+                </p>
+              </div>
+            </div>
+
+            <div className={styles.benefitCard}>
+              <div className={styles.benefitIconWrapper}>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <path d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
+                </svg>
+              </div>
+              <div className={styles.benefitText}>
+                <h3>Expands Knowledge Beyond the Classroom</h3>
+                <p>
+                  Model UN exposes students to global affairs and international relations. Mock
+                  Trial teaches the legal system and civic engagement. Mathletes develops advanced
+                  problem-solving abilities that extend beyond standard curriculum.
+                </p>
+              </div>
+            </div>
+
+            <div className={styles.benefitCard}>
+              <div className={styles.benefitIconWrapper}>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <path d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
+                </svg>
+              </div>
+              <div className={styles.benefitText}>
+                <h3>Safe, Supportive Learning Environment</h3>
+                <p>
+                  Our volunteer mentors create an encouraging atmosphere where it's safe to make
+                  mistakes and learn. We focus on growth and improvement, not just winning, so
+                  every student leaves feeling more confident and capable.
+                </p>
               </div>
             </div>
           </div>
@@ -172,10 +283,11 @@ const About: React.FC = () => {
       {/* Team Section */}
       <section className={styles.teamSection}>
         <div className={styles.teamContent}>
-          <h2 className={styles.sectionTitle}>Meet the Team</h2>
+          <h2 className={styles.sectionTitle}>Meet Our Volunteer Leadership Team</h2>
           <p className={styles.sectionSubtitle}>
-            JAMUN is led by passionate students and recent graduates who believe in the
-            power of academic competition.
+            JAMUN is led by passionate college students and recent graduates who volunteer their time
+            to mentor the next generation. Our team brings firsthand experience from top academic
+            competitions and a genuine commitment to helping middle school and high school students succeed.
           </p>
 
           <div className={styles.teamGrid}>
@@ -202,10 +314,10 @@ const About: React.FC = () => {
       {/* Programs Section */}
       <section className={styles.programsSection}>
         <div className={styles.programsContent}>
-          <h2 className={styles.sectionTitle}>Our Programs</h2>
+          <h2 className={styles.sectionTitle}>Academic Competition Programs for Grades 6-12</h2>
           <p className={styles.sectionSubtitle}>
-            We offer three distinct competition programs, each designed to develop
-            different skills and interests.
+            We offer three engaging extracurricular programs designed for middle school and high school
+            students. Each program develops unique skills while preparing students for college and beyond.
           </p>
 
           <div className={styles.programsGrid}>
@@ -215,10 +327,11 @@ const About: React.FC = () => {
                   <path d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5a17.92 17.92 0 0 1-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" />
                 </svg>
               </div>
-              <h3>Model United Nations</h3>
+              <h3>Model United Nations for Middle School</h3>
               <p>
-                Simulate UN committees, debate global issues, and develop diplomatic skills
-                through engaging role-play scenarios.
+                Students simulate UN committees, research global issues, and develop diplomatic,
+                public speaking, and research skills. Perfect for students interested in politics,
+                international relations, and current events.
               </p>
               <span className={styles.programLink}>
                 Learn more
@@ -234,10 +347,11 @@ const About: React.FC = () => {
                   <path d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0012 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 01-2.031.352 5.988 5.988 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L18.75 4.971zm-16.5.52c.99-.203 1.99-.377 3-.52m0 0l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.989 5.989 0 01-2.031.352 5.989 5.989 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L5.25 4.971z" />
                 </svg>
               </div>
-              <h3>Mock Trial</h3>
+              <h3>Mock Trial for Kids and Teens</h3>
               <p>
-                Experience the courtroom firsthand, master legal argumentation, and build
-                persuasive speaking abilities.
+                Students experience courtroom simulations, master legal argumentation, and build
+                persuasive speaking abilities. Ideal for students curious about law, justice, and
+                civic engagement.
               </p>
               <span className={styles.programLink}>
                 Learn more
@@ -253,10 +367,11 @@ const About: React.FC = () => {
                   <path d="M15.75 15.75V18m-7.5-6.75h.008v.008H8.25v-.008zm0 2.25h.008v.008H8.25V13.5zm0 2.25h.008v.008H8.25v-.008zm0 2.25h.008v.008H8.25V18zm2.498-6.75h.007v.008h-.007v-.008zm0 2.25h.007v.008h-.007V13.5zm0 2.25h.007v.008h-.007v-.008zm0 2.25h.007v.008h-.007V18zm2.504-6.75h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V13.5zm0 2.25h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V18zm2.498-6.75h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V13.5zM8.25 6h7.5v2.25h-7.5V6zM12 2.25c-1.892 0-3.758.11-5.593.322C5.307 2.7 4.5 3.65 4.5 4.757V19.5a2.25 2.25 0 002.25 2.25h10.5a2.25 2.25 0 002.25-2.25V4.757c0-1.108-.806-2.057-1.907-2.185A48.507 48.507 0 0012 2.25z" />
                 </svg>
               </div>
-              <h3>Mathletes</h3>
+              <h3>Math Competitions for Middle Schoolers</h3>
               <p>
-                Challenge yourself with competitive mathematics, problem-solving contests,
-                and team-based math challenges.
+                Students challenge themselves with competitive mathematics, problem-solving contests,
+                and team-based challenges. Great for students who love numbers and want to strengthen
+                their quantitative reasoning skills.
               </p>
               <span className={styles.programLink}>
                 Learn more
@@ -272,17 +387,18 @@ const About: React.FC = () => {
       {/* CTA Section */}
       <section className={styles.ctaSection}>
         <div className={styles.ctaContent}>
-          <h2>Ready to Get Involved?</h2>
+          <h2>Ready to Help Your Students Thrive?</h2>
           <p>
-            Whether you're a student looking to compete, a teacher wanting to start a
-            program, or someone who wants to support our mission, we'd love to hear from you.
+            Whether you're a parent looking to enroll your child, a teacher wanting to bring
+            Model UN, Mock Trial, or Mathletes to your school, or someone who wants to support
+            our mission—we're here to help.
           </p>
           <div className={styles.ctaButtons}>
             <Link to="/donate" className={styles.ctaButtonPrimary}>
-              Support Our Mission
+              Support Student Success
             </Link>
             <Link to="/grants" className={styles.ctaButtonSecondary}>
-              Apply for a Grant
+              Apply for a School Grant
             </Link>
           </div>
         </div>
