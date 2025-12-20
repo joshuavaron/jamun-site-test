@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import CommonHead from "../../components/CommonHead/CommonHead";
 import NavBar from "../../components/NavBar/NavBar";
 import Footer from "../../components/Footer/Footer";
 import { COMMITTEES } from "../../data/committees";
@@ -105,6 +106,10 @@ const CommitteesList: React.FC = () => {
 
   return (
     <div className={styles.page}>
+      <CommonHead
+        title="All Committees"
+        description="Explore all Model UN committees available at JAMUN, including General Assembly and Crisis committees for all skill levels."
+      />
       <NavBar
         title="jamun-blue-side-logo"
         exploreItems={[

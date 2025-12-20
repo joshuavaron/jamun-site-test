@@ -1,4 +1,5 @@
 import { useState } from "react";
+import CommonHead from "../../components/CommonHead/CommonHead";
 import NavBar from "../../components/NavBar/NavBar";
 import Footer from "../../components/Footer/Footer";
 import Banner from "../../components/Banner/Banner";
@@ -22,6 +23,10 @@ const Grants: React.FC = () => {
 
   return (
     <div className={styles.page}>
+      <CommonHead
+        title="Grants"
+        description="Apply for JAMUN grants to fund your participation in academic competitions. We believe every student deserves the opportunity to excel."
+      />
       <NavBar
         title="jamun-blue-side-logo"
         exploreItems={[

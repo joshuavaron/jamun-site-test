@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import CommonHead from "../../components/CommonHead/CommonHead";
 import NavBar from "../../components/NavBar/NavBar";
 import Footer from "../../components/Footer/Footer";
 import { RESOURCES, ResourceData } from "../../data/resources";
@@ -191,6 +192,10 @@ const ResourcesList: React.FC = () => {
 
   return (
     <div className={styles.page}>
+      <CommonHead
+        title="Delegate Resources"
+        description="Everything you need to prepare for a successful Model UN experience. Browse guides, templates, and training materials."
+      />
       <NavBar
         title="jamun-blue-side-logo"
         exploreItems={[

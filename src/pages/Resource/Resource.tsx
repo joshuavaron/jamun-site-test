@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, Navigate, Link } from "react-router-dom";
+import CommonHead from "../../components/CommonHead/CommonHead";
 import NavBar from "../../components/NavBar/NavBar";
 import Footer from "../../components/Footer/Footer";
 import ResourceBanner from "../../components/ResourceBanner/ResourceBanner";
@@ -286,6 +287,10 @@ const Resource: React.FC = () => {
 
   return (
     <div className={styles.page}>
+      <CommonHead
+        title={resource.name}
+        description={resource.longDescription}
+      />
       <NavBar
         title="jamun-blue-side-logo"
         exploreItems={[

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import React from "react";
+import CommonHead from "../../components/CommonHead/CommonHead";
 import Banner from "../../components/Banner/Banner";
 import FeatureShowcase from "../../components/FeatureShowcase/FeatureShowcase";
 import NavBar from "../../components/NavBar/NavBar";
@@ -13,6 +14,10 @@ const Home: React.FC = () => {
 
   return (
     <div>
+      <CommonHead
+        title="Home"
+        description="JAMUN makes learning fun! Join our community of students, parents, and teachers for Model UN, Mock Trial, and Mathletes."
+      />
       <NavBar
         title="jamun-blue-side-logo"
         exploreItems={[

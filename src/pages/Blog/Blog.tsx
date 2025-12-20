@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import CommonHead from "../../components/CommonHead/CommonHead";
 import NavBar from "../../components/NavBar/NavBar";
 import Footer from "../../components/Footer/Footer";
 import { BLOG_POSTS, BlogPost, formatDate } from "../../data/blog";
@@ -112,6 +113,10 @@ const Blog: React.FC = () => {
 
   return (
     <div className={styles.page}>
+      <CommonHead
+        title="Blog"
+        description="Insights, tips, and news from the world of Model UN. Stay updated with the latest from JAMUN."
+      />
       <NavBar
         title="jamun-blue-side-logo"
         exploreItems={[

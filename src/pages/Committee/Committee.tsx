@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { useParams, Navigate } from "react-router-dom";
+import CommonHead from "../../components/CommonHead/CommonHead";
 import NavBar from "../../components/NavBar/NavBar";
 import Footer from "../../components/Footer/Footer";
 import CommitteeBanner from "../../components/CommitteeBanner/CommitteeBanner";
@@ -405,6 +406,10 @@ const Committee: React.FC = () => {
 
   return (
     <div className={styles.page}>
+      <CommonHead
+        title={committee.name}
+        description={`${committee.name} (${committee.shorthand}) - ${committee.isAdHoc ? 'Crisis committee' : committee.topic}. Learn about this JAMUN Model UN committee.`}
+      />
       <NavBar
         title="jamun-blue-side-logo"
         exploreItems={[

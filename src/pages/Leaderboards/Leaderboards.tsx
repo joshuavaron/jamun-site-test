@@ -1,5 +1,6 @@
 import { useState } from "react";
 import React from "react";
+import CommonHead from "../../components/CommonHead/CommonHead";
 import Banner from "../../components/Banner/Banner";
 import NavBar from "../../components/NavBar/NavBar";
 import styles from "./Leaderboards.module.css";
@@ -67,6 +68,10 @@ const Leaderboards: React.FC = () => {
 
   return (
     <div>
+      <CommonHead
+        title="Leaderboards"
+        description="Track school scores and compete with peers. View rankings for Model UN, Mock Trial, and Mathletes competitions."
+      />
       <NavBar
         title="jamun-blue-side-logo"
         exploreItems={[

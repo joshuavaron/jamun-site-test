@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import CommonHead from "./components/CommonHead/CommonHead";
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import Leaderboards from "./pages/Leaderboards/Leaderboards";
@@ -17,6 +18,8 @@ import Grants from "./pages/Grants/Grants";
 function App() {
   return (
     <Router>
+      {/* Common head content for all pages - page-specific head will override */}
+      <CommonHead />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />

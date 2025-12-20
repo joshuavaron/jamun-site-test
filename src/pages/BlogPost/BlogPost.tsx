@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, Navigate, Link } from "react-router-dom";
+import CommonHead from "../../components/CommonHead/CommonHead";
 import NavBar from "../../components/NavBar/NavBar";
 import Footer from "../../components/Footer/Footer";
 import { getBlogPostById, BLOG_POSTS, BlogPost as BlogPostType, formatDate } from "../../data/blog";
@@ -229,6 +230,11 @@ const BlogPostPage: React.FC = () => {
 
   return (
     <div className={styles.page}>
+      <CommonHead
+        title={post.title}
+        description={post.excerpt}
+        ogImage={post.imageUrl}
+      />
       <NavBar
         title="jamun-blue-side-logo"
         exploreItems={[

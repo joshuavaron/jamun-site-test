@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import CommonHead from "../../components/CommonHead/CommonHead";
 import NavBar from "../../components/NavBar/NavBar";
 import Footer from "../../components/Footer/Footer";
 import QuoteBlock from "../../components/QuoteBlock/QuoteBlock";
@@ -43,6 +44,10 @@ const Donate: React.FC = () => {
 
   return (
     <div className={styles.page}>
+      <CommonHead
+        title="Donate"
+        description="Support JAMUN's mission to empower the next generation of leaders. Your donation funds educational programs, competition resources, and student opportunities."
+      />
       <NavBar
         title="jamun-blue-side-logo"
         exploreItems={[

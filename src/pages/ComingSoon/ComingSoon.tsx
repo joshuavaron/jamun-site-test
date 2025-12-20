@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
+import CommonHead from "../../components/CommonHead/CommonHead";
 import NavBar from "../../components/NavBar/NavBar";
 import Footer from "../../components/Footer/Footer";
 import styles from "./ComingSoon.module.css";
@@ -34,6 +35,10 @@ const ComingSoon: React.FC = () => {
 
   return (
     <div className={styles.container}>
+      <CommonHead
+        title={`${pageName} - Coming Soon`}
+        description={`JAMUN ${pageName} is coming soon! We're building an incredible experience with interactive learning, practice resources, and competition prep tools.`}
+      />
       <NavBar
         title="jamun-blue-side-logo"
         exploreItems={[

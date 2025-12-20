@@ -1,5 +1,6 @@
 import { useState } from "react";
 import React from "react";
+import CommonHead from "../../components/CommonHead/CommonHead";
 import Banner from "../../components/Banner/Banner";
 import NavBar from "../../components/NavBar/NavBar";
 import Footer from "../../components/Footer/Footer";
@@ -14,6 +15,10 @@ const ModelUN: React.FC = () => {
 
   return (
     <div>
+      <CommonHead
+        title="Model UN"
+        description="Join JAMUN Model United Nations - debate, diplomacy, and discovery. Committees for every skill level from beginner to advanced."
+      />
       <NavBar
         title="jamun-blue-side-logo"
         exploreItems={[

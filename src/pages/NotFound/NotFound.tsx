@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import CommonHead from "../../components/CommonHead/CommonHead";
 import NavBar from "../../components/NavBar/NavBar";
 import Footer from "../../components/Footer/Footer";
 import styles from "./NotFound.module.css";
@@ -9,6 +10,10 @@ const NotFound: React.FC = () => {
 
   return (
     <div className={styles.container}>
+      <CommonHead
+        title="Page Not Found"
+        description="The page you're looking for doesn't exist. Explore JAMUN's programs and resources instead."
+      />
       <NavBar
         title="jamun-blue-side-logo"
         exploreItems={[
