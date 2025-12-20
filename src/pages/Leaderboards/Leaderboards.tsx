@@ -78,6 +78,7 @@ const Leaderboards: React.FC = () => {
         searchValue={query}
         onSearchChange={setQuery}
         rightButtons={[
+          { label: "Donate", href: "/donate", variant: "donate" },
           { label: "Login", href: "/login" },
         ]}
       />

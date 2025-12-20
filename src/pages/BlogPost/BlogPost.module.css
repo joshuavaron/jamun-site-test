@@ -1,0 +1,534 @@
+.page {
+  min-height: 100vh;
+  background: #f8fafc;
+}
+
+/* Header */
+.header {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  padding: 120px 24px 48px;
+}
+
+.headerContent {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: white;
+  margin: 20px 0 16px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.excerpt {
+  font-size: 1.125rem;
+  color: #94a3b8;
+  margin: 0 0 24px;
+  line-height: 1.6;
+}
+
+.meta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #cbd5e1;
+  font-size: 0.95rem;
+}
+
+.metaIcon {
+  width: 18px;
+  height: 18px;
+  color: #94a3b8;
+}
+
+.metaIcon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.metaDivider {
+  color: #475569;
+}
+
+/* Content */
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+/* Two Column Layout */
+.twoColumn {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 48px;
+}
+
+.leftColumn {
+  min-width: 0;
+}
+
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Back Link */
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #497bce;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  margin-bottom: 24px;
+  transition: color 0.2s ease;
+}
+
+.backLink:hover {
+  color: #3b5998;
+}
+
+.backIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.backIcon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Article Content */
+.article {
+  background: white;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+.articleContent {
+  font-family: inherit;
+  font-size: 1.05rem;
+  color: #374151;
+  line-height: 1.8;
+}
+
+/* Content formatting */
+.articleContent h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0 0 24px 0;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.articleContent h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 40px 0 16px 0;
+}
+
+.articleContent h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin: 32px 0 12px 0;
+}
+
+.articleContent h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #374151;
+  margin: 24px 0 8px 0;
+}
+
+.articleContent p {
+  margin: 0 0 16px 0;
+}
+
+.articleContent ul,
+.articleContent ol {
+  margin: 0 0 16px 0;
+  padding-left: 24px;
+}
+
+.articleContent li {
+  margin: 8px 0;
+}
+
+.articleContent strong {
+  font-weight: 600;
+  color: #1a1a2e;
+}
+
+.articleContent em {
+  font-style: italic;
+}
+
+.articleContent blockquote {
+  margin: 24px 0;
+  padding: 16px 24px;
+  background: #f8fafc;
+  border-left: 4px solid #497bce;
+  border-radius: 0 8px 8px 0;
+  color: #475569;
+  font-style: italic;
+}
+
+.articleContent code {
+  background: #f1f5f9;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.9em;
+}
+
+.articleContent pre {
+  background: #1a1a2e;
+  color: #e2e8f0;
+  padding: 20px;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 24px 0;
+}
+
+.articleContent pre code {
+  background: none;
+  padding: 0;
+  color: inherit;
+}
+
+.articleContent hr {
+  border: none;
+  border-top: 1px solid #e2e8f0;
+  margin: 32px 0;
+}
+
+.articleContent a {
+  color: #497bce;
+  text-decoration: underline;
+}
+
+.articleContent a:hover {
+  color: #3b5998;
+}
+
+/* Category Badge */
+.categoryBadge {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.categoryMUNPrep {
+  background: rgba(219, 234, 254, 0.9);
+  color: #1e40af;
+}
+
+.categoryDelegateAdvice {
+  background: rgba(209, 250, 229, 0.9);
+  color: #065f46;
+}
+
+.categoryCrisis {
+  background: rgba(254, 226, 226, 0.9);
+  color: #991b1b;
+}
+
+.categoryCommittees {
+  background: rgba(254, 243, 199, 0.9);
+  color: #92400e;
+}
+
+.categoryMUNSkills {
+  background: rgba(237, 233, 254, 0.9);
+  color: #5b21b6;
+}
+
+.categoryReflections {
+  background: rgba(243, 232, 255, 0.9);
+  color: #7c3aed;
+}
+
+.categoryGlobalImpact {
+  background: rgba(204, 251, 241, 0.9);
+  color: #0f766e;
+}
+
+/* Sidebar Cards */
+.infoCard,
+.relatedCard,
+.allPostsCard {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+.sidebarTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0 0 16px 0;
+}
+
+/* Info Card */
+.infoList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.infoItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.infoIcon {
+  width: 20px;
+  height: 20px;
+  color: #94a3b8;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.infoIcon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.infoContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.infoLabel {
+  font-size: 0.75rem;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.infoValue {
+  font-size: 0.9rem;
+  color: #1a1a2e;
+  font-weight: 500;
+}
+
+/* Related Posts */
+.relatedList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.relatedItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  background: #f8fafc;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.relatedItem:hover {
+  background: #f1f5f9;
+}
+
+.relatedInfo {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.relatedName {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1a1a2e;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.relatedMeta {
+  font-size: 0.75rem;
+  color: #64748b;
+  margin-top: 4px;
+}
+
+.relatedArrow {
+  width: 14px;
+  height: 14px;
+  color: #94a3b8;
+  flex-shrink: 0;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.relatedArrow svg {
+  width: 100%;
+  height: 100%;
+}
+
+.relatedItem:hover .relatedArrow {
+  color: #497bce;
+  transform: translateX(2px);
+}
+
+/* All Posts Card */
+.allPostsDescription {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin: 0 0 16px 0;
+  line-height: 1.5;
+}
+
+.allPostsLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 12px 16px;
+  background: #f8fafc;
+  color: #497bce;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease;
+  box-sizing: border-box;
+}
+
+.allPostsLink:hover {
+  background: #f1f5f9;
+  border-color: #497bce;
+}
+
+.allPostsArrow {
+  width: 16px;
+  height: 16px;
+}
+
+.allPostsArrow svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .twoColumn {
+    grid-template-columns: 1fr;
+  }
+
+  .rightColumn {
+    order: -1;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .infoCard,
+  .relatedCard,
+  .allPostsCard {
+    flex: 1;
+    min-width: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 100px 16px 32px;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .excerpt {
+    font-size: 1rem;
+  }
+
+  .meta {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .metaDivider {
+    display: none;
+  }
+
+  .content {
+    padding: 32px 16px 60px;
+  }
+
+  .article {
+    padding: 24px;
+  }
+
+  .articleContent {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .articleContent h1 {
+    font-size: 1.5rem;
+  }
+
+  .articleContent h2 {
+    font-size: 1.25rem;
+    margin: 32px 0 12px 0;
+  }
+
+  .articleContent h3 {
+    font-size: 1.1rem;
+    margin: 24px 0 10px 0;
+  }
+
+  .rightColumn {
+    flex-direction: column;
+  }
+
+  .infoCard,
+  .relatedCard,
+  .allPostsCard {
+    min-width: auto;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .backLink,
+  .relatedItem,
+  .relatedArrow,
+  .allPostsLink {
+    transition: none;
+  }
+}

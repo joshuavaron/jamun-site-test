@@ -25,6 +25,10 @@ export interface CommitteeData {
   letterFromChair: string;
   documents: Document[];
   countries: string[];
+  // Special Ad-Hoc committee properties
+  isAdHoc?: boolean;
+  redHerringTopics?: string[];
+  realTopic?: string;
 }
 
 export const COMMITTEES: CommitteeData[] = [
@@ -416,33 +420,46 @@ Chair, Chinese Civil War`,
     countries: [],
   },
   {
-    id: "2008-financial-crisis",
-    name: "2008 Financial Crisis",
+    id: "adhoc",
+    name: "Ad-Hoc Committee of the Secretary General",
+    shorthand: "ADHOC",
     group: "Crisis",
-    topic: "Global Economic Meltdown",
-    description:
-      "Navigate the complex decisions that shaped the response to the worst financial crisis since the Great Depression.",
+    topic: "CLASSIFIED",
+    description: "CLASSIFIED",
     difficulty: "Advanced",
     delegateCount: 15,
+    isAdHoc: true,
+    realTopic: "Global Economic Meltdown",
+    redHerringTopics: [
+      "Climate Change Mitigation Strategies",
+      "International Space Law Reform",
+      "Cybersecurity and Digital Sovereignty",
+      "Global Pandemic Response Framework",
+      "Arctic Resource Distribution",
+      "Artificial Intelligence Governance",
+      "Nuclear Non-Proliferation Treaty Review",
+      "Transnational Organized Crime",
+      "Ocean Biodiversity Conservation",
+      "Refugee Resettlement Protocols",
+    ],
     executives: [
       { name: "Osiris Khan", role: "Chair" },
       { name: "Andrew Walsh", role: "Vice Chair" },
     ],
     letterFromChair: `Dear Delegates,
 
-Welcome to the 2008 Financial Crisis committee at JAMUN! You will be thrust into one of the most challenging moments in modern economic history.
+Welcome to the Ad-Hoc Committee of the Secretary General at JAMUN! You have been selected for a committee of the utmost importance and sensitivity.
 
-As key decision-makers during this crisis, you will need to balance competing interests, make rapid decisions under pressure, and navigate the complex interconnections of the global financial system.
+The nature of this committee requires discretion. You will be thrust into one of the most challenging moments in modern history.
 
-Prepare for high-stakes economic crisis simulation.
+As key decision-makers during this crisis, you will need to balance competing interests, make rapid decisions under pressure, and navigate complex interconnections that span the global system.
+
+Further details will be revealed at the appropriate time. Prepare for high-stakes crisis simulation.
 
 Best regards,
-Osiris Khan
-Chair, 2008 Financial Crisis`,
-    documents: [
-      { title: "Background Guide", type: "Background Guide", url: "#" },
-      { title: "Crisis Procedures", type: "Other", url: "#" },
-    ],
+[REDACTED]
+Chair, Ad-Hoc Committee`,
+    documents: [],
     countries: [],
   },
   {

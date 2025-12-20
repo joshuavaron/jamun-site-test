@@ -19,7 +19,10 @@ const NotFound: React.FC = () => {
         ]}
         searchValue={query}
         onSearchChange={setQuery}
-        rightButtons={[{ label: "Login", href: "/login" }]}
+        rightButtons={[
+          { label: "Donate", href: "/donate", variant: "donate" },
+          { label: "Login", href: "/login" },
+        ]}
       />
 
       <main className={styles.content}>

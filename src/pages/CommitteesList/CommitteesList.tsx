@@ -115,7 +115,10 @@ const CommitteesList: React.FC = () => {
         ]}
         searchValue={query}
         onSearchChange={setQuery}
-        rightButtons={[{ label: "Login", href: "/login" }]}
+        rightButtons={[
+          { label: "Donate", href: "/donate", variant: "donate" },
+          { label: "Login", href: "/login" },
+        ]}
       />
 
       <div className={styles.header}>

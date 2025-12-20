@@ -7,8 +7,12 @@ import Committee from "./pages/Committee/Committee";
 import CommitteesList from "./pages/CommitteesList/CommitteesList";
 import ResourcesList from "./pages/ResourcesList/ResourcesList";
 import Resource from "./pages/Resource/Resource";
+import Blog from "./pages/Blog/Blog";
+import BlogPost from "./pages/BlogPost/BlogPost";
 import NotFound from "./pages/NotFound/NotFound";
 import ComingSoon from "./pages/ComingSoon/ComingSoon";
+import Donate from "./pages/Donate/Donate";
+import Grants from "./pages/Grants/Grants";
 
 function App() {
   return (
@@ -24,6 +28,10 @@ function App() {
         <Route path="/modelun/committees/:committeeId" element={<Committee />} />
         <Route path="/modelun/resources" element={<ResourcesList />} />
         <Route path="/modelun/resources/:resourceId" element={<Resource />} />
+        <Route path="/donate" element={<Donate />} />
+        <Route path="/grants" element={<Grants />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:postId" element={<BlogPost />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>

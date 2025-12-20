@@ -18,3 +18,20 @@ h3,
 p {
   margin: 0;
 }
+
+/* Givebutter widget iframe fix */
+givebutter-widget {
+  display: flex !important;
+  justify-content: center !important;
+  width: 100% !important;
+}
+
+iframe[name="givebutter"] {
+  display: block !important;
+  margin: 0 auto !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  min-width: 100% !important;
+  width: 100% !important;
+}

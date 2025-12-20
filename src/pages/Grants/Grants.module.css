@@ -1,0 +1,1199 @@
+/* ===================================
+   GRANTS PAGE - Modern & Interactive
+   =================================== */
+
+/* CSS Custom Properties */
+:root {
+  --grants-primary: #2563eb;
+  --grants-primary-dark: #1d4ed8;
+  --grants-primary-light: rgba(37, 99, 235, 0.1);
+  --grants-accent: #10b981;
+  --grants-accent-light: rgba(16, 185, 129, 0.1);
+  --grants-text-primary: #1f2937;
+  --grants-text-secondary: #6b7280;
+  --grants-bg-light: #f0f9ff;
+  --grants-bg-subtle: #f9fafb;
+  --grants-border: rgba(0, 0, 0, 0.06);
+}
+
+/* ===================================
+   PAGE CONTAINER
+   =================================== */
+
+.page {
+  min-height: 100vh;
+  background: #ffffff;
+  overflow-x: clip;
+}
+
+/* ===================================
+   HERO SECTION
+   =================================== */
+
+.hero {
+  position: relative;
+  height: 100vh;
+  max-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 24px;
+  overflow: hidden;
+  box-sizing: border-box;
+  margin-top: -64px;
+  padding-top: 144px;
+}
+
+.heroBackground {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #eff6ff 0%, #f0fdf4 50%, #ecfeff 100%);
+  z-index: 0;
+}
+
+/* Grid pattern overlay */
+.gridPattern {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(37, 99, 235, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37, 99, 235, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
+}
+
+/* Animated gradient orbs */
+.gradientOrb1,
+.gradientOrb2,
+.gradientOrb3 {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.4;
+  animation: float 20s ease-in-out infinite;
+}
+
+.gradientOrb1 {
+  width: 500px;
+  height: 500px;
+  background: linear-gradient(135deg, #93c5fd 0%, #6ee7b7 100%);
+  top: -150px;
+  right: -100px;
+  animation-delay: 0s;
+}
+
+.gradientOrb2 {
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(135deg, #a5b4fc 0%, #67e8f9 100%);
+  bottom: -100px;
+  left: -100px;
+  animation-delay: -7s;
+}
+
+.gradientOrb3 {
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(135deg, #86efac 0%, #7dd3fc 100%);
+  top: 40%;
+  left: 60%;
+  animation-delay: -14s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(40px, -40px) scale(1.05);
+  }
+  50% {
+    transform: translate(-30px, 30px) scale(0.95);
+  }
+  75% {
+    transform: translate(20px, 15px) scale(1.02);
+  }
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.heroContent.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Badge */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(37, 99, 235, 0.15);
+  border-radius: 9999px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--grants-primary);
+  margin-bottom: 28px;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.08);
+}
+
+.badgeIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+}
+
+.badgeIcon svg {
+  width: 18px;
+  height: 18px;
+  stroke: var(--grants-primary);
+}
+
+.heroTitle {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: #1a1a2e;
+  margin: 0 0 24px;
+  letter-spacing: -0.02em;
+}
+
+.highlight {
+  background: linear-gradient(135deg, var(--grants-primary) 0%, #10b981 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.heroSubtitle {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: #64748b;
+  margin: 0 0 40px;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Hero CTA Buttons */
+.heroCta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+}
+
+.primaryButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, var(--grants-primary) 0%, #1e40af 100%);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+}
+
+.primaryButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.4);
+}
+
+.buttonIcon {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.3s ease;
+}
+
+.primaryButton:hover .buttonIcon {
+  transform: translateX(4px);
+}
+
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--grants-text-primary);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--grants-border);
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.secondaryButton:hover {
+  background: white;
+  border-color: rgba(37, 99, 235, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Impact Stats */
+.impactStats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.statNumber {
+  font-size: 2.25rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--grants-primary) 0%, #10b981 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.statLabel {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--grants-text-secondary);
+}
+
+/* ===================================
+   WHY GRANTS SECTION
+   =================================== */
+
+.whySection {
+  padding: 100px 24px;
+  background: white;
+}
+
+.whyContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0 0 16px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.sectionSubtitle {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: #64748b;
+  margin: 0 0 40px;
+  max-width: 600px;
+}
+
+.benefitsList {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.benefitItem {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.benefitIcon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: var(--grants-primary-light);
+  border-radius: 12px;
+}
+
+.benefitIcon svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--grants-primary);
+}
+
+.benefitItem h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--grants-text-primary);
+  margin: 0 0 6px;
+}
+
+.benefitItem p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--grants-text-secondary);
+  margin: 0;
+}
+
+/* Visual Card */
+.whyVisual {
+  display: flex;
+  justify-content: center;
+}
+
+.visualCard {
+  background: linear-gradient(135deg, #f0f9ff 0%, #f0fdf4 100%);
+  border: 1px solid rgba(37, 99, 235, 0.1);
+  border-radius: 24px;
+  padding: 32px;
+  max-width: 400px;
+  position: relative;
+  overflow: hidden;
+}
+
+.visualCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--grants-primary), #10b981);
+}
+
+.visualHeader {
+  margin-bottom: 20px;
+}
+
+.visualBadge {
+  display: inline-block;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--grants-primary);
+  background: rgba(37, 99, 235, 0.1);
+  border-radius: 9999px;
+}
+
+.testimonialQuote {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--grants-text-primary);
+  font-style: italic;
+  margin: 0 0 24px;
+  border: none;
+  padding: 0;
+}
+
+.testimonialAuthor {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.authorAvatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, var(--grants-primary), #10b981);
+  color: white;
+  font-weight: 700;
+  border-radius: 50%;
+}
+
+.testimonialAuthor strong {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--grants-text-primary);
+}
+
+.testimonialAuthor span {
+  font-size: 0.85rem;
+  color: var(--grants-text-secondary);
+}
+
+/* ===================================
+   GRANT TYPES SECTION
+   =================================== */
+
+.grantTypesSection {
+  padding: 100px 24px;
+  background: var(--grants-bg-subtle);
+}
+
+.grantTypesContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.grantTypesContent .sectionTitle,
+.grantTypesContent .sectionSubtitle {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.grantTypesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.grantCard {
+  background: white;
+  border: 1px solid var(--grants-border);
+  border-radius: 20px;
+  padding: 32px;
+  text-align: left;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.grantCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background: linear-gradient(180deg, rgba(37, 99, 235, 0.03) 0%, transparent 100%);
+  transition: height 0.3s ease;
+}
+
+.grantCard:hover {
+  border-color: rgba(37, 99, 235, 0.2);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(37, 99, 235, 0.12);
+}
+
+.grantCard:hover::before {
+  height: 100%;
+}
+
+.grantCardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.grantIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  background: var(--grants-primary-light);
+  border-radius: 14px;
+  transition: all 0.3s ease;
+}
+
+.grantIcon svg {
+  width: 28px;
+  height: 28px;
+  stroke: var(--grants-primary);
+  transition: stroke 0.3s ease;
+}
+
+.grantCard:hover .grantIcon {
+  background: linear-gradient(135deg, var(--grants-primary), #1e40af);
+}
+
+.grantCard:hover .grantIcon svg {
+  stroke: white;
+}
+
+.grantAmount {
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.1);
+  border-radius: 9999px;
+}
+
+.grantTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--grants-text-primary);
+  margin: 0 0 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.grantDescription {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--grants-text-secondary);
+  margin: 0 0 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.eligibilitySection {
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.eligibilityLabel {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--grants-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+}
+
+.eligibilityList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.eligibilityList li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: var(--grants-text-primary);
+}
+
+.eligibilityList li::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: var(--grants-primary);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.grantApplyButton {
+  width: 100%;
+  padding: 14px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--grants-primary);
+  background: var(--grants-primary-light);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.grantApplyButton:hover {
+  color: white;
+  background: var(--grants-primary);
+}
+
+/* ===================================
+   PROCESS SECTION
+   =================================== */
+
+.processSection {
+  padding: 100px 24px;
+  background: white;
+}
+
+.processContent {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.processContent .sectionTitle,
+.processContent .sectionSubtitle {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.processSteps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.processStep {
+  position: relative;
+  text-align: center;
+  padding: 24px 16px;
+}
+
+.stepNumber {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  background: linear-gradient(135deg, var(--grants-primary), #1e40af);
+  border-radius: 50%;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.stepConnector {
+  position: absolute;
+  top: 52px;
+  left: calc(50% + 28px);
+  width: calc(100% - 28px);
+  height: 3px;
+  background: linear-gradient(90deg, var(--grants-primary), rgba(37, 99, 235, 0.2));
+  z-index: 1;
+}
+
+.processStep:last-child .stepConnector {
+  display: none;
+}
+
+.processStep h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--grants-text-primary);
+  margin: 0 0 10px;
+}
+
+.processStep p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--grants-text-secondary);
+  margin: 0;
+}
+
+/* ===================================
+   TESTIMONIALS SECTION
+   =================================== */
+
+.testimonialsSection {
+  padding: 100px 24px;
+  background: linear-gradient(135deg, #f0f9ff 0%, #f0fdf4 100%);
+}
+
+.testimonialsContent {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.testimonialsContent .sectionTitle {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 48px;
+}
+
+.testimonialsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.testimonialCard {
+  background: white;
+  border-radius: 20px;
+  padding: 32px;
+  text-align: left;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+}
+
+.testimonialCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+
+.quoteIcon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 16px;
+}
+
+.quoteIcon svg {
+  width: 100%;
+  height: 100%;
+  fill: rgba(37, 99, 235, 0.15);
+}
+
+.testimonialCard blockquote {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--grants-text-primary);
+  margin: 0 0 24px;
+  border: none;
+  padding: 0;
+}
+
+.testimonialFooter {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.testimonialFooter strong {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--grants-text-primary);
+}
+
+.testimonialFooter span {
+  font-size: 0.85rem;
+  color: var(--grants-text-secondary);
+}
+
+/* ===================================
+   FORM SECTION
+   =================================== */
+
+.formSection {
+  padding: 100px 24px;
+  background: white;
+}
+
+.formContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.formHeader {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.formHeader .sectionTitle,
+.formHeader .sectionSubtitle {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Apply Card */
+.applyCard {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.applyIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  background: var(--grants-primary-light);
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.applyIcon svg {
+  width: 36px;
+  height: 36px;
+  stroke: var(--grants-primary);
+}
+
+.applyCard h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--grants-text-primary);
+  margin: 0 0 12px;
+}
+
+.applyCard > p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--grants-text-secondary);
+  margin: 0 0 24px;
+}
+
+.applyButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 18px 40px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  background: linear-gradient(135deg, var(--grants-primary) 0%, #1e40af 100%);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+}
+
+.applyButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.4);
+}
+
+.applyButton svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.3s ease;
+}
+
+.applyButton:hover svg {
+  transform: translateX(4px);
+}
+
+.applyCard .formNote {
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+.grantForm {
+  background: var(--grants-bg-subtle);
+  border: 1px solid var(--grants-border);
+  border-radius: 24px;
+  padding: 40px;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.formGroup.fullWidth {
+  grid-column: span 2;
+}
+
+.formGroup label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--grants-text-primary);
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
+  padding: 14px 18px;
+  font-size: 15px;
+  font-family: inherit;
+  color: var(--grants-text-primary);
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.formGroup input::placeholder,
+.formGroup textarea::placeholder {
+  color: #9ca3af;
+}
+
+.formGroup input:focus,
+.formGroup select:focus,
+.formGroup textarea:focus {
+  outline: none;
+  border-color: var(--grants-primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.formGroup textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.formGroup select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236b7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 18px;
+  padding-right: 44px;
+}
+
+.formActions {
+  margin-top: 32px;
+  text-align: center;
+}
+
+.submitButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-width: 240px;
+  padding: 18px 40px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, var(--grants-primary) 0%, #1e40af 100%);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+}
+
+.submitButton:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.4);
+}
+
+.submitButton:disabled {
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+
+.submitButton svg {
+  width: 18px;
+  height: 18px;
+}
+
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.formNote {
+  margin-top: 16px;
+  font-size: 13px;
+  color: var(--grants-text-secondary);
+}
+
+/* ===================================
+   CTA SECTION
+   =================================== */
+
+.ctaSection {
+  padding: 80px 24px;
+  background: linear-gradient(135deg, var(--grants-primary) 0%, #1e40af 100%);
+}
+
+.ctaContent {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.ctaContent h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  margin: 0 0 16px;
+}
+
+.ctaContent p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 32px;
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--grants-primary);
+  background: white;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* ===================================
+   RESPONSIVE BREAKPOINTS
+   =================================== */
+
+@media (max-width: 1024px) {
+  .whyContent {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .whyVisual {
+    order: -1;
+  }
+
+  .grantTypesGrid {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+    padding: 100px 20px 60px;
+  }
+
+  .heroCta {
+    flex-direction: column;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .impactStats {
+    gap: 24px;
+  }
+
+  .statNumber {
+    font-size: 1.75rem;
+  }
+
+  .grantTypesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .processSteps {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  .stepConnector {
+    display: none;
+  }
+
+  .testimonialsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .formGroup.fullWidth {
+    grid-column: span 1;
+  }
+
+  .grantForm {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sectionTitle {
+    font-size: 2rem;
+  }
+
+  .sectionSubtitle {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroTitle {
+    font-size: 2rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1rem;
+  }
+
+  .badge {
+    font-size: 12px;
+    padding: 8px 14px;
+  }
+
+  .impactStats {
+    flex-direction: column;
+  }
+
+  .processSteps {
+    grid-template-columns: 1fr;
+  }
+
+  .sectionTitle {
+    font-size: 1.75rem;
+  }
+
+  .grantCard {
+    padding: 24px;
+  }
+
+  .ctaContent h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .heroContent,
+  .gradientOrb1,
+  .gradientOrb2,
+  .gradientOrb3,
+  .grantCard,
+  .testimonialCard,
+  .submitButton,
+  .primaryButton,
+  .secondaryButton,
+  .spinner {
+    animation: none;
+    transition: none;
+  }
+
+  .heroContent.visible {
+    opacity: 1;
+    transform: none;
+  }
+}

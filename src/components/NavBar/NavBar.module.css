@@ -229,6 +229,16 @@
   box-shadow: none;
 }
 
+/* Donate Button Variant */
+.buttonDonate {
+  background: linear-gradient(135deg, #e11d48 0%, #f97316 100%);
+}
+
+.buttonDonate:hover {
+  background: linear-gradient(135deg, #be123c 0%, #ea580c 100%);
+  box-shadow: 0 4px 12px rgba(225, 29, 72, 0.3);
+}
+
 /* ===================================
    HAMBURGER BUTTON
    =================================== */

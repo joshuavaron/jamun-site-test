@@ -246,3 +246,12 @@
     transition: none;
   }
 }
+
+/* Minecraft-style obfuscated character - fixed width so text doesn't jump */
+.obfuscatedChar {
+  display: inline-block;
+  width: 0.6em;
+  text-align: center;
+  font-family: monospace;
+}
+

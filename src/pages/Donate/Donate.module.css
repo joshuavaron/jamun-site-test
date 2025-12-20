@@ -1,0 +1,483 @@
+/* ===================================
+   DONATE PAGE - Compelling Design
+   =================================== */
+
+/* CSS Custom Properties */
+:root {
+  --donate-primary: #e11d48;
+  --donate-primary-dark: #be123c;
+  --donate-primary-light: rgba(225, 29, 72, 0.1);
+  --donate-gradient-start: #e11d48;
+  --donate-gradient-end: #f97316;
+  --donate-text-primary: #1f2937;
+  --donate-text-secondary: #6b7280;
+  --donate-bg-light: #fef2f2;
+  --donate-bg-warm: #fff7ed;
+}
+
+/* ===================================
+   PAGE CONTAINER
+   =================================== */
+
+.page {
+  min-height: 100vh;
+  background: #ffffff;
+  overflow-x: hidden;
+}
+
+/* ===================================
+   HERO SECTION
+   =================================== */
+
+.hero {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 24px 80px;
+  overflow: hidden;
+}
+
+.heroBackground {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #fef2f2 0%, #fff7ed 50%, #fefce8 100%);
+  z-index: 0;
+}
+
+/* Animated gradient orbs */
+.gradientOrb1,
+.gradientOrb2,
+.gradientOrb3 {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.5;
+  animation: float 15s ease-in-out infinite;
+}
+
+.gradientOrb1 {
+  width: 600px;
+  height: 600px;
+  background: linear-gradient(135deg, #fecaca 0%, #fde68a 100%);
+  top: -200px;
+  right: -100px;
+  animation-delay: 0s;
+}
+
+.gradientOrb2 {
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(135deg, #fdba74 0%, #fca5a5 100%);
+  bottom: -100px;
+  left: -100px;
+  animation-delay: -5s;
+}
+
+.gradientOrb3 {
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(135deg, #fcd34d 0%, #fb7185 100%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-delay: -10s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(30px, -30px) scale(1.05);
+  }
+  50% {
+    transform: translate(-20px, 20px) scale(0.95);
+  }
+  75% {
+    transform: translate(20px, 10px) scale(1.02);
+  }
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.heroContent.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Badge */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: linear-gradient(135deg, var(--donate-primary-light) 0%, rgba(249, 115, 22, 0.1) 100%);
+  border: 1px solid rgba(225, 29, 72, 0.2);
+  border-radius: 9999px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--donate-primary);
+  margin-bottom: 24px;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.badgeIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badgeIcon svg {
+  width: 16px;
+  height: 16px;
+  fill: var(--donate-primary);
+  stroke: var(--donate-primary);
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(225, 29, 72, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(225, 29, 72, 0);
+  }
+}
+
+.heroTitle {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--donate-text-primary);
+  margin: 0 0 24px;
+  letter-spacing: -0.02em;
+}
+
+.highlight {
+  background: linear-gradient(135deg, var(--donate-primary) 0%, #f97316 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.heroSubtitle {
+  font-size: 1.25rem;
+  line-height: 1.7;
+  color: var(--donate-text-secondary);
+  margin: 0 0 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Impact Stats */
+.impactStats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  padding: 24px 32px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02), 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.statNumber {
+  font-size: 2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--donate-primary) 0%, #f97316 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.statLabel {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--donate-text-secondary);
+}
+
+.statDivider {
+  width: 1px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* ===================================
+   DONATE SECTION
+   =================================== */
+
+.donateSection {
+  position: relative;
+  padding: 0 24px 80px;
+  margin-top: -40px;
+}
+
+.widgetContainer {
+  max-width: 600px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+}
+
+.widgetContainer.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.widgetCard {
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.02),
+    0 12px 24px rgba(0, 0, 0, 0.04),
+    0 24px 48px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.widgetCard:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 8px 12px rgba(0, 0, 0, 0.03),
+    0 24px 48px rgba(0, 0, 0, 0.06),
+    0 48px 80px rgba(0, 0, 0, 0.08);
+}
+
+.widgetHeader {
+  padding: 32px 32px 0;
+  text-align: center;
+}
+
+.widgetTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--donate-text-primary);
+  margin: 0 0 8px;
+}
+
+.widgetSubtitle {
+  font-size: 1rem;
+  color: var(--donate-text-secondary);
+  margin: 0;
+}
+
+.widgetWrapper {
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ===================================
+   WHY DONATE SECTION
+   =================================== */
+
+.whyDonate {
+  padding: 80px 24px;
+  background: linear-gradient(180deg, #ffffff 0%, #f9fafb 100%);
+}
+
+.whyDonateContent {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 800;
+  color: var(--donate-text-primary);
+  text-align: center;
+  margin: 0 0 48px;
+}
+
+.impactCards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.impactCard {
+  padding: 32px;
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.impactCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  border-color: rgba(225, 29, 72, 0.2);
+}
+
+.impactCard:hover .impactIcon {
+  background: linear-gradient(135deg, var(--donate-primary) 0%, #f97316 100%);
+  transform: scale(1.1);
+}
+
+.impactCard:hover .impactIcon svg {
+  stroke: white;
+}
+
+.impactIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  background: var(--donate-bg-light);
+  border-radius: 16px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.impactIcon svg {
+  width: 32px;
+  height: 32px;
+  stroke: var(--donate-primary);
+  transition: stroke 0.3s ease;
+}
+
+.impactCard h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--donate-text-primary);
+  margin: 0 0 12px;
+}
+
+.impactCard p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--donate-text-secondary);
+  margin: 0;
+}
+
+/* ===================================
+   RESPONSIVE BREAKPOINTS
+   =================================== */
+
+@media (max-width: 1024px) {
+  .impactCards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .impactCard:last-child {
+    grid-column: span 2;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+    padding: 100px 20px 60px;
+  }
+
+  .impactStats {
+    flex-direction: column;
+    gap: 20px;
+    padding: 24px;
+  }
+
+  .statDivider {
+    width: 80px;
+    height: 1px;
+  }
+
+  .impactCards {
+    grid-template-columns: 1fr;
+  }
+
+  .impactCard:last-child {
+    grid-column: span 1;
+    max-width: none;
+  }
+
+  .donateSection {
+    margin-top: 0;
+    padding-top: 40px;
+  }
+
+  .widgetHeader {
+    padding: 24px 24px 0;
+  }
+
+  .widgetWrapper {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroTitle {
+    font-size: 2rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1rem;
+  }
+
+  .badge {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  .statNumber {
+    font-size: 1.5rem;
+  }
+
+  .impactCard {
+    padding: 24px;
+  }
+
+  .quote {
+    font-size: 1.1rem;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .heroContent,
+  .widgetContainer,
+  .gradientOrb1,
+  .gradientOrb2,
+  .gradientOrb3,
+  .badge,
+  .impactCard,
+  .impactIcon,
+  .widgetCard {
+    animation: none;
+    transition: none;
+  }
+
+  .heroContent.visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  .widgetContainer.visible {
+    opacity: 1;
+    transform: none;
+  }
+}

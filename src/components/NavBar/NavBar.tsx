@@ -6,6 +6,7 @@ export interface NavBarButton {
   label: string;
   onClick?: () => void;
   href?: string;
+  variant?: "default" | "donate";
 }
 
 export interface NavBarProps {
@@ -15,18 +16,23 @@ export interface NavBarProps {
   onSearchChange: (value: string) => void;
   rightButtons?: NavBarButton[];
   grantsHref?: string;
+  registerHref?: string;
 }
 
-function NavButton({ label, onClick, href }: NavBarButton) {
+function NavButton({ label, onClick, href, variant = "default" }: NavBarButton) {
+  const buttonClass = variant === "donate"
+    ? `${styles.button} ${styles.buttonDonate}`
+    : styles.button;
+
   if (href) {
     return (
-      <a className={styles.button} href={href}>
+      <a className={buttonClass} href={href}>
         {label}
       </a>
     );
   }
   return (
-    <button className={styles.button} onClick={onClick}>
+    <button className={buttonClass} onClick={onClick}>
       {label}
     </button>
   );
@@ -67,6 +73,7 @@ export default function NavBar({
   onSearchChange,
   rightButtons = [],
   grantsHref = "/grants",
+  registerHref = "/register",
 }: NavBarProps) {
   const [exploreOpen, setExploreOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -219,10 +226,13 @@ export default function NavBar({
           <img src={`/images/${title}.webp`} alt={`${title} logo`} />
         </a>
 
-        {/* Right Section: Grants + Login */}
+        {/* Right Section: Grants + Register + Login */}
         <div className={styles.rightSection}>
           <a href={grantsHref} className={styles.textLink}>
             Grants
+          </a>
+          <a href={registerHref} className={styles.textLink}>
+            Register
           </a>
           {rightButtons.map((btn, i) => (
             <NavButton key={i} {...btn} />
@@ -293,6 +303,13 @@ export default function NavBar({
             onClick={() => setMobileMenuOpen(false)}
           >
             Grants
+          </a>
+          <a
+            className={styles.mobileButton}
+            href={registerHref}
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Register
           </a>
           {rightButtons.map((btn, i) => (
             <a

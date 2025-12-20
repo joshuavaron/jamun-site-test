@@ -1,10 +1,35 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useParams, Navigate } from "react-router-dom";
 import NavBar from "../../components/NavBar/NavBar";
 import Footer from "../../components/Footer/Footer";
 import CommitteeBanner from "../../components/CommitteeBanner/CommitteeBanner";
 import { getCommitteeById, CommitteeData } from "../../data/committees";
 import styles from "./Committee.module.css";
+
+// Minecraft-style obfuscation charset - similar width characters that cycle rapidly
+const OBFUSCATION_CHARS = "ᒲ∷╎ᓵᒷ⍑╎ᓭ⍑ᔑᓭ⎓∴ᓵ╎↸ᔑ⎓ᔑ↸∷ᓵᒲꖎ⍑⎓";
+
+// Words/phrases to obfuscate in the letter
+const OBFUSCATE_PATTERNS = [
+  "Ad-Hoc Committee of the Secretary General",
+  "utmost importance",
+  "sensitivity",
+  "discretion",
+  "challenging moments",
+  "modern history",
+  "decision-makers",
+  "crisis",
+  "competing interests",
+  "rapid decisions",
+  "pressure",
+  "complex interconnections",
+  "global system",
+  "Further details",
+  "revealed",
+  "appropriate time",
+  "high-stakes",
+  "[REDACTED]",
+];
 
 const COUNTRY_CODES: Record<string, string> = {
   "Afghanistan": "af", "Albania": "al", "Algeria": "dz", "Angola": "ao",
@@ -190,6 +215,180 @@ function CommitteeContent({ committee }: CommitteeContentProps) {
   );
 }
 
+// ========================================
+// AD-HOC COMMITTEE SPECIAL COMPONENTS
+// ========================================
+
+interface GlitchingLetterProps {
+  text: string;
+}
+
+function GlitchingLetter({ text }: GlitchingLetterProps) {
+  const [displayChars, setDisplayChars] = useState<Array<{ char: string; isObfuscated: boolean }>>([]);
+  const obfuscationMapRef = useRef<Set<number>>(new Set());
+
+  // Initialize and find indices to obfuscate
+  useEffect(() => {
+    const obfuscationSet = new Set<number>();
+    const textLower = text.toLowerCase();
+
+    OBFUSCATE_PATTERNS.forEach(pattern => {
+      const patternLower = pattern.toLowerCase();
+      let startIndex = 0;
+      let index;
+
+      while ((index = textLower.indexOf(patternLower, startIndex)) !== -1) {
+        for (let i = index; i < index + pattern.length; i++) {
+          obfuscationSet.add(i);
+        }
+        startIndex = index + 1;
+      }
+    });
+
+    obfuscationMapRef.current = obfuscationSet;
+
+    // Initialize display chars
+    setDisplayChars(text.split('').map((char, i) => ({
+      char,
+      isObfuscated: obfuscationSet.has(i)
+    })));
+  }, [text]);
+
+  // Glitch effect loop - constantly scramble obfuscated characters at ~20 ticks/sec
+  useEffect(() => {
+    const glitchInterval = setInterval(() => {
+      setDisplayChars(prev => prev.map((item, index) => {
+        if (item.isObfuscated && text[index] !== '\n' && text[index] !== ' ') {
+          return {
+            ...item,
+            char: OBFUSCATION_CHARS[Math.floor(Math.random() * OBFUSCATION_CHARS.length)]
+          };
+        }
+        return item;
+      }));
+    }, 50);
+
+    return () => clearInterval(glitchInterval);
+  }, [text]);
+
+  return (
+    <pre className={styles.letterText}>
+      {displayChars.map((item, index) => (
+        item.isObfuscated && text[index] !== '\n' && text[index] !== ' ' ? (
+          <span key={index} className={styles.obfuscatedChar}>{item.char}</span>
+        ) : (
+          text[index]
+        )
+      ))}
+    </pre>
+  );
+}
+
+interface CyclingTopicProps {
+  realTopic: string;
+  redHerringTopics: string[];
+}
+
+function CyclingTopic({ realTopic, redHerringTopics }: CyclingTopicProps) {
+  const [currentTopic, setCurrentTopic] = useState(redHerringTopics[0] || realTopic);
+  const allTopics = useRef([...redHerringTopics, realTopic]);
+
+  useEffect(() => {
+    const cycleInterval = setInterval(() => {
+      const randomIndex = Math.floor(Math.random() * allTopics.current.length);
+      setCurrentTopic(allTopics.current[randomIndex]);
+    }, 100);
+
+    return () => clearInterval(cycleInterval);
+  }, []);
+
+  return <>{currentTopic}</>;
+}
+
+interface AdHocCommitteeContentProps {
+  committee: CommitteeData;
+}
+
+function AdHocCommitteeContent({ committee }: AdHocCommitteeContentProps) {
+  const delegationSize = committee.delegateCount <= 20 ? "Single" : "Double";
+
+  return (
+    <div className={styles.content}>
+      {/* Two Column Layout */}
+      <div className={styles.twoColumn}>
+        {/* Left Column */}
+        <div className={styles.leftColumn}>
+          {/* Topic - Cycling */}
+          <section className={styles.section}>
+            <h2 className={styles.sectionTitle}>Topic</h2>
+            <p className={styles.infoValue}>
+              <CyclingTopic
+                realTopic={committee.realTopic || "CLASSIFIED"}
+                redHerringTopics={committee.redHerringTopics || []}
+              />
+            </p>
+          </section>
+
+          {/* Delegation Size */}
+          <section className={styles.section}>
+            <h2 className={styles.sectionTitle}>Delegation Size</h2>
+            <p className={styles.infoValue}>{delegationSize}</p>
+          </section>
+
+          {/* Number of Delegates */}
+          <section className={styles.section}>
+            <h2 className={styles.sectionTitle}>Number of Delegates</h2>
+            <p className={styles.infoValue}>{committee.delegateCount}</p>
+          </section>
+
+          {/* Executives */}
+          <section className={styles.section}>
+            <h2 className={styles.sectionTitle}>Committee Executives</h2>
+            <div className={styles.executivesList}>
+              {committee.executives.map((exec) => (
+                <div key={exec.name} className={styles.executiveItem}>
+                  <span className={styles.executiveName}>{exec.name}</span>
+                  {exec.pronouns && (
+                    <span className={styles.executivePronouns}>({exec.pronouns})</span>
+                  )}
+                  <span className={styles.executiveRole}> — {exec.role}</span>
+                </div>
+              ))}
+            </div>
+          </section>
+        </div>
+
+        {/* Right Column */}
+        <div className={styles.rightColumn}>
+          {/* Letter from Chair - Glitching */}
+          <section className={styles.section}>
+            <h2 className={styles.sectionTitle}>Letter from the Chair</h2>
+            <div className={styles.letterCard}>
+              <GlitchingLetter text={committee.letterFromChair} />
+            </div>
+          </section>
+
+          {/* Documents - empty for ad-hoc */}
+          <section className={styles.section}>
+            <h2 className={styles.sectionTitle}>Committee Documents</h2>
+            <div className={styles.documentsList}>
+              <p className={styles.infoValue}>Documents will be provided at committee.</p>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      {/* Countries - Full Width Below - crisis committees have no countries */}
+      <section className={styles.countriesSection}>
+        <h2 className={styles.sectionTitle}>Country Assignments</h2>
+        <p className={styles.sectionSubtitle}>
+          This is a crisis committee. Delegate roles will be assigned upon registration.
+        </p>
+      </section>
+    </div>
+  );
+}
+
 const Committee: React.FC = () => {
   const { committeeId } = useParams<{ committeeId: string }>();
   const [query, setQuery] = useState("");
@@ -216,18 +415,25 @@ const Committee: React.FC = () => {
         ]}
         searchValue={query}
         onSearchChange={setQuery}
-        rightButtons={[{ label: "Login", href: "/login" }]}
+        rightButtons={[
+          { label: "Donate", href: "/donate", variant: "donate" },
+          { label: "Login", href: "/login" },
+        ]}
       />
 
       <CommitteeBanner
         name={committee.name}
         shorthand={committee.shorthand}
         group={committee.group}
-        topic={committee.topic}
+        topic={committee.isAdHoc ? "CLASSIFIED" : committee.topic}
         backgroundImage={committee.backgroundImage}
       />
 
-      <CommitteeContent committee={committee} />
+      {committee.isAdHoc ? (
+        <AdHocCommitteeContent committee={committee} />
+      ) : (
+        <CommitteeContent committee={committee} />
+      )}
 
       <Footer />
     </div>
