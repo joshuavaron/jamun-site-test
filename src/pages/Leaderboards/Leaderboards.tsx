@@ -3,6 +3,7 @@ import React from "react";
 import CommonHead from "../../components/CommonHead/CommonHead";
 import Banner from "../../components/Banner/Banner";
 import NavBar from "../../components/NavBar/NavBar";
+import Footer from "../../components/Footer/Footer";
 import styles from "./Leaderboards.module.css";
 import ToggleableLeaderboard from "../../components/ToggleableLeaderboard/ToggleableLeaderboard";
 import { LEADERBOARDS } from "../../data/leaderboards";
@@ -44,6 +45,8 @@ const Leaderboards: React.FC = () => {
         {/* RENDER THE NEW TOGGLEABLE LEADERBOARD HERE */}
         <ToggleableLeaderboard leaderboards={LEADERBOARDS} />
       </section>
+
+      <Footer />
     </div>
   );
 };

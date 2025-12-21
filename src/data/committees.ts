@@ -42,7 +42,7 @@ export const COMMITTEES: CommitteeData[] = [
     description:
       "Address the challenges of providing quality primary education to children living in conflict-affected regions worldwide.",
     difficulty: "Beginner",
-    delegateCount: 40,
+    delegateCount: 60,
     executives: [
       { name: "Abby Kettlewell", role: "Chair" },
       { name: "Grant Nusinow", role: "Vice Chair" },
@@ -50,29 +50,33 @@ export const COMMITTEES: CommitteeData[] = [
     ],
     letterFromChair: `Dear Delegates,
 
-Welcome to UNICEF at JAMUN! We are excited to have you join us as we tackle the critical issue of access to primary education in conflict zones.
+We are so excited to welcome you to UNICEF at JAMUN! This committee promises to be an engaging and rewarding experience as we tackle the critical issue of access to primary education in conflict zones.
 
-Around the world, millions of children are denied their fundamental right to education due to ongoing conflicts. Our committee will work to develop innovative solutions that can provide safe, quality education to these vulnerable populations.
+We will be updating this page shortly with our background guides and letters from your committee chairs. In the meantime, feel free to explore the topic and start thinking about your country's position.
 
-We look forward to your thoughtful contributions and creative problem-solving.
+We can't wait to see you at committee!
 
 Best regards,
-Abby Kettlewell
-Chair, UNICEF`,
+Joshua Varon
+Founder, JAMUN`,
     documents: [
       { title: "Background Guide", type: "Background Guide", url: "#" },
       { title: "Rules of Procedure", type: "Rules of Procedure", url: "#" },
       { title: "Position Paper Template", type: "Position Paper Template", url: "#" },
     ],
     countries: [
-      "Afghanistan", "Australia", "Bangladesh", "Belgium", "Brazil",
-      "Canada", "China", "Colombia", "Denmark", "Egypt",
-      "Ethiopia", "Finland", "France", "Germany", "India",
+      "Afghanistan", "Argentina", "Australia", "Bangladesh", "Belgium",
+      "Brazil", "Canada", "Chile", "China", "Colombia",
+      "Denmark", "Ecuador", "Egypt", "Ethiopia", "Finland",
+      "France", "Germany", "Ghana", "Greece", "India",
       "Indonesia", "Iraq", "Ireland", "Italy", "Japan",
-      "Jordan", "Kenya", "Lebanon", "Mexico", "Netherlands",
-      "Nigeria", "Norway", "Pakistan", "Philippines", "Poland",
-      "Russia", "Saudi Arabia", "South Africa", "Spain", "Sweden",
-      "Syria", "Turkey", "Ukraine", "United Kingdom", "United States"
+      "Jordan", "Kenya", "Lebanon", "Malaysia", "Mexico",
+      "Morocco", "Netherlands", "New Zealand", "Nigeria", "Norway",
+      "Pakistan", "Peru", "Philippines", "Poland", "Portugal",
+      "Russia", "Saudi Arabia", "South Africa", "South Korea", "Spain",
+      "Sweden", "Switzerland", "Syria", "Thailand", "Tunisia",
+      "Turkey", "Ukraine", "United Arab Emirates", "United Kingdom", "United States",
+      "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe"
     ],
   },
   {
@@ -91,15 +95,15 @@ Chair, UNICEF`,
     ],
     letterFromChair: `Dear Delegates,
 
-Welcome to the African Union committee at JAMUN! We will be exploring the important topic of colonial territories and the path to independence.
+We are so excited to welcome you to the African Union at JAMUN! This committee promises to be an engaging and rewarding experience as we explore the important topic of colonial territories and the path to independence.
 
-The legacy of colonialism continues to shape the African continent, and our discussions will focus on supporting self-determination while addressing the complex political and economic realities involved.
+We will be updating this page shortly with our background guides and letters from your committee chairs. In the meantime, feel free to explore the topic and start thinking about your country's position.
 
-We look forward to engaging debates and meaningful resolutions.
+We can't wait to see you at committee!
 
 Best regards,
-Alex Silverman
-Chair, African Union`,
+Joshua Varon
+Founder, JAMUN`,
     documents: [
       { title: "Background Guide", type: "Background Guide", url: "#" },
       { title: "Rules of Procedure", type: "Rules of Procedure", url: "#" },
@@ -107,12 +111,16 @@ Chair, African Union`,
     ],
     countries: [
       "Algeria", "Angola", "Benin", "Botswana", "Burkina Faso",
-      "Cameroon", "Chad", "Côte d'Ivoire", "Egypt", "Eritrea",
-      "Ethiopia", "Gabon", "Gambia", "Ghana", "Guinea",
-      "Kenya", "Libya", "Madagascar", "Malawi", "Mali",
-      "Mauritania", "Morocco", "Mozambique", "Namibia", "Niger",
-      "Nigeria", "Rwanda", "Senegal", "Somalia", "South Africa",
-      "Sudan", "Tanzania", "Tunisia", "Uganda", "Zambia", "Zimbabwe"
+      "Burundi", "Cameroon", "Cape Verde", "Central African Republic", "Chad",
+      "Comoros", "Congo", "Côte d'Ivoire", "Democratic Republic of the Congo", "Djibouti",
+      "Egypt", "Equatorial Guinea", "Eritrea", "Eswatini", "Ethiopia",
+      "Gabon", "Gambia", "Ghana", "Guinea", "Guinea-Bissau",
+      "Kenya", "Lesotho", "Liberia", "Libya", "Madagascar",
+      "Malawi", "Mali", "Mauritania", "Mauritius", "Morocco",
+      "Mozambique", "Namibia", "Niger", "Nigeria", "Rwanda",
+      "São Tomé and Príncipe", "Senegal", "Seychelles", "Sierra Leone", "Somalia",
+      "South Africa", "South Sudan", "Sudan", "Tanzania", "Togo",
+      "Tunisia", "Uganda", "Zambia", "Zimbabwe", "Western Sahara"
     ],
   },
   {
@@ -123,8 +131,8 @@ Chair, African Union`,
     topic: "International Trade Security of Colonized Nations",
     description:
       "Address trade inequalities and economic exploitation affecting colonized and formerly colonized nations.",
-    difficulty: "Intermediate",
-    delegateCount: 45,
+    difficulty: "Beginner",
+    delegateCount: 60,
     executives: [
       { name: "Rishi Mowan", role: "Chair" },
       { name: "Emma Lagunas", role: "Vice Chair" },
@@ -132,30 +140,33 @@ Chair, African Union`,
     ],
     letterFromChair: `Dear Delegates,
 
-Welcome to SPECPOL at JAMUN! Our committee will tackle the critical intersection of international trade and the economic security of colonized nations.
+We are so excited to welcome you to SPECPOL at JAMUN! This committee promises to be an engaging and rewarding experience as we tackle the critical intersection of international trade and the economic security of colonized nations.
 
-Trade relationships have historically been shaped by colonial power dynamics, and many nations continue to face unfair economic conditions. We will work together to develop solutions that promote equitable trade practices.
+We will be updating this page shortly with our background guides and letters from your committee chairs. In the meantime, feel free to explore the topic and start thinking about your country's position.
 
-We look forward to your research and diplomatic skills.
+We can't wait to see you at committee!
 
 Best regards,
-Rishi Mowan
-Chair, SPECPOL`,
+Joshua Varon
+Founder, JAMUN`,
     documents: [
       { title: "Background Guide", type: "Background Guide", url: "#" },
       { title: "Rules of Procedure", type: "Rules of Procedure", url: "#" },
       { title: "Position Paper Template", type: "Position Paper Template", url: "#" },
     ],
     countries: [
-      "Argentina", "Australia", "Bangladesh", "Belgium", "Brazil",
-      "Canada", "Chile", "China", "Colombia", "Cuba",
-      "Egypt", "France", "Germany", "Ghana", "India",
-      "Indonesia", "Iran", "Ireland", "Italy", "Japan",
-      "Kenya", "Malaysia", "Mexico", "Morocco", "Netherlands",
-      "New Zealand", "Nigeria", "Norway", "Pakistan", "Peru",
-      "Philippines", "Poland", "Russia", "Saudi Arabia", "Singapore",
-      "South Africa", "South Korea", "Spain", "Thailand", "Turkey",
-      "United Kingdom", "United States", "Venezuela", "Vietnam"
+      "Algeria", "Argentina", "Australia", "Bangladesh", "Belgium",
+      "Brazil", "Canada", "Chile", "China", "Colombia",
+      "Cuba", "Czech Republic", "Denmark", "Ecuador", "Egypt",
+      "Ethiopia", "Finland", "France", "Germany", "Ghana",
+      "Greece", "India", "Indonesia", "Iran", "Iraq",
+      "Ireland", "Israel", "Italy", "Jamaica", "Japan",
+      "Jordan", "Kenya", "Malaysia", "Mexico", "Morocco",
+      "Netherlands", "New Zealand", "Nigeria", "Norway", "Pakistan",
+      "Peru", "Philippines", "Poland", "Portugal", "Russia",
+      "Saudi Arabia", "Singapore", "South Africa", "South Korea", "Spain",
+      "Sweden", "Switzerland", "Thailand", "Tunisia", "Turkey",
+      "Ukraine", "United Kingdom", "United States", "Venezuela", "Vietnam"
     ],
   },
   {
@@ -167,22 +178,22 @@ Chair, SPECPOL`,
     description:
       "Develop regional frameworks for fair labor practices and corporate accountability across Southeast Asia.",
     difficulty: "Intermediate",
-    delegateCount: 20,
+    delegateCount: 40,
     executives: [
       { name: "Abby Vandesteeg", role: "Chair" },
       { name: "Holden Moons", role: "Vice Chair" },
     ],
     letterFromChair: `Dear Delegates,
 
-Welcome to ASEAN at JAMUN! Our committee will focus on the important topic of labor laws and corporate accountability in the Southeast Asian region.
+We are so excited to welcome you to ASEAN at JAMUN! This committee promises to be an engaging and rewarding experience as we focus on the important topic of labor laws and corporate accountability in the Southeast Asian region.
 
-As economies continue to grow and evolve, ensuring fair treatment of workers and holding corporations accountable becomes increasingly important. We will work to develop regional standards that protect workers' rights.
+We will be updating this page shortly with our background guides and letters from your committee chairs. In the meantime, feel free to explore the topic and start thinking about your country's position.
 
-We look forward to productive discussions.
+We can't wait to see you at committee!
 
 Best regards,
-Abby Vandesteeg
-Chair, ASEAN`,
+Joshua Varon
+Founder, JAMUN`,
     documents: [
       { title: "Background Guide", type: "Background Guide", url: "#" },
       { title: "Rules of Procedure", type: "Rules of Procedure", url: "#" },
@@ -192,7 +203,11 @@ Chair, ASEAN`,
       "Brunei", "Cambodia", "Indonesia", "Laos", "Malaysia",
       "Myanmar", "Philippines", "Singapore", "Thailand", "Vietnam",
       "Australia", "China", "India", "Japan", "New Zealand",
-      "South Korea", "Russia", "United States"
+      "South Korea", "Russia", "United States", "Bangladesh", "Canada",
+      "Germany", "Mongolia", "Nepal", "Norway", "Pakistan",
+      "Sri Lanka", "Switzerland", "Timor-Leste", "Turkey", "United Kingdom",
+      "Brunei", "Cambodia", "Indonesia", "Laos", "Malaysia",
+      "Myanmar", "Philippines", "Singapore", "Thailand", "Vietnam"
     ],
   },
   {
@@ -203,36 +218,41 @@ Chair, ASEAN`,
     topic: "Homeless Persons and Refugees in Europe",
     description:
       "Address the humanitarian crisis of homelessness and refugee displacement across European nations.",
-    difficulty: "Beginner",
-    delegateCount: 35,
+    difficulty: "Intermediate",
+    delegateCount: 60,
     executives: [
       { name: "Jaden Livshutz", role: "Chair" },
       { name: "Jonathan Greenspon", role: "Vice Chair" },
     ],
     letterFromChair: `Dear Delegates,
 
-Welcome to SOCHUM at JAMUN! We will be addressing the pressing humanitarian issues of homelessness and refugee displacement in Europe.
+We are so excited to welcome you to SOCHUM at JAMUN! This committee promises to be an engaging and rewarding experience as we address the pressing humanitarian issues of homelessness and refugee displacement in Europe.
 
-These interconnected challenges require compassionate and practical solutions. Our committee will work to develop policies that protect the dignity and rights of all people regardless of their housing status.
+We will be updating this page shortly with our background guides and letters from your committee chairs. In the meantime, feel free to explore the topic and start thinking about your country's position.
 
-We look forward to meaningful debate and collaboration.
+We can't wait to see you at committee!
 
 Best regards,
-Jaden Livshutz
-Chair, SOCHUM`,
+Joshua Varon
+Founder, JAMUN`,
     documents: [
       { title: "Background Guide", type: "Background Guide", url: "#" },
       { title: "Rules of Procedure", type: "Rules of Procedure", url: "#" },
       { title: "Position Paper Template", type: "Position Paper Template", url: "#" },
     ],
     countries: [
-      "Albania", "Austria", "Belgium", "Bulgaria", "Croatia",
-      "Czech Republic", "Denmark", "Estonia", "Finland", "France",
-      "Germany", "Greece", "Hungary", "Ireland", "Italy",
-      "Latvia", "Lithuania", "Luxembourg", "Netherlands", "Norway",
-      "Poland", "Portugal", "Romania", "Serbia", "Slovakia",
-      "Slovenia", "Spain", "Sweden", "Switzerland", "Turkey",
-      "Ukraine", "United Kingdom"
+      "Albania", "Armenia", "Austria", "Azerbaijan", "Belarus",
+      "Belgium", "Bosnia and Herzegovina", "Bulgaria", "Canada", "Croatia",
+      "Cyprus", "Czech Republic", "Denmark", "Estonia", "Finland",
+      "France", "Georgia", "Germany", "Greece", "Hungary",
+      "Iceland", "Ireland", "Italy", "Kazakhstan", "Kosovo",
+      "Latvia", "Liechtenstein", "Lithuania", "Luxembourg", "Malta",
+      "Moldova", "Monaco", "Montenegro", "Netherlands", "North Macedonia",
+      "Norway", "Poland", "Portugal", "Romania", "Russia",
+      "San Marino", "Serbia", "Slovakia", "Slovenia", "Spain",
+      "Sweden", "Switzerland", "Turkey", "Ukraine", "United Kingdom",
+      "United States", "Vatican City", "Andorra", "Australia", "Brazil",
+      "China", "Egypt", "India", "Japan", "South Africa"
     ],
   },
   {
@@ -243,36 +263,43 @@ Chair, SOCHUM`,
     topic: "Nuclear Weaponry",
     description:
       "Negotiate frameworks for nuclear disarmament and non-proliferation in the modern era.",
-    difficulty: "Advanced",
-    delegateCount: 50,
+    difficulty: "Beginner",
+    delegateCount: 70,
     executives: [
       { name: "Miranda Winters", role: "Chair" },
       { name: "Noah Cohen", role: "Vice Chair" },
     ],
     letterFromChair: `Dear Delegates,
 
-Welcome to DISEC at JAMUN! Our committee will tackle one of the most consequential issues in international security: nuclear weaponry.
+We are so excited to welcome you to DISEC at JAMUN! This committee promises to be an engaging and rewarding experience as we tackle one of the most consequential issues in international security: nuclear weaponry.
 
-The threat of nuclear weapons continues to shape global politics and security arrangements. We will work to find pathways toward disarmament while addressing the legitimate security concerns of all nations.
+We will be updating this page shortly with our background guides and letters from your committee chairs. In the meantime, feel free to explore the topic and start thinking about your country's position.
 
-This is an advanced committee requiring sophisticated understanding of international relations.
+We can't wait to see you at committee!
 
 Best regards,
-Miranda Winters
-Chair, DISEC`,
+Joshua Varon
+Founder, JAMUN`,
     documents: [
       { title: "Background Guide", type: "Background Guide", url: "#" },
       { title: "Rules of Procedure", type: "Rules of Procedure", url: "#" },
       { title: "Position Paper Template", type: "Position Paper Template", url: "#" },
     ],
     countries: [
-      "Argentina", "Australia", "Brazil", "Canada", "China",
-      "Egypt", "France", "Germany", "India", "Indonesia",
-      "Iran", "Israel", "Italy", "Japan", "Kazakhstan",
-      "Mexico", "Netherlands", "Nigeria", "North Korea", "Norway",
-      "Pakistan", "Poland", "Russia", "Saudi Arabia", "South Africa",
-      "South Korea", "Spain", "Sweden", "Switzerland", "Turkey",
-      "Ukraine", "United Arab Emirates", "United Kingdom", "United States"
+      "Afghanistan", "Algeria", "Argentina", "Australia", "Austria",
+      "Bangladesh", "Belarus", "Belgium", "Brazil", "Canada",
+      "Chile", "China", "Colombia", "Cuba", "Czech Republic",
+      "Denmark", "Ecuador", "Egypt", "Ethiopia", "Finland",
+      "France", "Germany", "Ghana", "Greece", "Hungary",
+      "India", "Indonesia", "Iran", "Iraq", "Ireland",
+      "Israel", "Italy", "Japan", "Jordan", "Kazakhstan",
+      "Kenya", "Libya", "Malaysia", "Mexico", "Morocco",
+      "Netherlands", "New Zealand", "Nigeria", "North Korea", "Norway",
+      "Pakistan", "Peru", "Philippines", "Poland", "Portugal",
+      "Qatar", "Romania", "Russia", "Saudi Arabia", "South Africa",
+      "South Korea", "Spain", "Sweden", "Switzerland", "Syria",
+      "Thailand", "Tunisia", "Turkey", "Ukraine", "United Arab Emirates",
+      "United Kingdom", "United States", "Venezuela", "Vietnam", "Yemen"
     ],
   },
   {
@@ -291,15 +318,15 @@ Chair, DISEC`,
     ],
     letterFromChair: `Dear Delegates,
 
-Welcome to the European Union committee at JAMUN! We will be tackling the challenging topic of border security and refugee policy.
+We are so excited to welcome you to the European Union at JAMUN! This committee promises to be an engaging and rewarding experience as we tackle the challenging topic of border security and refugee policy.
 
-The EU faces the difficult task of maintaining secure borders while upholding its commitment to human rights and refugee protection. Our discussions will seek to find balanced approaches to these complex issues.
+We will be updating this page shortly with our background guides and letters from your committee chairs. In the meantime, feel free to explore the topic and start thinking about your country's position.
 
-We look forward to thoughtful debate.
+We can't wait to see you at committee!
 
 Best regards,
-Naomi Altneu
-Chair, European Union`,
+Joshua Varon
+Founder, JAMUN`,
     documents: [
       { title: "Background Guide", type: "Background Guide", url: "#" },
       { title: "Rules of Procedure", type: "Rules of Procedure", url: "#" },
@@ -322,8 +349,8 @@ Chair, European Union`,
     topic: "Government Embezzlement and Transparency",
     description:
       "Combat corruption and promote government transparency through international cooperation and frameworks.",
-    difficulty: "Intermediate",
-    delegateCount: 54,
+    difficulty: "Advanced",
+    delegateCount: 60,
     executives: [
       { name: "Andrew Calderon", role: "Chair" },
       { name: "Lainey Reinglass", role: "Vice Chair" },
@@ -331,30 +358,32 @@ Chair, European Union`,
     ],
     letterFromChair: `Dear Delegates,
 
-Welcome to ECOSOC at JAMUN! Our committee will focus on the critical issues of government embezzlement and transparency.
+We are so excited to welcome you to ECOSOC at JAMUN! This committee promises to be an engaging and rewarding experience as we focus on the critical issues of government embezzlement and transparency.
 
-Corruption undermines economic development, erodes public trust, and diverts resources from those who need them most. We will work to develop international frameworks that promote accountability and transparency in governance.
+We will be updating this page shortly with our background guides and letters from your committee chairs. In the meantime, feel free to explore the topic and start thinking about your country's position.
 
-We look forward to your contributions.
+We can't wait to see you at committee!
 
 Best regards,
-Andrew Calderon
-Chair, ECOSOC`,
+Joshua Varon
+Founder, JAMUN`,
     documents: [
       { title: "Background Guide", type: "Background Guide", url: "#" },
       { title: "Rules of Procedure", type: "Rules of Procedure", url: "#" },
       { title: "Position Paper Template", type: "Position Paper Template", url: "#" },
     ],
     countries: [
-      "Afghanistan", "Argentina", "Australia", "Austria", "Belgium",
-      "Brazil", "Canada", "Chile", "China", "Colombia",
-      "Denmark", "Egypt", "Ethiopia", "Finland", "France",
-      "Germany", "Ghana", "India", "Indonesia", "Iran",
-      "Ireland", "Israel", "Italy", "Japan", "Kenya",
-      "Malaysia", "Mexico", "Morocco", "Netherlands", "Nigeria",
-      "Norway", "Pakistan", "Peru", "Philippines", "Poland",
-      "Russia", "Saudi Arabia", "Singapore", "South Africa", "South Korea",
-      "Spain", "Sweden", "Switzerland", "Thailand", "Turkey",
+      "Afghanistan", "Argentina", "Australia", "Austria", "Bangladesh",
+      "Belgium", "Brazil", "Canada", "Chile", "China",
+      "Colombia", "Czech Republic", "Denmark", "Ecuador", "Egypt",
+      "Ethiopia", "Finland", "France", "Germany", "Ghana",
+      "Greece", "Hungary", "India", "Indonesia", "Iran",
+      "Ireland", "Israel", "Italy", "Jamaica", "Japan",
+      "Jordan", "Kenya", "Malaysia", "Mexico", "Morocco",
+      "Netherlands", "New Zealand", "Nigeria", "Norway", "Pakistan",
+      "Peru", "Philippines", "Poland", "Portugal", "Russia",
+      "Saudi Arabia", "Singapore", "South Africa", "South Korea", "Spain",
+      "Sweden", "Switzerland", "Thailand", "Tunisia", "Turkey",
       "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Venezuela"
     ],
   },
@@ -367,22 +396,22 @@ Chair, ECOSOC`,
     description:
       "Navigate the complex political and military landscape of Haiti's struggle for independence from colonial rule.",
     difficulty: "Advanced",
-    delegateCount: 15,
+    delegateCount: 20,
     executives: [
       { name: "Eric Nodland", role: "Chair" },
       { name: "Stephanie Jiang", role: "Vice Chair" },
     ],
     letterFromChair: `Dear Delegates,
 
-Welcome to the Haiti's Independence crisis committee at JAMUN! You will be stepping into one of history's most significant revolutionary moments.
+We are so excited to welcome you to Haiti's Independence at JAMUN! This crisis committee promises to be an intense and dynamic experience as you step into one of history's most significant revolutionary moments.
 
-The Haitian Revolution represents the only successful slave rebellion that led to the founding of a state. As crisis delegates, you will navigate complex alliances, military strategy, and the fight for freedom.
+We will be updating this page shortly with our background guides and letters from your committee chairs. In the meantime, feel free to explore the topic and prepare for an unforgettable crisis experience.
 
-Prepare for an intense and dynamic committee experience.
+We can't wait to see you at committee!
 
 Best regards,
-Eric Nodland
-Chair, Haiti's Independence`,
+Joshua Varon
+Founder, JAMUN`,
     documents: [
       { title: "Background Guide", type: "Background Guide", url: "#" },
       { title: "Crisis Procedures", type: "Other", url: "#" },
@@ -397,22 +426,22 @@ Chair, Haiti's Independence`,
     description:
       "Experience the pivotal conflict between Nationalist and Communist forces that shaped modern China.",
     difficulty: "Advanced",
-    delegateCount: 15,
+    delegateCount: 20,
     executives: [
       { name: "Sam Harutyunyan", role: "Chair" },
       { name: "Scarlett Jackson", role: "Vice Chair" },
     ],
     letterFromChair: `Dear Delegates,
 
-Welcome to the Chinese Civil War crisis committee at JAMUN! You will be immersed in one of the 20th century's most consequential conflicts.
+We are so excited to welcome you to the Chinese Civil War at JAMUN! This crisis committee promises to be an intense and challenging experience as you immerse yourself in one of the 20th century's most consequential conflicts.
 
-This crisis will challenge you to think strategically about military, political, and ideological dimensions of conflict. Your decisions will shape the future of a nation.
+We will be updating this page shortly with our background guides and letters from your committee chairs. In the meantime, feel free to explore the topic and prepare for an unforgettable crisis experience.
 
-Come prepared for intense crisis simulations.
+We can't wait to see you at committee!
 
 Best regards,
-Sam Harutyunyan
-Chair, Chinese Civil War`,
+Joshua Varon
+Founder, JAMUN`,
     documents: [
       { title: "Background Guide", type: "Background Guide", url: "#" },
       { title: "Crisis Procedures", type: "Other", url: "#" },
@@ -427,7 +456,7 @@ Chair, Chinese Civil War`,
     topic: "CLASSIFIED",
     description: "CLASSIFIED",
     difficulty: "Advanced",
-    delegateCount: 15,
+    delegateCount: 24,
     isAdHoc: true,
     realTopic: "Global Economic Meltdown",
     redHerringTopics: [
@@ -448,17 +477,15 @@ Chair, Chinese Civil War`,
     ],
     letterFromChair: `Dear Delegates,
 
-Welcome to the Ad-Hoc Committee of the Secretary General at JAMUN! You have been selected for a committee of the utmost importance and sensitivity.
+We are so excited to welcome you to the Ad-Hoc Committee of the Secretary General at JAMUN! You have been selected for a committee of the utmost importance and sensitivity.
 
-The nature of this committee requires discretion. You will be thrust into one of the most challenging moments in modern history.
+We will be updating this page shortly with our background guides and letters from your committee chairs. The nature of this committee requires discretion, and further details will be revealed at the appropriate time.
 
-As key decision-makers during this crisis, you will need to balance competing interests, make rapid decisions under pressure, and navigate complex interconnections that span the global system.
-
-Further details will be revealed at the appropriate time. Prepare for high-stakes crisis simulation.
+Prepare for high-stakes crisis simulation. We can't wait to see you at committee!
 
 Best regards,
-[REDACTED]
-Chair, Ad-Hoc Committee`,
+Joshua Varon
+Founder, JAMUN`,
     documents: [],
     countries: [],
   },
@@ -469,23 +496,23 @@ Chair, Ad-Hoc Committee`,
     topic: "Economic Collapse and Recovery",
     description:
       "Address the unprecedented economic challenges of the 1930s and develop strategies for recovery.",
-    difficulty: "Intermediate",
-    delegateCount: 15,
+    difficulty: "Beginner",
+    delegateCount: 12,
     executives: [
       { name: "Myra Amin", role: "Chair" },
       { name: "Augusto Aguilar", role: "Vice Chair" },
     ],
     letterFromChair: `Dear Delegates,
 
-Welcome to The Great Depression crisis committee at JAMUN! You will be navigating the deepest economic crisis of the 20th century.
+We are so excited to welcome you to The Great Depression at JAMUN! This crisis committee promises to be a challenging experience as you navigate the deepest economic crisis of the 20th century.
 
-This committee will challenge you to think creatively about economic policy, social welfare, and international cooperation during times of extreme hardship.
+We will be updating this page shortly with our background guides and letters from your committee chairs. In the meantime, feel free to explore the topic and prepare for an unforgettable crisis experience.
 
-We look forward to seeing how you respond to this historic challenge.
+We can't wait to see you at committee!
 
 Best regards,
-Myra Amin
-Chair, The Great Depression`,
+Joshua Varon
+Founder, JAMUN`,
     documents: [
       { title: "Background Guide", type: "Background Guide", url: "#" },
       { title: "Crisis Procedures", type: "Other", url: "#" },
@@ -499,7 +526,7 @@ Chair, The Great Depression`,
     topic: "Preserving the Union",
     description:
       "Lead the Union through the crucible of civil war and shape the future of American democracy.",
-    difficulty: "Advanced",
+    difficulty: "Intermediate",
     delegateCount: 18,
     executives: [
       { name: "Daniel Greenspon", role: "Chair" },
@@ -508,15 +535,15 @@ Chair, The Great Depression`,
     ],
     letterFromChair: `Dear Delegates,
 
-Welcome to the American Civil War (Union) crisis committee at JAMUN! You will be taking on the roles of key Union leaders during America's most divisive conflict.
+We are so excited to welcome you to the American Civil War (Union) at JAMUN! This crisis committee promises to be an intense experience as you take on the roles of key Union leaders during America's most divisive conflict.
 
-Your decisions will affect military strategy, political unity, and the fundamental question of slavery in America. This is an advanced crisis requiring quick thinking and strategic acumen.
+We will be updating this page shortly with our background guides and letters from your committee chairs. In the meantime, feel free to explore the topic and prepare for an unforgettable crisis experience.
 
-Prepare for an intense committee experience.
+We can't wait to see you at committee!
 
 Best regards,
-Daniel Greenspon
-Chair, American Civil War (Union)`,
+Joshua Varon
+Founder, JAMUN`,
     documents: [
       { title: "Background Guide", type: "Background Guide", url: "#" },
       { title: "Crisis Procedures", type: "Other", url: "#" },
@@ -531,22 +558,22 @@ Chair, American Civil War (Union)`,
     description:
       "Navigate the complex ethnic, political, and humanitarian dimensions of Sudan's ongoing civil conflict.",
     difficulty: "Advanced",
-    delegateCount: 15,
+    delegateCount: 18,
     executives: [
       { name: "Gregory Kislovsky", role: "Chair" },
       { name: "Austin Blumberg", role: "Vice Chair" },
     ],
     letterFromChair: `Dear Delegates,
 
-Welcome to the Sudan Civil War crisis committee at JAMUN! You will be grappling with one of the most complex humanitarian crises of our time.
+We are so excited to welcome you to the Sudan Civil War at JAMUN! This crisis committee promises to be a challenging and meaningful experience as you grapple with one of the most complex humanitarian crises of our time.
 
-This committee requires understanding of ethnic tensions, regional politics, and humanitarian law. Your crisis responses will shape the lives of millions.
+We will be updating this page shortly with our background guides and letters from your committee chairs. In the meantime, feel free to explore the topic and prepare for an unforgettable crisis experience.
 
-Come prepared for challenging and meaningful debate.
+We can't wait to see you at committee!
 
 Best regards,
-Gregory Kislovsky
-Chair, Sudan Civil War`,
+Joshua Varon
+Founder, JAMUN`,
     documents: [
       { title: "Background Guide", type: "Background Guide", url: "#" },
       { title: "Crisis Procedures", type: "Other", url: "#" },
@@ -560,8 +587,8 @@ Chair, Sudan Civil War`,
     topic: "Thirteen Days on the Brink",
     description:
       "Experience the tension of the closest the world came to nuclear war and make decisions that could save or destroy civilization.",
-    difficulty: "Advanced",
-    delegateCount: 18,
+    difficulty: "Intermediate",
+    delegateCount: 20,
     executives: [
       { name: "Bee Kuehn", role: "Chair" },
       { name: "Ceci Frye", role: "Vice Chair" },
@@ -569,15 +596,15 @@ Chair, Sudan Civil War`,
     ],
     letterFromChair: `Dear Delegates,
 
-Welcome to the Cuban Missile Crisis committee at JAMUN! You will be experiencing the most dangerous thirteen days in human history.
+We are so excited to welcome you to the Cuban Missile Crisis at JAMUN! This crisis committee promises to be an unforgettable experience as you navigate the most dangerous thirteen days in human history.
 
-As members of key decision-making bodies during this nuclear standoff, your choices will determine whether humanity survives or faces nuclear annihilation. This is crisis committee at its most intense.
+We will be updating this page shortly with our background guides and letters from your committee chairs. In the meantime, feel free to explore the topic and prepare for an intense crisis experience.
 
-Prepare for an unforgettable experience.
+We can't wait to see you at committee!
 
 Best regards,
-Bee Kuehn
-Chair, Cuban Missile Crisis`,
+Joshua Varon
+Founder, JAMUN`,
     documents: [
       { title: "Background Guide", type: "Background Guide", url: "#" },
       { title: "Crisis Procedures", type: "Other", url: "#" },
@@ -592,7 +619,7 @@ Chair, Cuban Missile Crisis`,
     description:
       "Confront the international community's response to one of history's darkest chapters and work to prevent future atrocities.",
     difficulty: "Advanced",
-    delegateCount: 18,
+    delegateCount: 20,
     executives: [
       { name: "Danielle Murray", role: "Chair" },
       { name: "Dylan Liu", role: "Vice Chair" },
@@ -600,15 +627,15 @@ Chair, Cuban Missile Crisis`,
     ],
     letterFromChair: `Dear Delegates,
 
-Welcome to the Rwandan Genocide crisis committee at JAMUN! This committee will tackle one of the most tragic failures of the international community.
+We are so excited to welcome you to the Rwandan Genocide at JAMUN! This crisis committee promises to be a meaningful and impactful experience as you grapple with one of the most significant events in modern history.
 
-You will grapple with difficult questions about intervention, sovereignty, and the responsibility to protect. This committee requires maturity and sensitivity to handle its challenging subject matter.
+We will be updating this page shortly with our background guides and letters from your committee chairs. In the meantime, feel free to explore the topic and prepare for a respectful and engaging crisis experience.
 
-We look forward to meaningful and respectful engagement.
+We can't wait to see you at committee!
 
 Best regards,
-Danielle Murray
-Chair, Rwandan Genocide`,
+Joshua Varon
+Founder, JAMUN`,
     documents: [
       { title: "Background Guide", type: "Background Guide", url: "#" },
       { title: "Crisis Procedures", type: "Other", url: "#" },

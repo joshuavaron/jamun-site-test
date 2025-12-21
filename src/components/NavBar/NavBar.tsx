@@ -303,19 +303,26 @@ export default function NavBar({
           >
             Grants
           </a>
-          {rightButtons.map((btn, i) => (
-            <a
-              key={i}
-              className={styles.mobileButton}
-              href={btn.href}
-              onClick={() => {
-                btn.onClick?.();
-                setMobileMenuOpen(false);
-              }}
-            >
-              {btn.label}
-            </a>
-          ))}
+          {rightButtons.map((btn, i) => {
+            const buttonClass = btn.variant === "donate"
+              ? `${styles.mobileButton} ${styles.mobileButtonDonate}`
+              : btn.label === "Register"
+                ? `${styles.mobileButton} ${styles.mobileButtonRegister}`
+                : styles.mobileButton;
+            return (
+              <a
+                key={i}
+                className={buttonClass}
+                href={btn.href}
+                onClick={() => {
+                  btn.onClick?.();
+                  setMobileMenuOpen(false);
+                }}
+              >
+                {btn.label}
+              </a>
+            );
+          })}
         </div>
       </div>
     </>

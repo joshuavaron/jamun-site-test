@@ -76,7 +76,7 @@ const MUNForParents: React.FC = () => {
               "JAMUN helped my daughter find her voice. She used to be shy about speaking
               in class, but now she feels confident talking to groups of her peers."
             </blockquote>
-            <cite className={styles.cite}>— Parent of 2023 JAMUN Delegate</cite>
+            <cite className={styles.cite}>— Parent of 2024 JAMUN Delegate</cite>
           </div>
         </div>
 

@@ -804,12 +804,17 @@
 
   .ctaButtons {
     flex-direction: column;
+    width: 100%;
+    max-width: 280px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .ctaButtonPrimary,
   .ctaButtonSecondary {
     width: 100%;
     justify-content: center;
+    box-sizing: border-box;
   }
 }
 

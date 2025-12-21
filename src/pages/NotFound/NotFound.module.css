@@ -86,6 +86,10 @@
     font-size: 1rem;
   }
 
+  .content {
+    padding: 40px 16px;
+  }
+
   .links {
     flex-direction: column;
     width: 100%;
@@ -96,5 +100,6 @@
   .secondaryButton {
     width: 100%;
     text-align: center;
+    box-sizing: border-box;
   }
 }
