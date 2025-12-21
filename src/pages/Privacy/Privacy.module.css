@@ -1,0 +1,108 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+  padding: 80px 24px;
+  background: #f8fafc;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 16px;
+  padding: 48px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: var(--font-semibold);
+  color: #1a1a2e;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.02em;
+}
+
+.lastUpdated {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin: 0 0 40px 0;
+}
+
+.section {
+  margin-bottom: 32px;
+}
+
+.section h2 {
+  font-size: 1.5rem;
+  font-weight: var(--font-medium);
+  color: #1a1a2e;
+  margin: 0 0 16px 0;
+}
+
+.section h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin: 24px 0 12px 0;
+}
+
+.section p {
+  font-size: 1rem;
+  color: #475569;
+  line-height: 1.7;
+  margin: 0 0 16px 0;
+}
+
+.section ul {
+  margin: 0 0 16px 0;
+  padding-left: 24px;
+}
+
+.section li {
+  font-size: 1rem;
+  color: #475569;
+  line-height: 1.7;
+  margin-bottom: 8px;
+}
+
+.section a {
+  color: #497bce;
+  text-decoration: none;
+}
+
+.section a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .content {
+    padding: 60px 16px;
+  }
+
+  .container {
+    padding: 32px 24px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .section h2 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .container {
+    padding: 24px 20px;
+  }
+}

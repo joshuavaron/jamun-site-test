@@ -1,15 +1,47 @@
+/* ===== DESIGN TOKENS ===== */
+:root {
+  /* Font Families - Using Montserrat as primary for brand consistency */
+  --font-primary: "Montserrat", sans-serif;
+
+  /* Font Sizes - Consolidated to 8 sizes */
+  --text-xs: 0.75rem;     /* 12px - small labels, tags */
+  --text-sm: 0.875rem;    /* 14px - secondary text, captions */
+  --text-base: 1rem;      /* 16px - body text */
+  --text-lg: 1.125rem;    /* 18px - intro text, emphasis */
+  --text-xl: 1.5rem;      /* 24px - small headings */
+  --text-2xl: 2rem;       /* 32px - section headings */
+  --text-3xl: 2.5rem;     /* 40px - page headings */
+  --text-4xl: 3rem;       /* 48px - hero headings */
+
+  /* Font Weights - Mild boldness only, no 700-800 */
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+
+  /* Line Heights - Consolidated to 3 */
+  --leading-tight: 1.1;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.7;
+
+  /* Letter Spacing - Consolidated to 3 */
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.15em;
+}
+
 .montserrat {
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-primary);
   font-optical-sizing: auto;
-  font-weight: 400;
+  font-weight: var(--font-normal);
   font-style: normal;
 }
 
 body {
   margin: 0;
-  font-family: Montserrat, sans-serif;
+  font-family: var(--font-primary);
   background-color: #ffffff;
   color: #222222;
+  line-height: var(--leading-normal);
 }
 
 h1,

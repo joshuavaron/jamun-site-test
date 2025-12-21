@@ -32,7 +32,7 @@
 
 .sectionTitle {
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: var(--font-medium);
   color: #1a1a2e;
   margin: 0 0 12px 0;
 }

@@ -59,7 +59,7 @@
 
 .title {
   font-size: 2.5rem;
-  font-weight: 800;
+  font-weight: var(--font-semibold);
   color: #1a1a2e;
   margin: 0 0 16px 0;
   line-height: 1.2;
@@ -114,7 +114,7 @@
 .markerNumber {
   color: white;
   font-size: 0.875rem;
-  font-weight: 700;
+  font-weight: var(--font-medium);
 }
 
 .timelineContent {
@@ -126,7 +126,7 @@
 
 .timelineDate {
   font-size: 1.1rem;
-  font-weight: 700;
+  font-weight: var(--font-medium);
   color: #1a1a2e;
 }
 
@@ -181,7 +181,7 @@
 
 .nextEventDate {
   font-size: 2rem;
-  font-weight: 800;
+  font-weight: var(--font-semibold);
   line-height: 1.2;
 }
 

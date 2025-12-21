@@ -155,7 +155,7 @@
 
 .heroTitle {
   font-size: clamp(2.5rem, 6vw, 4rem);
-  font-weight: 800;
+  font-weight: var(--font-semibold);
   line-height: 1.1;
   color: var(--donate-text-primary);
   margin: 0 0 24px;
@@ -201,7 +201,7 @@
 
 .statNumber {
   font-size: 2rem;
-  font-weight: 800;
+  font-weight: var(--font-semibold);
   background: linear-gradient(135deg, var(--donate-primary) 0%, #f97316 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -269,7 +269,7 @@
 
 .widgetTitle {
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: var(--font-medium);
   color: var(--donate-text-primary);
   margin: 0 0 8px;
 }
@@ -303,7 +303,7 @@
 
 .sectionTitle {
   font-size: clamp(1.75rem, 4vw, 2.5rem);
-  font-weight: 800;
+  font-weight: var(--font-semibold);
   color: var(--donate-text-primary);
   text-align: center;
   margin: 0 0 48px;
@@ -361,7 +361,7 @@
 
 .impactCard h3 {
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: var(--font-medium);
   color: var(--donate-text-primary);
   margin: 0 0 12px;
 }

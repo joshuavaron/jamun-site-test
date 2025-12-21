@@ -14,6 +14,8 @@ import NotFound from "./pages/NotFound/NotFound";
 import ComingSoon from "./pages/ComingSoon/ComingSoon";
 import Donate from "./pages/Donate/Donate";
 import Grants from "./pages/Grants/Grants";
+import Privacy from "./pages/Privacy/Privacy";
+import Terms from "./pages/Terms/Terms";
 
 function App() {
   return (
@@ -35,6 +37,8 @@ function App() {
         <Route path="/grants" element={<Grants />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:postId" element={<BlogPost />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/terms" element={<Terms />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>

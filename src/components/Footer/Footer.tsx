@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Footer.module.css';
-import { FaTwitter, FaFacebookF, FaInstagram, FaLinkedin, FaYoutube } from 'react-icons/fa';
+import { FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 interface NavItem {
     label: string;
@@ -22,25 +22,18 @@ const PROGRAMS_LINKS: NavItem[] = [
 
 const ORGANIZATION_LINKS: NavItem[] = [
     { label: "About Us", href: "/about" },
-    { label: "Our Team", href: "/team" },
-    { label: "Contact", href: "/contact" },
-    { label: "Careers", href: "/careers" },
+    { label: "Contact", href: "mailto:contact@jamun.org" },
 ];
 
 const RESOURCES_LINKS: NavItem[] = [
     { label: "Blog", href: "/blog" },
-    { label: "FAQ", href: "/faq" },
-    { label: "Support", href: "/support" },
     { label: "Privacy Policy", href: "/privacy" },
     { label: "Terms of Service", href: "/terms" },
 ];
 
 const SOCIAL_LINKS: SocialItem[] = [
-    { icon: FaTwitter, href: "https://twitter.com/jamun", ariaLabel: "Follow JAMUN on Twitter" },
-    { icon: FaFacebookF, href: "https://facebook.com/jamun", ariaLabel: "Like JAMUN on Facebook" },
-    { icon: FaInstagram, href: "https://instagram.com/jamun", ariaLabel: "Follow JAMUN on Instagram" },
-    { icon: FaLinkedin, href: "https://linkedin.com/company/jamun", ariaLabel: "Connect with JAMUN on LinkedIn" },
-    { icon: FaYoutube, href: "https://youtube.com/@jamun", ariaLabel: "Subscribe to JAMUN on YouTube" },
+    { icon: FaInstagram, href: "https://www.instagram.com/jamun_usa/", ariaLabel: "Follow JAMUN on Instagram" },
+    { icon: FaLinkedin, href: "https://www.linkedin.com/company/jamun-org", ariaLabel: "Connect with JAMUN on LinkedIn" },
 ];
 
 const Footer: React.FC = () => {

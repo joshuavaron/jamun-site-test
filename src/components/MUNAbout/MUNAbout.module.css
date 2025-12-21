@@ -94,7 +94,7 @@
 
 .title {
   font-size: 2.5rem;
-  font-weight: 800;
+  font-weight: var(--font-semibold);
   color: #1a1a2e;
   margin: 0 0 20px 0;
   line-height: 1.2;
@@ -185,7 +185,7 @@
 
 .statNumber {
   font-size: 3rem;
-  font-weight: 800;
+  font-weight: var(--font-semibold);
   color: #497bce;
   line-height: 1;
 }

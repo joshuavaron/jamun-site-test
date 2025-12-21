@@ -25,19 +25,22 @@
   text-align: center;
   top: 50%;
   transform: translateY(-50%);
+  padding: 0 24px;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .content h1 {
-  font-size: 3rem;
-  font-weight: 600;
+  font-size: var(--text-4xl);
+  font-weight: var(--font-semibold);
   margin-bottom: 0.75rem;
   text-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
   min-height: 1.2em; /* Prevent layout shift during typing */
 }
 
 .content p {
-  font-size: 1.2rem;
-  font-weight: 500;
+  font-size: var(--text-lg);
+  font-weight: var(--font-medium);
   text-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
 }
 

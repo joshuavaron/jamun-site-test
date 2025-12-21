@@ -17,7 +17,7 @@
 
 .title {
   font-size: 2.5rem;
-  font-weight: 700;
+  font-weight: var(--font-medium);
   color: white;
   margin: 20px 0 16px;
   line-height: 1.2;
@@ -131,7 +131,7 @@
 /* Content formatting */
 .articleContent h1 {
   font-size: 2rem;
-  font-weight: 700;
+  font-weight: var(--font-medium);
   color: #1a1a2e;
   margin: 0 0 24px 0;
   padding-bottom: 12px;
@@ -140,7 +140,7 @@
 
 .articleContent h2 {
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: var(--font-medium);
   color: #1a1a2e;
   margin: 40px 0 16px 0;
 }
@@ -288,7 +288,7 @@
 
 .sidebarTitle {
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: var(--font-medium);
   color: #1a1a2e;
   margin: 0 0 16px 0;
 }

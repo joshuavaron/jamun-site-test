@@ -163,7 +163,7 @@
 
 .heroTitle {
   font-size: clamp(2.5rem, 6vw, 4rem);
-  font-weight: 700;
+  font-weight: var(--font-medium);
   line-height: 1.2;
   color: #1a1a2e;
   margin: 0 0 24px;
@@ -268,7 +268,7 @@
 
 .statNumber {
   font-size: 2.25rem;
-  font-weight: 800;
+  font-weight: var(--font-semibold);
   background: linear-gradient(135deg, var(--grants-primary) 0%, #10b981 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -301,7 +301,7 @@
 
 .sectionTitle {
   font-size: 2.5rem;
-  font-weight: 700;
+  font-weight: var(--font-medium);
   color: #1a1a2e;
   margin: 0 0 16px;
   line-height: 1.2;
@@ -423,7 +423,7 @@
   height: 44px;
   background: linear-gradient(135deg, var(--grants-primary), #10b981);
   color: white;
-  font-weight: 700;
+  font-weight: var(--font-medium);
   border-radius: 50%;
 }
 
@@ -536,7 +536,7 @@
 .grantAmount {
   padding: 8px 16px;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: var(--font-medium);
   color: #10b981;
   background: rgba(16, 185, 129, 0.1);
   border-radius: 9999px;
@@ -544,7 +544,7 @@
 
 .grantTitle {
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: var(--font-medium);
   color: var(--grants-text-primary);
   margin: 0 0 12px;
   position: relative;
@@ -663,7 +663,7 @@
   width: 56px;
   height: 56px;
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: var(--font-medium);
   color: white;
   background: linear-gradient(135deg, var(--grants-primary), #1e40af);
   border-radius: 50%;
@@ -1026,7 +1026,7 @@
 
 .ctaContent h2 {
   font-size: 2rem;
-  font-weight: 700;
+  font-weight: var(--font-medium);
   color: white;
   margin: 0 0 16px;
 }

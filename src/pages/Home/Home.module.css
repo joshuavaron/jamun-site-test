@@ -23,7 +23,7 @@
 
 .sectionTitle {
   font-size: 2.5rem;
-  font-weight: 800;
+  font-weight: var(--font-semibold);
   color: #1a1a2e;
   margin: 0 0 16px 0;
   line-height: 1.2;
@@ -86,7 +86,7 @@
 
 .impactTitle {
   font-size: 2.25rem;
-  font-weight: 800;
+  font-weight: var(--font-semibold);
   margin: 0 0 16px 0;
   letter-spacing: -0.02em;
 }
@@ -116,7 +116,7 @@
 .statNumber {
   display: block;
   font-size: 3rem;
-  font-weight: 800;
+  font-weight: var(--font-semibold);
   color: #667eea;
   margin-bottom: 8px;
 }
@@ -174,7 +174,7 @@
 
 .audienceCard h3 {
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: var(--font-medium);
   color: #1a1a2e;
   margin: 0 0 12px 0;
 }
@@ -223,7 +223,7 @@
 
 .faqItem h3 {
   font-size: 1.05rem;
-  font-weight: 700;
+  font-weight: var(--font-medium);
   color: #1a1a2e;
   margin: 0 0 12px 0;
   line-height: 1.4;

@@ -51,7 +51,7 @@
 
 .title {
   font-size: 2.5rem;
-  font-weight: 800;
+  font-weight: var(--font-semibold);
   color: #1a1a2e;
   margin: 0;
   line-height: 1.2;
@@ -95,7 +95,7 @@
 
 .subheading {
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: var(--font-medium);
   color: #1a1a2e;
   margin: 0 0 32px 0;
   text-align: center;
@@ -123,13 +123,13 @@
   align-items: center;
   justify-content: center;
   color: white;
-  font-weight: 700;
+  font-weight: var(--font-medium);
   font-size: 1.125rem;
 }
 
 .stepContent h4 {
   font-size: 1.125rem;
-  font-weight: 700;
+  font-weight: var(--font-medium);
   color: #1a1a2e;
   margin: 0 0 8px 0;
 }
@@ -170,7 +170,7 @@
 
 .beginnerText h4 {
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: var(--font-medium);
   margin: 0 0 8px 0;
 }
 

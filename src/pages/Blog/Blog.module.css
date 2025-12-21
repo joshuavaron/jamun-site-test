@@ -16,7 +16,7 @@
 
 .title {
   font-size: 3rem;
-  font-weight: 700;
+  font-weight: var(--font-medium);
   color: white;
   margin: 0 0 16px 0;
   letter-spacing: -0.02em;
@@ -144,7 +144,7 @@
 
 .featuredTitle {
   font-size: 2rem;
-  font-weight: 700;
+  font-weight: var(--font-medium);
   color: #1a1a2e;
   margin: 16px 0;
   line-height: 1.3;
@@ -193,7 +193,7 @@
 
 .cardTitle {
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: var(--font-medium);
   color: #1a1a2e;
   margin: 12px 0;
   line-height: 1.4;

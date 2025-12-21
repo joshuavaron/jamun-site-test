@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, Navigate, Link } from "react-router-dom";
 import CommonHead from "../../components/CommonHead/CommonHead";
+import { ArticleSchema, BreadcrumbSchema } from "../../components/SEO";
 import NavBar from "../../components/NavBar/NavBar";
 import Footer from "../../components/Footer/Footer";
 import { getBlogPostById, BLOG_POSTS, BlogPost as BlogPostType, formatDate } from "../../data/blog";
@@ -234,6 +235,22 @@ const BlogPostPage: React.FC = () => {
         title={post.title.length <= 40 ? `${post.title} - MUN Guide` : post.title}
         description={post.excerpt}
         ogImage={post.imageUrl}
+      />
+      <ArticleSchema
+        title={post.title}
+        description={post.excerpt}
+        url={`/blog/${post.id}`}
+        datePublished={post.publishDate}
+        author={post.author}
+        image={post.imageUrl}
+        category={post.category}
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Blog", url: "/blog" },
+          { name: post.title, url: `/blog/${post.id}` },
+        ]}
       />
       <NavBar
         title="jamun-blue-side-logo"

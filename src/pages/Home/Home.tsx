@@ -2,12 +2,14 @@ import { useState } from "react";
 import React from "react";
 import { Link } from "react-router-dom";
 import CommonHead from "../../components/CommonHead/CommonHead";
+import FAQSchema from "../../components/SEO/FAQSchema";
 import Banner from "../../components/Banner/Banner";
 import FeatureShowcase from "../../components/FeatureShowcase/FeatureShowcase";
 import NavBar from "../../components/NavBar/NavBar";
 import CompetitionButtons from "../../components/CompetitionButtons/CompetitionButtons";
 import QuoteBlock from "../../components/QuoteBlock/QuoteBlock";
 import CountUp from "../../components/CountUp/CountUp";
+import HomeFAQ from "../../components/HomeFAQ/HomeFAQ";
 import Footer from "../../components/Footer/Footer";
 import styles from "./Home.module.css";
 
@@ -19,6 +21,35 @@ const Home: React.FC = () => {
       <CommonHead
         title="Model UN & Academic Competitions for Grades 5-8"
         description="JAMUN offers Model UN, Mock Trial, and Mathletes programs for grades 5-8. Join 500+ students from 30+ schools. 100% volunteer-run nonprofit with grants available."
+        includeOrgSchema={true}
+      />
+      <FAQSchema
+        faqs={[
+          {
+            question: "What is Model UN for middle school students?",
+            answer: "Model United Nations (Model UN or MUN) is an educational simulation where students role-play as delegates representing countries in UN committees. Middle school students learn about international relations, diplomacy, public speaking, and global issues while developing research and debate skills in a supportive environment."
+          },
+          {
+            question: "How do I prepare for my first Mock Trial competition?",
+            answer: "JAMUN provides free preparation materials including case studies, witness preparation guides, and opening/closing statement templates. Our beginner-friendly resources help students understand courtroom procedures, develop argumentation skills, and practice cross-examination techniques before their first competition."
+          },
+          {
+            question: "What grades can participate in JAMUN programs?",
+            answer: "JAMUN programs are designed for students in grades 5-8 (approximately ages 10-14). Our conferences and competitions are specifically tailored for middle school students, with beginner-friendly formats that welcome first-time participants alongside more experienced competitors."
+          },
+          {
+            question: "Are there free resources for math competitions?",
+            answer: "Yes! JAMUN offers free Mathletes practice problems, competition strategies, and study guides. Our materials cover topics commonly seen in middle school math competitions like MATHCOUNTS, Math Olympiad, and other regional math leagues. All resources are available at no cost to students and teachers."
+          },
+          {
+            question: "How can my school start a Model UN or Mock Trial program?",
+            answer: "Teachers and schools can access our free curriculum guides, training materials, and ongoing support to start Model UN, Mock Trial, or Mathletes programs. JAMUN also offers grants to help schools cover competition fees and travel costs. Visit our Resources page or contact us to get started."
+          },
+          {
+            question: "Is JAMUN a nonprofit organization?",
+            answer: "Yes, JAMUN is a 100% volunteer-run nonprofit organization. We've raised over $70,000 to support student programs, with all donations going directly toward educational materials, competition grants, and expanding access to academic enrichment opportunities for middle school students."
+          }
+        ]}
       />
       <NavBar
         title="jamun-blue-side-logo"
@@ -223,78 +254,7 @@ const Home: React.FC = () => {
         title="Middle School Social Studies Teachers"
       />
 
-      {/* FAQ Section for SEO */}
-      <section className={styles.faqSection}>
-        <div className={styles.sectionHeader}>
-          <span className={styles.sectionTagline}>Questions & Answers</span>
-          <h2 className={styles.sectionTitle}>Frequently Asked Questions</h2>
-          <p className={styles.sectionSubtitle}>
-            Everything you need to know about getting started with Model UN, Mock Trial, and Mathletes.
-          </p>
-        </div>
-
-        <div className={styles.faqGrid}>
-          <div className={styles.faqItem}>
-            <h3>What is Model UN for middle school students?</h3>
-            <p>
-              Model United Nations (Model UN or MUN) is an educational simulation where students
-              role-play as delegates representing countries in UN committees. Middle school
-              students learn about international relations, diplomacy, public speaking, and
-              global issues while developing research and debate skills in a supportive environment.
-            </p>
-          </div>
-
-          <div className={styles.faqItem}>
-            <h3>How do I prepare for my first Mock Trial competition?</h3>
-            <p>
-              JAMUN provides free preparation materials including case studies, witness preparation
-              guides, and opening/closing statement templates. Our beginner-friendly resources
-              help students understand courtroom procedures, develop argumentation skills, and
-              practice cross-examination techniques before their first competition.
-            </p>
-          </div>
-
-          <div className={styles.faqItem}>
-            <h3>What grades can participate in JAMUN programs?</h3>
-            <p>
-              JAMUN programs are designed for students in grades 5-8 (approximately ages 10-14).
-              Our conferences and competitions are specifically tailored for middle school students,
-              with beginner-friendly formats that welcome first-time participants alongside more
-              experienced competitors.
-            </p>
-          </div>
-
-          <div className={styles.faqItem}>
-            <h3>Are there free resources for math competitions?</h3>
-            <p>
-              Yes! JAMUN offers free Mathletes practice problems, competition strategies, and
-              study guides. Our materials cover topics commonly seen in middle school math
-              competitions like MATHCOUNTS, Math Olympiad, and other regional math leagues.
-              All resources are available at no cost to students and teachers.
-            </p>
-          </div>
-
-          <div className={styles.faqItem}>
-            <h3>How can my school start a Model UN or Mock Trial program?</h3>
-            <p>
-              Teachers and schools can access our free curriculum guides, training materials,
-              and ongoing support to start Model UN, Mock Trial, or Mathletes programs.
-              JAMUN also offers grants to help schools cover competition fees and travel costs.
-              Visit our Resources page or contact us to get started.
-            </p>
-          </div>
-
-          <div className={styles.faqItem}>
-            <h3>Is JAMUN a nonprofit organization?</h3>
-            <p>
-              Yes, JAMUN is a 100% volunteer-run nonprofit organization. We've raised over
-              $70,000 to support student programs, with all donations going directly toward
-              educational materials, competition grants, and expanding access to academic
-              enrichment opportunities for middle school students.
-            </p>
-          </div>
-        </div>
-      </section>
+      <HomeFAQ />
 
       <Footer />
     </div>

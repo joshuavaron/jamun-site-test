@@ -123,7 +123,7 @@
 
 .title {
   font-size: 2.5rem;
-  font-weight: 800;
+  font-weight: var(--font-semibold);
   color: #1a1a2e;
   margin: 0 0 16px 0;
   line-height: 1.2;
@@ -154,7 +154,7 @@
 .reasonNumber {
   flex-shrink: 0;
   font-size: 0.875rem;
-  font-weight: 700;
+  font-weight: var(--font-medium);
   color: #497bce;
   padding-top: 2px;
 }
@@ -172,7 +172,7 @@
 
 .reasonTitle {
   font-size: 1.1rem;
-  font-weight: 700;
+  font-weight: var(--font-medium);
   color: #1a1a2e;
   margin: 0 0 6px 0;
 }
@@ -194,7 +194,7 @@
   background: linear-gradient(135deg, #497bce 0%, #3a62a8 100%);
   color: white;
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: var(--font-medium);
   border-radius: 12px;
   text-decoration: none;
   transition: transform 0.2s ease, box-shadow 0.2s ease;

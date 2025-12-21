@@ -9,7 +9,6 @@ interface LeaderboardEntry {
   school: string;
   score: number;
   previousRank: number;
-  isCurrentUserSchool?: boolean;
 }
 
 interface Leaderboard {
@@ -43,9 +42,8 @@ const LeaderboardRow: React.FC<LeaderboardEntry> = ({
   rank,
   school,
   score,
-  isCurrentUserSchool,
 }) => (
-  <tr className={isCurrentUserSchool ? styles.rowHighlighted : styles.row}>
+  <tr className={styles.row}>
     <td>
       <RankBadge rank={rank} />
     </td>

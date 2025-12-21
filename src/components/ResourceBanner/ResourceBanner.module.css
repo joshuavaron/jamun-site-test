@@ -31,31 +31,31 @@
 }
 
 .category {
-  font-size: 0.9rem;
-  font-weight: 700;
-  font-family: "Georgia", serif;
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  font-family: var(--font-primary);
   text-transform: uppercase;
-  letter-spacing: 0.15em;
+  letter-spacing: var(--tracking-wide);
   margin: 0 0 16px 0;
   opacity: 0.9;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
 .name {
-  font-size: 2.75rem;
-  font-weight: 600;
+  font-size: var(--text-3xl);
+  font-weight: var(--font-semibold);
   margin: 0 0 16px 0;
   text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-  line-height: 1.1;
+  line-height: var(--leading-tight);
 }
 
 .description {
-  font-size: 1.15rem;
-  font-weight: 400;
+  font-size: var(--text-lg);
+  font-weight: var(--font-normal);
   margin: 0;
   opacity: 0.9;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-  line-height: 1.5;
+  line-height: var(--leading-normal);
   max-width: 650px;
 }
 

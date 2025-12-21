@@ -147,7 +147,7 @@
 
 .heroTitle {
   font-size: clamp(2.5rem, 6vw, 4rem);
-  font-weight: 700;
+  font-weight: var(--font-medium);
   line-height: 1.2;
   color: #1a1a2e;
   margin: 0 0 24px;
@@ -191,7 +191,7 @@
 
 .sectionTitle {
   font-size: 2.5rem;
-  font-weight: 700;
+  font-weight: var(--font-medium);
   color: #1a1a2e;
   margin: 0 0 16px;
   line-height: 1.2;
@@ -248,7 +248,7 @@
 
 .statNumber {
   font-size: 3rem;
-  font-weight: 800;
+  font-weight: var(--font-semibold);
   background: linear-gradient(135deg, var(--about-primary) 0%, #10b981 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -328,7 +328,7 @@
 
 .benefitText h3 {
   font-size: 1.15rem;
-  font-weight: 700;
+  font-weight: var(--font-medium);
   color: var(--about-text-primary);
   margin: 0 0 8px;
 }
@@ -428,7 +428,7 @@
 
 .valueCard h3 {
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: var(--font-medium);
   color: var(--about-text-primary);
   margin: 0 0 12px;
 }
@@ -513,7 +513,7 @@
   background: linear-gradient(135deg, var(--about-primary), #10b981);
   color: white;
   font-size: 2.5rem;
-  font-weight: 700;
+  font-weight: var(--font-medium);
   border-radius: 50%;
   box-shadow: 0 8px 24px rgba(37, 99, 235, 0.25);
 }
@@ -533,7 +533,7 @@
   position: relative;
   z-index: 1;
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: var(--font-medium);
   color: var(--about-text-primary);
   margin: 0 0 4px;
 }
@@ -631,7 +631,7 @@
 
 .programCard h3 {
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: var(--font-medium);
   color: var(--about-text-primary);
   margin: 0 0 12px;
 }
@@ -685,7 +685,7 @@
 
 .ctaContent h2 {
   font-size: 2.5rem;
-  font-weight: 700;
+  font-weight: var(--font-medium);
   color: white;
   margin: 0 0 16px;
 }

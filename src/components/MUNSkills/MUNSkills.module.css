@@ -69,13 +69,13 @@
 }
 
 .statNumber {
-  font-size: 3rem;
-  font-weight: 800;
+  font-size: var(--text-4xl);
+  font-weight: var(--font-semibold);
   line-height: 1;
 }
 
 .statLabel {
-  font-size: 1rem;
+  font-size: var(--text-base);
   opacity: 0.9;
   max-width: 200px;
 }
@@ -90,27 +90,27 @@
 
 .tagline {
   display: inline-block;
-  font-size: 0.8rem;
-  font-weight: 600;
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
   text-transform: uppercase;
-  letter-spacing: 0.2em;
+  letter-spacing: var(--tracking-wide);
   color: #497bce;
   margin-bottom: 12px;
 }
 
 .title {
-  font-size: 2.5rem;
-  font-weight: 800;
+  font-size: var(--text-3xl);
+  font-weight: var(--font-semibold);
   color: #1a1a2e;
   margin: 0 0 16px 0;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
 }
 
 .intro {
-  font-size: 1.125rem;
+  font-size: var(--text-lg);
   color: #64748b;
-  line-height: 1.7;
+  line-height: var(--leading-relaxed);
   margin: 0 0 40px 0;
 }
 
@@ -132,8 +132,8 @@
 
 .skillNumber {
   flex-shrink: 0;
-  font-size: 0.875rem;
-  font-weight: 700;
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
   color: #497bce;
   padding-top: 2px;
 }
@@ -150,16 +150,16 @@
 }
 
 .skillTitle {
-  font-size: 1.1rem;
-  font-weight: 700;
+  font-size: var(--text-lg);
+  font-weight: var(--font-medium);
   color: #1a1a2e;
   margin: 0 0 6px 0;
 }
 
 .skillDescription {
-  font-size: 0.95rem;
+  font-size: var(--text-base);
   color: #64748b;
-  line-height: 1.6;
+  line-height: var(--leading-normal);
   margin: 0;
 }
 
@@ -170,7 +170,7 @@
   }
 
   .title {
-    font-size: 2rem;
+    font-size: var(--text-2xl);
   }
 }
 
@@ -189,7 +189,7 @@
   }
 
   .title {
-    font-size: 1.75rem;
+    font-size: var(--text-xl);
   }
 
   .intro {
