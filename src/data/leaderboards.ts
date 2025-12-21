@@ -44,39 +44,36 @@ function withRanks(entries: RawLeaderboardEntry[]): LeaderboardEntry[] {
 
 // Individual competition data (without ranks - they're computed)
 const modelUNRaw: RawLeaderboardEntry[] = [
-  { school: "Parkway Middle School", score: 15400, previousRank: 5 },
-  { school: "Atlas Jr. High School", score: 12100, previousRank: 4 },
-  { school: "Cropley Middle School", score: 11950, previousRank: 1 },
-  { school: "Rhodes Middle School", score: 10500, previousRank: 9 },
-  { school: "Cary East Middle School", score: 9800, previousRank: 4 },
-  { school: "Eastwood School", score: 9500, previousRank: 6 },
-  { school: "Riverdale High", score: 8800, previousRank: 4 },
-  { school: "Lakeside School", score: 8500, previousRank: 9 },
-  { school: "New Horizons", score: 18000, previousRank: 9 },
+  { school: "Edward E. Sadlowski Elementary School", score: 0, previousRank: 1 },
+  { school: "Jose de Diego Community Academy", score: 0, previousRank: 1 },
+  { school: "The Frances Xavier Warde School", score: 0, previousRank: 1 },
+  { school: "Caruso Middle School", score: 0, previousRank: 1 },
+  { school: "Holden Elementary", score: 0, previousRank: 1 },
+  { school: "Moving Everest Charter School", score: 0, previousRank: 1 },
+  { school: "Catalyst Circle Rock Charter School", score: 0, previousRank: 1 },
+  { school: "Northwood Middle School", score: 0, previousRank: 1 },
 ];
 
 const mockTrialRaw: RawLeaderboardEntry[] = [
-  { school: "Westlake Academy", score: 5500, previousRank: 2 },
-  { school: "Oakwood High", score: 5100, previousRank: 1 },
-  { school: "Pine Valley School", score: 4900, previousRank: 3 },
-  { school: "North Star Prep", score: 4100, previousRank: 6 },
-  { school: "City College High", score: 3800, previousRank: 5 },
-  { school: "Riverside Academy", score: 3600, previousRank: 8 },
-  { school: "Summit Heights", score: 3400, previousRank: 4 },
-  { school: "Harbor View School", score: 3200, previousRank: 7 },
-  { school: "Mountain Ridge", score: 2900, previousRank: 9 },
+  { school: "Edward E. Sadlowski Elementary School", score: 0, previousRank: 1 },
+  { school: "Jose de Diego Community Academy", score: 0, previousRank: 1 },
+  { school: "The Frances Xavier Warde School", score: 0, previousRank: 1 },
+  { school: "Caruso Middle School", score: 0, previousRank: 1 },
+  { school: "Holden Elementary", score: 0, previousRank: 1 },
+  { school: "Moving Everest Charter School", score: 0, previousRank: 1 },
+  { school: "Catalyst Circle Rock Charter School", score: 0, previousRank: 1 },
+  { school: "Northwood Middle School", score: 0, previousRank: 1 },
 ];
 
 const mathletesRaw: RawLeaderboardEntry[] = [
-  { school: "North Star Prep", score: 4000, previousRank: 1 },
-  { school: "Eastwood School", score: 3850, previousRank: 3 },
-  { school: "Oakwood High", score: 3700, previousRank: 2 },
-  { school: "Summit Heights", score: 3500, previousRank: 7 },
-  { school: "Lakeside High", score: 3100, previousRank: 5 },
-  { school: "Cropley Middle School", score: 2950, previousRank: 4 },
-  { school: "Atlas Jr. High School", score: 2800, previousRank: 6 },
-  { school: "Parkway Middle School", score: 2600, previousRank: 10 },
-  { school: "Rhodes Middle School", score: 2400, previousRank: 8 },
+  { school: "Edward E. Sadlowski Elementary School", score: 0, previousRank: 1 },
+  { school: "Jose de Diego Community Academy", score: 0, previousRank: 1 },
+  { school: "The Frances Xavier Warde School", score: 0, previousRank: 1 },
+  { school: "Caruso Middle School", score: 0, previousRank: 1 },
+  { school: "Holden Elementary", score: 0, previousRank: 1 },
+  { school: "Moving Everest Charter School", score: 0, previousRank: 1 },
+  { school: "Catalyst Circle Rock Charter School", score: 0, previousRank: 1 },
+  { school: "Northwood Middle School", score: 0, previousRank: 1 },
 ];
 
 // Generate overall leaderboard by combining all scores
