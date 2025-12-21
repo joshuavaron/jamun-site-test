@@ -4,6 +4,11 @@ import CommonHead from "../../components/CommonHead/CommonHead";
 import NavBar from "../../components/NavBar/NavBar";
 import Footer from "../../components/Footer/Footer";
 import Banner from "../../components/Banner/Banner";
+import {
+  STUDENTS_IMPACTED_TEXT,
+  SCHOOLS_REACHED_TEXT,
+  VOLUNTEERS_COUNT_TEXT,
+} from "../../data/stats";
 import styles from "./About.module.css";
 
 const teamMembers = [
@@ -81,7 +86,7 @@ const About: React.FC = () => {
             <p>
               Founded by students who experienced firsthand the transformative power of
               Model UN, Mock Trial, and Mathletes, JAMUN was created to break down barriers
-              and expand access to these life-changing academic competitions for students in grades 6-12.
+              and expand access to these life-changing academic competitions for students in grades 5-8.
             </p>
             <p>
               Research shows that students who participate in academic competitions perform better
@@ -99,15 +104,15 @@ const About: React.FC = () => {
           <div className={styles.statsCard}>
             <div className={styles.statsGrid}>
               <div className={styles.statItem}>
-                <div className={styles.statNumber}>500+</div>
+                <div className={styles.statNumber}>{STUDENTS_IMPACTED_TEXT}</div>
                 <div className={styles.statLabel}>Middle & High School Students</div>
               </div>
               <div className={styles.statItem}>
-                <div className={styles.statNumber}>15+</div>
+                <div className={styles.statNumber}>{SCHOOLS_REACHED_TEXT}</div>
                 <div className={styles.statLabel}>Partner Schools</div>
               </div>
               <div className={styles.statItem}>
-                <div className={styles.statNumber}>25+</div>
+                <div className={styles.statNumber}>{VOLUNTEERS_COUNT_TEXT}</div>
                 <div className={styles.statLabel}>Dedicated Volunteers</div>
               </div>
               <div className={styles.statItem}>
@@ -314,7 +319,7 @@ const About: React.FC = () => {
       {/* Programs Section */}
       <section className={styles.programsSection}>
         <div className={styles.programsContent}>
-          <h2 className={styles.sectionTitle}>Academic Competition Programs for Grades 6-12</h2>
+          <h2 className={styles.sectionTitle}>Academic Competition Programs for Grades 5-8</h2>
           <p className={styles.sectionSubtitle}>
             We offer three engaging extracurricular programs designed for middle school and high school
             students. Each program develops unique skills while preparing students for college and beyond.

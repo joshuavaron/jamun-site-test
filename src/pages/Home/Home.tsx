@@ -11,6 +11,15 @@ import QuoteBlock from "../../components/QuoteBlock/QuoteBlock";
 import CountUp from "../../components/CountUp/CountUp";
 import HomeFAQ from "../../components/HomeFAQ/HomeFAQ";
 import Footer from "../../components/Footer/Footer";
+import {
+  STUDENTS_IMPACTED,
+  SCHOOLS_REACHED,
+  VOLUNTEERS_COUNT,
+  FUNDS_RAISED_K,
+  STUDENTS_IMPACTED_TEXT,
+  SCHOOLS_REACHED_TEXT,
+  FUNDS_RAISED_TEXT,
+} from "../../data/stats";
 import styles from "./Home.module.css";
 
 const Home: React.FC = () => {
@@ -20,7 +29,7 @@ const Home: React.FC = () => {
     <div>
       <CommonHead
         title="Model UN & Academic Competitions for Grades 5-8"
-        description="JAMUN offers Model UN, Mock Trial, and Mathletes programs for grades 5-8. Join 500+ students from 30+ schools. 100% volunteer-run nonprofit with grants available."
+        description={`JAMUN offers Model UN, Mock Trial, and Mathletes programs for grades 5-8. Join ${STUDENTS_IMPACTED_TEXT} students from ${SCHOOLS_REACHED_TEXT} schools. 100% volunteer-run nonprofit with grants available.`}
         includeOrgSchema={true}
       />
       <FAQSchema
@@ -47,7 +56,7 @@ const Home: React.FC = () => {
           },
           {
             question: "Is JAMUN a nonprofit organization?",
-            answer: "Yes, JAMUN is a 100% volunteer-run nonprofit organization. We've raised over $70,000 to support student programs, with all donations going directly toward educational materials, competition grants, and expanding access to academic enrichment opportunities for middle school students."
+            answer: `Yes, JAMUN is a 100% volunteer-run nonprofit organization. We've raised over ${FUNDS_RAISED_TEXT} to support student programs, with all donations going directly toward educational materials, competition grants, and expanding access to academic enrichment opportunities for middle school students.`
           }
         ]}
       />
@@ -82,19 +91,19 @@ const Home: React.FC = () => {
           </p>
           <div className={styles.statsGrid}>
             <div className={styles.statCard}>
-              <CountUp end={500} suffix="+" baseDuration={1200} className={styles.statNumber} />
+              <CountUp end={STUDENTS_IMPACTED} suffix="+" baseDuration={1200} className={styles.statNumber} />
               <span className={styles.statLabel}>Students Impacted</span>
             </div>
             <div className={styles.statCard}>
-              <CountUp end={30} suffix="+" baseDuration={1200} className={styles.statNumber} />
+              <CountUp end={SCHOOLS_REACHED} suffix="+" baseDuration={1200} className={styles.statNumber} />
               <span className={styles.statLabel}>Schools Reached</span>
             </div>
             <div className={styles.statCard}>
-              <CountUp end={80} suffix="+" baseDuration={1200} className={styles.statNumber} />
+              <CountUp end={VOLUNTEERS_COUNT} suffix="+" baseDuration={1200} className={styles.statNumber} />
               <span className={styles.statLabel}>Volunteers</span>
             </div>
             <div className={styles.statCard}>
-              <CountUp end={70} prefix="$" suffix="K+" baseDuration={1200} className={styles.statNumber} />
+              <CountUp end={FUNDS_RAISED_K} prefix="$" suffix="K+" baseDuration={1200} className={styles.statNumber} />
               <span className={styles.statLabel}>Raised for Programs</span>
             </div>
           </div>

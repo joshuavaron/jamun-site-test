@@ -4,7 +4,7 @@ import styles from "./MUNForParents.module.css";
 const BENEFITS = [
   {
     title: "Safe, Supervised Environment",
-    description: "All conferences supervised by trained adults with strict safety protocols.",
+    description: "All conferences supervised by trained volunteers with strict safety protocols.",
   },
   {
     title: "Affordable & Accessible",
@@ -73,8 +73,8 @@ const MUNForParents: React.FC = () => {
 
           <div className={styles.testimonial}>
             <blockquote className={styles.quote}>
-              "JAMUN helped my daughter find her voice. She went from being shy about speaking
-              in class to confidently presenting in front of hundreds of delegates."
+              "JAMUN helped my daughter find her voice. She used to be shy about speaking
+              in class, but now she feels confident talking to groups of her peers."
             </blockquote>
             <cite className={styles.cite}>— Parent of 2023 JAMUN Delegate</cite>
           </div>

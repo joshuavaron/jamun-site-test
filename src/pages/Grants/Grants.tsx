@@ -7,13 +7,13 @@ import styles from "./Grants.module.css";
 
 const testimonials = [
   {
-    quote: "The JAMUN grant made it possible for me to attend my first Model UN conference. It changed my perspective on global issues and sparked my passion for diplomacy.",
-    author: "Sarah M.",
-    role: "Grant Recipient, 2024",
+    quote: "The JAMUN grant made it possible for my son to participate [in Model UN]. It changed his perspective on global issues and sparked a passion for social studies.",
+    author: "Anonymous",
+    role: "Grant Recipient, 2025",
   },
   {
-    quote: "Our school couldn't afford to start a Mock Trial program until we received the School Program Grant. Now we have 30 students participating!",
-    author: "Mr. Johnson",
+    quote: "Our school couldn't afford to start a new extracurricular. Now we have 30 students participating in Model UN conferences twice a year!",
+    author: "Anonymous",
     role: "Faculty Advisor",
   },
 ];

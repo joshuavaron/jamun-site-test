@@ -68,7 +68,7 @@ const MUNSkills: React.FC = () => {
           <div className={styles.imageOverlay}>
             <div className={styles.stat}>
               <span className={styles.statNumber}>85%</span>
-              <span className={styles.statLabel}>of MUN alumni say it shaped their career</span>
+              <span className={styles.statLabel}>of JAMUN alumni say it shaped their future</span>
             </div>
           </div>
         </div>

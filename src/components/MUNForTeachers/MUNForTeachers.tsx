@@ -25,9 +25,9 @@ const REASONS = [
 ];
 
 const RESOURCES = [
-  { title: "Curriculum Guide", description: "Ready-to-use lesson plans and curriculum resources" },
-  { title: "Club Starter Kit", description: "Step-by-step guide to starting a MUN club" },
-  { title: "Training Materials", description: "Prepare students for their first conference" },
+  { title: "General Assembly Guide", description: "Comprehensive guide to competing in a committee" },
+  { title: "Position Paper Outline", description: "Easy outline for delegate position papers" },
+  { title: "Sample Draft Resolution", description: "Prepare students for their first conference" },
 ];
 
 const MUNForTeachers: React.FC = () => {

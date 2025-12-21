@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { FUNDS_RAISED_TEXT } from "../../data/stats";
 import styles from "./HomeFAQ.module.css";
 
 interface FAQ {
@@ -34,8 +35,7 @@ const FAQS: FAQ[] = [
   },
   {
     question: "Is JAMUN a nonprofit organization?",
-    answer:
-      "Yes, JAMUN is a 100% volunteer-run nonprofit organization. We've raised over $70,000 to support student programs, with all donations going directly toward educational materials, competition grants, and expanding access to academic enrichment opportunities for middle school students.",
+    answer: `Yes, JAMUN is a 100% volunteer-run nonprofit organization. We've raised over ${FUNDS_RAISED_TEXT} to support student programs, with all donations going directly toward educational materials, competition grants, and expanding access to academic enrichment opportunities for middle school students.`,
   },
 ];
 

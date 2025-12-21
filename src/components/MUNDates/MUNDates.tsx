@@ -12,10 +12,10 @@ export interface MUNDatesProps {
 }
 
 const DEFAULT_DATES: ImportantDate[] = [
-  { date: "January 15", event: "Registration Opens", description: "Schools can begin registering delegations" },
-  { date: "February 28", event: "Early Bird Deadline", description: "Discounted registration rate ends" },
-  { date: "March 15", event: "Position Papers Due", description: "Submit papers for feedback" },
-  { date: "April 5-7", event: "Conference Dates", description: "The main JAMUN conference" },
+  { date: "November 15", event: "Registration Opens", description: "Schools can begin registering delegations" },
+  { date: "February 28", event: "Registration Closes", description: "Schools will recieve committee assignments" },
+  { date: "April 10", event: "Position Papers Due", description: "Submit papers for feedback" },
+  { date: "April 11-12", event: "Conference Dates", description: "The main JAMUN conference" },
 ];
 
 export default function MUNDates({ dates = DEFAULT_DATES }: MUNDatesProps) {
@@ -84,8 +84,8 @@ export default function MUNDates({ dates = DEFAULT_DATES }: MUNDatesProps) {
           <div className={styles.imageOverlay}>
             <div className={styles.nextEvent}>
               <span className={styles.nextEventLabel}>Next Conference</span>
-              <span className={styles.nextEventDate}>April 5-7, 2025</span>
-              <span className={styles.nextEventLocation}>Jacksonville, FL</span>
+              <span className={styles.nextEventDate}>April 11-12, 2025</span>
+              <span className={styles.nextEventLocation}>Chicago, IL; Raleigh, NC</span>
             </div>
           </div>
         </div>

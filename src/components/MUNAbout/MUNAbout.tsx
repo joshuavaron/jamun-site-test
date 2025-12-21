@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { STUDENTS_IMPACTED, SCHOOLS_REACHED } from "../../data/stats";
 import styles from "./MUNAbout.module.css";
 
 interface Stat {
@@ -15,10 +16,10 @@ interface MUNAboutProps {
 }
 
 const DEFAULT_STATS: Stat[] = [
-  { value: 500, suffix: "+", label: "Delegates" },
+  { value: STUDENTS_IMPACTED, suffix: "+", label: "Delegates" },
   { value: 16, suffix: "", label: "Committees" },
   { value: 2, suffix: "", label: "Days" },
-  { value: 30, suffix: "+", label: "Schools" },
+  { value: SCHOOLS_REACHED, suffix: "+", label: "Schools" },
 ];
 
 const GlobeIcon: React.FC = () => (
