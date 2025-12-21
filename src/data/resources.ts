@@ -252,7 +252,7 @@ export const RESOURCES: ResourceData[] = [
 <p>Model UN can feel overwhelming at first, but we promise it gets easier—and more fun—with practice. Don't be afraid to make mistakes; that's how we all learn. Your chairs and the JAMUN staff are here to support you every step of the way.</p>
 <p><strong>We can't wait to see you in committee. Good luck, and happy debating!</strong></p>
 `,
-    relatedResources: ["rules-of-procedure", "country-research-guide"],
+    relatedResources: ["rules-of-procedure", "country-research-guide", "ga-guide", "crisis-guide"],
   },
   {
     id: "rules-of-procedure",
@@ -741,6 +741,473 @@ export const RESOURCES: ResourceData[] = [
 <p><strong>Remember:</strong> The best speakers aren't born—they're made through practice and experience. Every speech is an opportunity to improve!</p>
 `,
     relatedResources: ["delegate-handbook"],
+  },
+  {
+    id: "crisis-guide",
+    name: "A Short Guide to the Crisis",
+    shortDescription: "Learn how crisis committees work, from backroom notes to directives.",
+    longDescription: "A comprehensive introduction to crisis committee mechanics, including crisis breaks, backroom arcs, directives, and strategies for success.",
+    category: "Training",
+    icon: "document",
+    content: `
+<h1>A Short Guide to the Crisis</h1>
+
+<h2>What is a crisis break?</h2>
+<p>Crisis breaks are short scenes acted out by JAMUN crisis staff every 15-30 minutes. These breaks evolve the committee's crisis storyline and require immediate responses from delegates.</p>
+
+<h2>What is the backroom?</h2>
+<p>"The backroom" is an imaginary space where your character's private actions take place. You interact with it via <strong>crisis notes</strong>.</p>
+
+<h2>What are crisis notes?</h2>
+<p>These are short letters your character writes to fictional or real figures outside the committee. Staff respond in character. Be creative and strategic.</p>
+<p><em>Example:</em> In a Civil War crisis, Ulysses S. Grant might write Abraham Lincoln requesting troops.</p>
+
+<h2>What is a frontroom break?</h2>
+<p>When your crisis note affects the committee's plot directly and is incorporated into a live scene, you've "broken" into the frontroom.</p>
+
+<h2>What is a directive?</h2>
+<p>Directives are short committee-wide documents outlining how the group responds to events. Passed by simple majority, they guide crisis progression and are often fast-paced.</p>
+
+<h2>A Short Timeline of Backroom Arcs</h2>
+
+<h3>Phase 1: Establish Your Relationship</h3>
+<p>Decide who your character is writing to and why. Establish motivations and background early.</p>
+<ul>
+<li><em>Example:</em> "It feels like just yesterday that we created ciphers behind Mr. Varon's back..."</li>
+</ul>
+<p>Fictional characters are allowed! Just build a solid backstory and relationship.</p>
+
+<h3>Build Up Your Resources</h3>
+<p>Start collecting assets and allies. These form the foundation for impactful later moves. Adapt based on the backroom's responses.</p>
+
+<h3>Phase 2: Disruption</h3>
+<p>Use small actions (e.g. a skirmish, a leaked rumor) to test your arc's strength and gather momentum.</p>
+
+<h4>A Note Against War</h4>
+<p>Not every arc must be violent. Politics, negotiation, and diplomacy can be just as effective. Violent arcs carry both risks and rewards.</p>
+
+<h3>Phase 3: Final Steps</h3>
+<p>Use all your resources to accomplish your main goal. Keep things realistic and proportional to what you've built throughout the committee.</p>
+
+<h2>A Short Timeline of the Frontroom</h2>
+<p>The frontroom doesn't follow clear phases. Instead, it repeats a <strong>cyclical pattern</strong>:</p>
+<ul>
+<li><strong>Crisis Break:</strong> Live action update from crisis staff.</li>
+<li><strong>Questions:</strong> Clarify the scene.</li>
+<li><strong>Timed Crisis (Optional):</strong> Solve a problem fast—fail, and face consequences.</li>
+<li><strong>Directive Writing:</strong> Work in caucuses to create and promote directives.</li>
+<li><strong>Bloc Formation:</strong> Allies may change with each crisis cycle.</li>
+<li><strong>Voting:</strong> Directives are debated and voted on. Passed directives are sent to the backroom.</li>
+</ul>
+
+<h3>A Couple Notes on the Crisis Frontroom</h3>
+<ul>
+<li>Write crisis notes during moderated caucuses.</li>
+<li>Frontroom resembles GA procedure, just faster and more intense.</li>
+<li>Collaboration makes big moves more likely to succeed.</li>
+</ul>
+`,
+    relatedResources: ["delegate-handbook", "crisis-position-paper-outline", "directive-outline"],
+  },
+  {
+    id: "crisis-position-paper-outline",
+    name: "Crisis Committee Position Paper Outline",
+    shortDescription: "A structured template for writing crisis committee position papers.",
+    longDescription: "A step-by-step outline to help delegates craft effective position papers for crisis committees, covering character introduction, frontroom goals, backroom strategies, and conclusions.",
+    category: "Conference Materials",
+    icon: "template",
+    content: `
+<h1>Crisis Committee Position Paper Outline</h1>
+
+<h2>Introduction</h2>
+<ul>
+<li>Who are you (name, occupation, setting)?</li>
+<li>What about you is important (family, wealth, title, etc.)?</li>
+</ul>
+
+<h2>Paragraph #1: Committee (Frontroom)</h2>
+<ul>
+<li><strong>Topic Sentence:</strong> What will your character's interests be during committee? How will you act in front of your peers? What are your public goals?</li>
+<li><strong>Context:</strong> What can you do about it? How do your portfolio powers empower you to achieve your goals?</li>
+<li><strong>Evidence:</strong> What are the specific details from your life that grant you the power to do what you would like to do?</li>
+<li><strong>Analysis:</strong> How will achieving your goals affect your character? Why do you want to achieve these goals? How will you use your portfolio powers to accomplish them?</li>
+<li><strong>Concluding Sentence:</strong> How do your goals contribute to the whole committee?</li>
+</ul>
+
+<h2>Paragraph #2: Personal (Backroom)</h2>
+<ul>
+<li><strong>Topic Sentence:</strong> What will your character attempt to do in the backroom? How will your character use crisis notes to achieve their private interests?</li>
+<li><strong>Context:</strong> How will your private goals impact your powers?</li>
+<li><strong>Evidence:</strong> What are the specific details from your life that grant you the power to do what you would like to do?</li>
+<li><strong>Analysis:</strong> How will achieving your goals affect your character? Why do you want to achieve these goals? How will you use your portfolio powers to accomplish them?</li>
+<li><strong>Concluding Sentence:</strong> How will your goals affect your character as a whole?</li>
+</ul>
+
+<h2>Conclusion</h2>
+<ul>
+<li>What are the two or three most important things you will try to do during the committee?</li>
+<li>How do your skills and qualities enable you to act on these goals?</li>
+</ul>
+`,
+    relatedResources: ["crisis-guide", "delegate-handbook"],
+  },
+  {
+    id: "directive-outline",
+    name: "Directive Outline",
+    shortDescription: "A template for writing crisis committee directives.",
+    longDescription: "A simple outline to help delegates structure directives in crisis committees, including title, sponsors, signatories, and operative clauses.",
+    category: "Conference Materials",
+    icon: "template",
+    content: `
+<h1>Directive Outline</h1>
+
+<h2>Header Information</h2>
+<ul>
+<li><strong>Title:</strong> Be creative! <em>Example: Developing Unforgettable Simulations for Thoughtful International Negotiations (DUSTIN)</em></li>
+<li><strong>Committee Name:</strong> <em>Example: JAMUN Secretariat</em></li>
+<li><strong>Sponsors:</strong> Main authors. <em>Example: Dustin, Joshua, Emma</em></li>
+<li><strong>Signatories:</strong> Delegates that want the directive to be brought to the floor to debate. <em>Example: Sahana, Sam, Miranda, Abby</em></li>
+</ul>
+
+<h2>Operative Clauses</h2>
+<ul>
+<li><strong>Beginning:</strong> A verb in the simple present (Direct, Move, Create, etc.)</li>
+<li><strong>Content:</strong> The sponsors' proposed solutions such as:
+  <ul>
+  <li>Obtaining funding</li>
+  <li>Building an army</li>
+  <li>Creating new institutions</li>
+  <li>Etc.</li>
+  </ul>
+</li>
+<li><strong>Ending:</strong> End each clause with a period. <em>Example: Create a national university to educate Canadian citizens in Law and Economics.</em></li>
+</ul>
+`,
+    relatedResources: ["crisis-guide", "rules-of-procedure"],
+  },
+  {
+    id: "draft-resolution-outline",
+    name: "Draft Resolution Outline",
+    shortDescription: "A template for writing General Assembly draft resolutions.",
+    longDescription: "A structured outline to help delegates write formal draft resolutions, including header information, preambulatory clauses, and operative clauses.",
+    category: "Conference Materials",
+    icon: "template",
+    content: `
+<h1>Draft Resolution Outline</h1>
+
+<h2>Header Information</h2>
+<ul>
+<li><strong>Title:</strong> Be creative! <em>Example: TGIF (Tackling Global Illicit Finance)</em></li>
+<li><strong>Committee Name:</strong> <em>Example: United Nations Security Council</em></li>
+<li><strong>Sponsors:</strong> Main authors. <em>Example: China, Russia, France, Algeria, etc.</em></li>
+<li><strong>Signatories:</strong> Nations that want the paper to be brought to the floor to debate. <em>Example: Sierra Leone, Switzerland, Malta</em></li>
+<li><strong>Topic:</strong> <em>Example: The Russo-Ukrainian War</em></li>
+</ul>
+
+<h2>Preambulatory Clauses</h2>
+<ul>
+<li><strong>Beginning:</strong> A verb in the present participle (Recognizing, Noting, etc.)</li>
+<li><strong>Content:</strong> Background information, the problem, and past efforts to address it</li>
+<li><strong>Ending:</strong> End with a comma. <em>Example: Recognizing the efforts of countries, humanitarian organizations, and the United Nations in providing aid, shelter, and medical care to those affected by the war,</em></li>
+</ul>
+
+<h2>Operative Clauses</h2>
+<ul>
+<li><strong>Beginning:</strong> A verb in the third person present (Calls, Seeks, Urges, etc.)</li>
+<li><strong>Content:</strong> The sponsors' proposed solutions: funding, subcommittees, other strategies</li>
+<li><strong>Note:</strong> UN committees (except UNSC) can't force action, so use verbs like Requests, Encourages, etc.</li>
+<li><strong>Ending:</strong> End each clause with a semicolon. <em>Example: Enacts an immediate ceasefire between Russia and Ukraine;</em></li>
+</ul>
+`,
+    relatedResources: ["delegate-handbook", "rules-of-procedure"],
+  },
+  {
+    id: "ga-position-paper-outline",
+    name: "General Assembly Position Paper Outline",
+    shortDescription: "A structured template for writing GA position papers.",
+    longDescription: "A step-by-step outline to help delegates craft effective position papers for General Assembly committees, covering topic importance, past UN actions, intended solutions, and conclusions.",
+    category: "Conference Materials",
+    icon: "template",
+    content: `
+<h1>General Assembly Position Paper Outline</h1>
+
+<h2>Introduction</h2>
+<ul>
+<li>Why is this topic important?</li>
+<li>How does it affect your nation?</li>
+<li>What is your nation's official stance?</li>
+</ul>
+
+<h2>Paragraph #1: Past UN Actions, Context</h2>
+<ul>
+<li><strong>Topic Sentence:</strong> How have past actions by the UN or other organizations affected your topic?</li>
+<li><strong>Context:</strong> Why is your evidence important?</li>
+<li><strong>Evidence:</strong> Past UN Actions, legislation, etc.</li>
+<li><strong>Analysis:</strong> Why does your evidence support your topic sentence?</li>
+<li><strong>Concluding Sentence:</strong> Connect your evidence to your larger argument.</li>
+</ul>
+
+<h2>Paragraph #2: Intended Actions</h2>
+<ul>
+<li><strong>Topic Sentence:</strong> How will your country solve the problem?</li>
+<li><strong>Context:</strong> Why will your solution be effective?</li>
+<li><strong>Evidence:</strong> Statistic, historical evidence, etc.</li>
+<li><strong>Analysis:</strong> How does your solution work?</li>
+<li><strong>Concluding Sentence:</strong> Connect your evidence to your argument.</li>
+</ul>
+
+<h2>Conclusion</h2>
+<ul>
+<li>Restate your stance</li>
+<li>Methods (One or two key parts of your solution)</li>
+</ul>
+`,
+    relatedResources: ["delegate-handbook", "country-research-guide"],
+  },
+  {
+    id: "ga-guide",
+    name: "A Short Guide to the General Assembly",
+    shortDescription: "Learn how General Assembly committees work, from topic selection to voting.",
+    longDescription: "A comprehensive guide to the phases of a General Assembly committee, including choosing topics, forming blocs, writing working papers, merging resolutions, and voting procedures.",
+    category: "Training",
+    icon: "document",
+    content: `
+<h1>A Short Guide to the General Assembly</h1>
+
+<h2>Phase 1: Choose the Topic</h2>
+<p>The committee will begin with a series of moderated caucuses. Use these caucuses to establish your country's stance on the topic. For example:</p>
+<ul>
+<li>"The Kingdom of Denmark believes that UN member states should..."</li>
+<li>"It is the policy of Nigeria to react to... by doing..."</li>
+</ul>
+<p>Use these moderated caucuses (mods) as opportunities to win allies! Referencing the speeches or ideas of other delegates will go a long way in building coalitions that will be vital during later portions of the conference.</p>
+<p>The topic that you will debate will be decided by a majority vote once a substantial number of delegates have been able to speak. This phase will take place during the very beginning of Session 1.</p>
+
+<h2>Phase 2: Voice Your Opinion</h2>
+<p>The beginning of the conference will be composed of many moderated caucuses. Make sure that you use these to clearly establish your country's position. These are similar to the speeches given when deciding the topic but are more specific. Instead of telling the committee which problem you would like to solve, tell them how you would like to solve it.</p>
+<p>Try to use notes (either physical or memorized) that include statistics or historical examples. These will make your speeches more memorable and persuasive. Very good speeches are passionate and relatable, but there is a fine line between a passionate speech and an irrelevant one. For example, beginning a speech with a quick joke or rhetorical question would be appropriate, so long as it allows time for the delegate to speak about their country's beliefs and position. Your speeches during moderated caucuses are how other delegates will know what your position is, so consistent participation is incredibly important.</p>
+
+<h3>Form Blocs</h3>
+<p>During moderated caucuses, make sure to pass notes to delegates with similar opinions that you would like to write working papers and draft resolutions with. For example:</p>
+<ul>
+<li>"Nigeria, The Kingdom of Denmark agrees with your opinion on ___. We look forward to working with you!"</li>
+</ul>
+<p>During unmoderated caucuses (unmods), try to recruit more delegates to your bloc. Try to find delegates that have not found a bloc and invite them to work with you! It also can't hurt to come up with a fun name for your bloc! For example:</p>
+<ul>
+<li>"The Western Bloc"</li>
+<li>"The Bloc of Developing Nations."</li>
+</ul>
+
+<h3>Begin Writing Your Working Paper</h3>
+<p>During unmoderated caucuses (and not during moderated caucuses), you and your bloc should write a paper describing your bloc's proposed solutions to the problem that your committee is debating. Make sure that working papers are as detailed as possible (a guide to writing working papers exists on jamun.org in Prep & Resources).</p>
+<p>You will work on your position papers for all of Sessions 1 and 2 and most of Session 3. During later portions of this phase, you might consider adding details about your working paper into your speeches during moderated caucuses. For example:</p>
+<ul>
+<li>"The Western Bloc believes that... will be effective in solving the problems that Delegate Simon mentioned in his earlier speech."</li>
+</ul>
+
+<h2>Phase 3: Mergers</h2>
+<p>Your chairs will limit the amount of draft resolutions that the committee will be allowed to vote on. This means that you will need to merge multiple working papers into single cohesive draft resolutions! Mergers are easiest when two (or more) blocs of similar opinions work together. During a merger, members from all involved blocs will come together to select the most important and agreeable clauses from their individual working papers to add to their final draft resolution.</p>
+<p>The working paper you create after merging should look similar to both blocs writing it. Blocs should discuss their new strategy for solving the problem before starting a new working paper. For example, a working paper that limits carbon emissions might merge with a working paper that promotes solar panels as a renewable energy source to yield a draft resolution that provides a robust system that limits the creation of additional emissions while promoting cleaner energy systems.</p>
+<p>Don't forget to name your merger! Draft resolutions with catchy names stand out during voting! For example, a draft resolution that will address air pollution could be appropriately named "Better Regulations Eliminating Airborne Toxic Health Effects (BREATHE)". Mergers will take place during Sessions 3, 4, and 5. Use some speaking time in moderated caucuses to speak about the results of the merger that you are working on!</p>
+
+<h2>Phase 4: Introducing Draft Resolutions and Voting</h2>
+<p>After draft resolutions have been completed, delegates will introduce them to the committee by handing a copy to their committee chairs. From this point, draft resolutions will be read to the committee, debated, and voted on. After each draft resolution is read to the committee, there will be a period of questioning, where delegates can ask questions about the contents of the resolution to its authors for a specified amount of time.</p>
+<p>If it is motioned for, there may also be a "Two For, Two Against" debate about each paper before they are voted on. In this form of debate, two delegates that support the paper and two delegates that are against it give alternating speeches (a supporting delegate will begin) regarding the draft resolution. More than one draft resolution can pass, so all draft resolutions will be voted on. In the case that two papers pass, the paper that is passed secondly will be used to resolve any contradictions between the two. This phase will take place during Sessions 5 and 6.</p>
+<p>Try not to rush through a General Assembly; all of these steps take time, and this timeline is a guide. It is important to know when to compromise, and when to stand by your opinion. Remember to be diplomatic and professional!</p>
+`,
+    relatedResources: ["delegate-handbook", "rules-of-procedure", "draft-resolution-outline", "ga-position-paper-outline"],
+  },
+  {
+    id: "example-crisis-note",
+    name: "Selected Crisis Note",
+    shortDescription: "An example crisis note with commentary on effective techniques.",
+    longDescription: "A sample crisis note written as J. Robert Oppenheimer, demonstrating how to establish relationships, stay in character, and pursue backroom goals effectively.",
+    category: "Training",
+    icon: "document",
+    content: `
+<h1>Selected Crisis Note</h1>
+
+<h2>Example Crisis Note - J. Robert Oppenheimer</h2>
+<p><em>Committee:</em> Manhattan Project Crisis</p>
+
+<h3>Note Text</h3>
+<p><strong>Dear Emily Roberts,</strong></p>
+
+<p>My wonderful assistant! You have worked with me for over a decade, and I am still overjoyed every time I get the opportunity to send you a letter. Your service has been characterized by complete loyalty, discretion, and commitment; I appreciate everything that you have done for me very much.</p>
+
+<p>As I'm sure you know, I can not disclose specific details of my recent work. That said, I have a task that I must ask you to do.</p>
+
+<p>I can still remember the vacation my family and I took to Geneva, Switzerland. I yearn for the tranquil parks, lakes, and roads that popped up throughout the city. I would quite like to surprise my family with a vacation house there.</p>
+
+<p>Over the next weeks, I will begin sending you money that I have earned in my recent work, as well as money that I have saved from my years spent in academia. Please begin collecting this money, as well as researching real estate in Geneva. If you find any promising properties please let me know, so I can consider whether it would be a wise investment.</p>
+
+<p><strong>Yours very truly,<br>J. Robert Oppenheimer</strong></p>
+
+<h3>Commentary</h3>
+<ul>
+<li>This letter opens by clearly establishing a long-term relationship with a loyal, fictional assistant.</li>
+<li>The note stays entirely in character as a personal letter — no out-of-character commentary or parenthetical notes.</li>
+<li>The character (Oppenheimer) gives specific instructions to collect money and investigate Geneva real estate.</li>
+<li>Though his true intention (to flee the country) is hidden, his actions and requests align with that goal.</li>
+<li>The letter also subtly introduces character assets: a trusted assistant, funds from government work, and a family.</li>
+</ul>
+`,
+    relatedResources: ["crisis-guide", "crisis-position-paper-outline"],
+  },
+  {
+    id: "example-directive",
+    name: "Selected Directive",
+    shortDescription: "An example directive showing proper formatting and structure.",
+    longDescription: "A sample directive demonstrating how to structure operative clauses with nested sub-clauses, using JAMUN's founding as an example.",
+    category: "Training",
+    icon: "document",
+    content: `
+<h1>Selected Directive</h1>
+
+<h2>Developing Unforgettable Simulations for Thoughtful International Negotiations (DUSTIN)</h2>
+<ol>
+<li>Create a Model United Nations conference called JAMUN.
+  <ol type="a">
+  <li>JAMUN will hold two conferences per year, one in the spring and one in the fall.</li>
+  <li>JAMUN will allow students in 5-8th grade to participate.
+    <ol type="i">
+    <li>Students will be required to have an adult sponsor in order to participate.</li>
+    </ol>
+  </li>
+  <li>JAMUN will create Crisis, General Assembly, and Ad Hoc committees.
+    <ol type="i">
+    <li>Students will be allowed to participate in only one committee.</li>
+    </ol>
+  </li>
+  </ol>
+</li>
+<li>Establish the JAMUN Secretariat.
+  <ol type="a">
+  <li>High Schoolers at Deerfield High School and neighboring high schools will be called on to serve as staff members for JAMUN.</li>
+  <li>Certain members of JAMUN staff will be given extra responsibilities to ensure a smooth and successful conference.
+    <ol type="i">
+    <li>These members will be said to form the "JAMUN Secretariat."</li>
+    <li>Members of the "JAMUN Secretariat" will be given unique titles to describe the nature of their responsibilities.</li>
+    </ol>
+  </li>
+  </ol>
+</li>
+<li>Call upon local middle school teachers to sponsor delegations.
+  <ol type="a">
+  <li>JAMUN staff will send emails to local middle school teachers encouraging them to create a Model UN club at their school.</li>
+  <li>Dustin Simon will create a spreadsheet to keep track of the schools that will attend JAMUN.</li>
+  <li>JAMUN staff may also send letters to schools.
+    <ol type="i">
+    <li>In the case that the JAMUN Secretariat believes that emails are being sent to spam, they may vote to begin sending "snail mail" to local teachers.</li>
+    <li>Members of JAMUN's staff will be called to assist in the writing and addressing of these letters.</li>
+    </ol>
+  </li>
+  </ol>
+</li>
+</ol>
+`,
+    relatedResources: ["directive-outline", "crisis-guide"],
+  },
+  {
+    id: "example-draft-resolution",
+    name: "Selected Draft Resolution",
+    shortDescription: "An example draft resolution showing proper formatting and structure.",
+    longDescription: "A sample draft resolution on climate change demonstrating preambulatory clauses, operative clauses with nested sub-clauses, and proper UN resolution formatting.",
+    category: "Training",
+    icon: "document",
+    content: `
+<h1>Selected Draft Resolution</h1>
+
+<h2>Better Regulations Eliminating Airborne Toxic Health Effects (BREATHE)</h2>
+
+<p><em>Observing</em> a rise in average global temperatures,</p>
+<p><em>Noting with displeasure</em> the increase in worldwide natural disasters as a result of rising temperatures,</p>
+<p><em>Identifying</em> the need for consistent worldwide regulations to address the proliferation of global warming,</p>
+<p><em>Observing</em> recent advances in renewable energy, including, but not limited to, solar, hydroelectric, nuclear, and wind,</p>
+<p><em>Recognizing</em> a worldwide shortage of climate scientists and research aimed at slowing the proliferation of global warming,</p>
+<p><em>Aware</em> of the need for worldwide collaboration in addressing climate change,</p>
+
+<ol>
+<li>Creates a committee of nations devoted to limiting carbon emissions and removing carbon dioxide from the atmosphere;
+  <ol type="a">
+  <li>Any nations joining the committee must commit to lowering total carbon emissions by 45% from 2024 levels by 2030;</li>
+  <li>Committee members must also plant 500,000 trees on their owned land by 2030;</li>
+  <li>Committee members will be empowered to:
+    <ol type="i">
+    <li>Develop UN regulations surrounding carbon emissions;</li>
+    <li>Promote the use of renewable energy globally.</li>
+    </ol>
+  </li>
+  </ol>
+</li>
+
+<li>Asks all nations to increase usage of renewable energy sources:
+  <ol type="a">
+  <li>Examples include solar, wind, nuclear, and hydroelectric power;</li>
+  <li>Nations with GDP above $1 trillion are requested to provide financial support to developing nations;</li>
+  <li>All nations are encouraged to share clean energy research publicly.</li>
+  </ol>
+</li>
+
+<li>Assigns oversight of nuclear energy to the following five nations: United States, Russia, United Kingdom, France, and China;
+  <ol type="a">
+  <li>These countries will form a committee to implement nuclear energy safely;</li>
+  <li>This committee is authorized to:
+    <ol type="i">
+    <li>Prevent weaponization of nuclear research, pursuant to the Treaty on the Non-Proliferation of Nuclear Weapons.</li>
+    </ol>
+  </li>
+  </ol>
+</li>
+
+<li>Establishes an international institute for research on carbon removal and renewable energy;
+  <ol type="a">
+  <li>This institute will:
+    <ol type="i">
+    <li>Research effective carbon dioxide removal methods (e.g., algae, plants);</li>
+    <li>Collaborate with institutions worldwide;</li>
+    <li>Support concurrent appointments of researchers at non-UN institutions;</li>
+    <li>Advance technologies for solar panels, wind turbines, hydroelectric, and nuclear systems;</li>
+    <li>Ensure all research is made public for global access.</li>
+    </ol>
+  </li>
+  </ol>
+</li>
+
+<li>Creates a scholarship fund for training climate scientists:
+  <ol type="a">
+  <li>Open to individuals at or above the age of majority in their home country;</li>
+  <li>Recipients must commit to five years of work with the UN post-education;</li>
+  <li>Funding will come from:
+    <ol type="i">
+    <li>Donations from IMF and UN member states;</li>
+    <li>A portion of the WMO's existing budget.</li>
+    </ol>
+  </li>
+  </ol>
+</li>
+
+<li>Urges nations to reduce plastic use, especially single-use items:
+  <ol type="a">
+  <li>Encourages legislation targeting plastic bags, bottles, and similar goods;</li>
+  <li>Calls on leading economists to advise on:
+    <ol type="i">
+    <li>Tax policies to discourage plastic use;</li>
+    <li>Funding options for climate solutions (e.g., renewable R&D).</li>
+    </ol>
+  </li>
+  <li>Encourages grants for innovation in reusable alternatives;</li>
+  <li>Creates a recycling initiative:
+    <ol type="i">
+    <li>Nations can donate single-use plastics for repurposing into consumer goods;</li>
+    <li>Profits will fund the scholarship program created in Clause 5.</li>
+    </ol>
+  </li>
+  </ol>
+</li>
+</ol>
+`,
+    relatedResources: ["draft-resolution-outline", "ga-guide"],
   },
 ];
 

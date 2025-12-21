@@ -143,8 +143,6 @@ const getCategoryColor = (category: string) => {
   switch (category) {
     case "Getting Started":
       return styles.categoryGettingStarted;
-    case "Writing Guides":
-      return styles.categoryWritingGuides;
     case "Conference Materials":
       return styles.categoryConferenceMaterials;
     case "Training":
@@ -156,7 +154,6 @@ const getCategoryColor = (category: string) => {
 
 const CATEGORIES: CategoryFilter[] = [
   "Getting Started",
-  "Writing Guides",
   "Conference Materials",
   "Training",
 ];
