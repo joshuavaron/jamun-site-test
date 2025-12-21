@@ -3,7 +3,7 @@ export interface ResourceData {
   name: string;
   shortDescription: string;
   longDescription: string;
-  category: "Getting Started" | "Writing Guides" | "Conference Materials" | "Training";
+  category: "Getting Started" | "Conference Materials" | "Training";
   icon: "book" | "document" | "template" | "globe" | "video" | "download";
   content: string;
   relatedResources?: string[];
@@ -19,71 +19,240 @@ export const RESOURCES: ResourceData[] = [
     icon: "book",
     content: `
 <h1>Delegate Handbook</h1>
-<p>Welcome to the JAMUN Delegate Handbook! This comprehensive guide will prepare you for a successful Model UN experience.</p>
+<p>Welcome to the JAMUN Delegate Handbook! Whether this is your first conference or your tenth, this guide will help you feel confident and prepared. We're excited to have you join us!</p>
 
 <h2>Introduction to Model UN</h2>
-<p>Model United Nations (MUN) is an academic simulation of the United Nations where students learn about diplomacy, international relations, and the UN. Participants role-play as delegates from different countries and attempt to solve real-world issues with the policies and perspectives of their assigned nation.</p>
+<p>Model United Nations (MUN) is an academic simulation of the United Nations where students learn about diplomacy, international relations, and the UN. In 1945, fifty-one nations signed the UN Charter, creating an organization dedicated to preventing war and promoting peace through international collaboration. MUN brings this mission to life in the classroom.</p>
+<p>As a delegate, you'll role-play as a representative from a country and work with others to solve real-world issues from your assigned nation's perspective. MUN is about more than just debate—it's about collaboration, creative problem-solving, and understanding different perspectives. Don't worry if you're new; everyone starts somewhere, and our chairs and staff are here to help you succeed!</p>
 
-<h2>Rules of Procedure</h2>
-<p>The following rules govern debate and conduct during committee sessions:</p>
+<h2>Types of Committees</h2>
+<p>At JAMUN, you may participate in different types of committees:</p>
 
-<h3>1. Roll Call</h3>
-<p>At the beginning of each session, the Chair will conduct a roll call. Delegates must respond <strong>"Present"</strong> or <strong>"Present and Voting."</strong> Those who respond "Present and Voting" may not abstain during substantive votes.</p>
+<h3>General Assembly (GA)</h3>
+<p>General Assembly committees are larger committees, typically with 50-150 delegates. Debate moves through formal speeches, moderated caucuses, and unmoderated caucuses as delegates work together to draft and pass resolutions. GA committees are great for delegates who enjoy working with large groups and want to develop their core MUN skills.</p>
 
-<h3>2. Setting the Agenda</h3>
-<p>If there are multiple topics, delegates must first vote to set the agenda. The Chair will entertain motions for which topic to address first.</p>
+<h3>Specialized and Regional Bodies</h3>
+<p>These committees function similarly to General Assemblies but are usually smaller (30-75 delegates) and focus on specific issues or regions. Examples include ECOSOC committees, regional bodies like the African Union, and specialized agencies like WHO or UNHCR.</p>
 
-<h3>3. Speakers' List</h3>
-<p>The primary mode of debate. Delegates who wish to speak raise their placards and are added to the list. The default speaking time is <strong>90 seconds</strong>.</p>
+<h3>Crisis Committees</h3>
+<p>Crisis committees are fast-paced, smaller committees (15-30 delegates) where the situation evolves throughout the conference. In addition to regular debate, delegates write private "crisis notes" to take individual actions that can change the course of events. Crisis committees reward quick thinking, creativity, and multitasking.</p>
 
-<h3>4. Moderated Caucus</h3>
-<p>A focused discussion where delegates speak for a set time on a specific sub-topic. To propose, specify:</p>
+<h2>First-Time Delegates</h2>
+<p>New to Model UN? Welcome! Here's what you need to know to hit the ground running:</p>
+
+<h3>Before the Conference</h3>
 <ul>
-<li>Total time (e.g., 10 minutes)</li>
-<li>Speaking time (e.g., 1 minute)</li>
-<li>Topic (e.g., "Addressing funding gaps")</li>
+<li><strong>Research your country:</strong> Learn about your country's government, economy, foreign policy, and position on your committee's topic. Check out our Country Research Guide for help!</li>
+<li><strong>Write your position paper:</strong> This helps you organize your thoughts and shows your chairs you've prepared.</li>
+<li><strong>Read the background guide:</strong> Your chairs have written a guide explaining the topic—read it carefully.</li>
+<li><strong>Practice speaking:</strong> Even just a few minutes in front of a mirror can help build confidence.</li>
 </ul>
 
-<h3>5. Unmoderated Caucus</h3>
-<p>Free-form discussion time where delegates leave their seats to negotiate and draft working papers. Specify total time when proposing.</p>
-
-<h3>6. Points and Motions</h3>
+<h3>What to Bring</h3>
 <ul>
-<li><strong>Point of Order:</strong> Address procedural issues</li>
-<li><strong>Point of Inquiry:</strong> Ask a question about procedure</li>
-<li><strong>Point of Personal Privilege:</strong> Address personal comfort</li>
-<li><strong>Motion to Close Debate:</strong> End discussion on current topic</li>
-<li><strong>Motion to Table:</strong> Postpone discussion</li>
+<li>Your research notes and position paper</li>
+<li>A notebook and pens for taking notes</li>
+<li>A water bottle and snacks for breaks</li>
+<li>Formal attire (see Dress Code below)</li>
+<li>A positive attitude and willingness to learn!</li>
+</ul>
+
+<h3>Tips for Success</h3>
+<ul>
+<li><strong>Don't be afraid to speak:</strong> Your voice matters! Start with a short speech or a point—every contribution counts.</li>
+<li><strong>Ask questions:</strong> If you're confused about procedure, raise a Point of Inquiry. Chairs are happy to help.</li>
+<li><strong>Work with others:</strong> Find allies who share your country's views and collaborate on working papers.</li>
+<li><strong>Stay in character:</strong> Remember, you're representing your country, not your personal opinions—even if you disagree with them!</li>
+<li><strong>Have fun:</strong> MUN is meant to be enjoyable! Don't stress too much about making mistakes.</li>
+</ul>
+
+<h2>Research and Preparation</h2>
+<p>Good preparation is the foundation of a successful MUN experience. Here's how to get ready:</p>
+
+<h3>Researching Your Country</h3>
+<ul>
+<li><strong>Background:</strong> Explore your country's history, geography, political system, and economy. Understanding where your country comes from helps explain its current positions.</li>
+<li><strong>Political Leadership:</strong> Know who leads your country and their influence on foreign policy. Research recent elections and political shifts.</li>
+<li><strong>Economic Interests:</strong> Understand your country's key industries, trade partners, and economic challenges. Economic interests often drive foreign policy positions.</li>
+<li><strong>Regional Relationships:</strong> Examine your country's relationships with neighbors and regional alliances. Who are your allies? Who are your rivals?</li>
+<li><strong>UN Involvement:</strong> Look at your country's history in the UN—voting patterns, treaties signed, and past statements on your topic.</li>
+</ul>
+
+<h3>Researching Your Topic</h3>
+<ul>
+<li><strong>Read the background guide:</strong> This is your starting point! Your chairs have done significant research to help you.</li>
+<li><strong>Find your country's position:</strong> Search for official government statements, UN speeches, and voting records related to your topic.</li>
+<li><strong>Identify relevant UN resolutions:</strong> What has the UN already done on this issue? What treaties exist?</li>
+<li><strong>Develop solutions:</strong> Come up with creative, realistic ideas. Don't be afraid to think outside the box!</li>
+</ul>
+
+<h2>Rules of Procedure</h2>
+<p>The following is a summary of how committee sessions work. For the complete rules, see our official Rules of Procedure document.</p>
+
+<h3>Roll Call</h3>
+<p>At the beginning of each session, the Chair will conduct a roll call. When your country is called, respond with one of the following:</p>
+<ul>
+<li><strong>"Present"</strong> — You may abstain on substantive votes</li>
+<li><strong>"Present and Voting"</strong> — You must vote yes or no on substantive votes (no abstaining)</li>
+</ul>
+
+<h3>Speakers' List</h3>
+<p>The speakers' list is the default mode of debate. Raise your placard to be added to the list, and when called upon, you'll have <strong>90 seconds</strong> to address the committee. After speaking, you may yield your remaining time to the Chair or to another delegate.</p>
+
+<h3>Moderated Caucus</h3>
+<p>A moderated caucus is a focused discussion on a specific sub-topic. To propose one, raise your placard and specify:</p>
+<ul>
+<li>Total time (e.g., "10 minutes")</li>
+<li>Speaking time (e.g., "1 minute" — this is the maximum allowed)</li>
+<li>Topic (e.g., "Discussing funding mechanisms")</li>
+</ul>
+<p>The delegate who proposes the caucus may request to speak first or last. If you want to speak during the caucus, raise your placard and the Chair will call on delegates.</p>
+
+<h3>Unmoderated Caucus</h3>
+<p>An unmoderated caucus is informal time where you can leave your seat, walk around, and talk directly with other delegates. This is when most negotiation and working paper drafting happens! Maximum duration is <strong>20 minutes</strong>.</p>
+
+<h3>Points</h3>
+<p>Points allow you to communicate with the Chair:</p>
+<ul>
+<li><strong>Point of Order:</strong> Something procedurally incorrect is happening. May be raised at any time.</li>
+<li><strong>Point of Inquiry:</strong> You have a question about procedure. Raise when there's no active speaker.</li>
+<li><strong>Point of Personal Privilege:</strong> You can't hear, see, or have a personal comfort concern. Raise when there's no active speaker.</li>
+<li><strong>Point of Information:</strong> A question directed to the current speaker. Only with the Chair's consent during a speech.</li>
+</ul>
+
+<h3>Common Motions</h3>
+<p>Motions allow you to change what the committee is doing:</p>
+<ul>
+<li><strong>Motion for Moderated Caucus:</strong> Start a focused discussion</li>
+<li><strong>Motion for Unmoderated Caucus:</strong> Start informal negotiation time</li>
+<li><strong>Motion to Open the Speakers' List:</strong> Open or reopen the speakers' list</li>
+<li><strong>Motion to Close Debate:</strong> End debate and move toward voting</li>
+<li><strong>Motion to Enter Voting Procedure:</strong> Begin voting on draft resolutions</li>
+<li><strong>Motion to Suspend:</strong> Take a recess</li>
+</ul>
+<p>Most motions require a simple majority to pass. The Chair may rule a motion "dilatory" (obstructing progress) and choose not to entertain it.</p>
+
+<h2>Strategy and Diplomacy</h2>
+<p>Success in MUN comes from more than just knowing the rules—it's about working effectively with others. Here are some strategies to help you excel:</p>
+
+<h3>The Flow of Debate</h3>
+<p>General Assembly committees typically move through four phases:</p>
+<ol>
+<li><strong>Opening Debate:</strong> Delegates speak about the topic and their country's position. Use this time to identify potential allies and signal your willingness to collaborate.</li>
+<li><strong>Working Papers:</strong> Small coalitions form to draft informal documents. This is where relationships matter—find delegates who share your views and start writing together.</li>
+<li><strong>Draft Resolutions:</strong> Coalitions merge their working papers into formal draft resolutions. Be flexible and collaborative, but make sure your key ideas are included.</li>
+<li><strong>Voting:</strong> The committee votes on resolutions. Present your resolution confidently and be prepared to answer questions.</li>
+</ol>
+
+<h3>Building Alliances</h3>
+<ul>
+<li><strong>Identify key players early:</strong> Notice which delegates are active, knowledgeable, and influential. Try to work with them.</li>
+<li><strong>Form coalitions:</strong> Work with like-minded countries to create a unified front. Regional blocs (EU, African Union, etc.) are natural starting points.</li>
+<li><strong>Mention other delegates:</strong> In your speeches, reference delegates you want to work with: "The delegation of France looks forward to collaborating with Germany on this issue."</li>
+<li><strong>Be inclusive:</strong> Welcome others into your coalition. The more support you have, the better your resolution's chances.</li>
+</ul>
+
+<h3>Effective Participation</h3>
+<ul>
+<li><strong>Deliver a strong opening speech:</strong> Clearly state your position, goals, and willingness to work with others.</li>
+<li><strong>Be active in moderated caucuses:</strong> Raise your placard and speak often. Consistent participation keeps you visible.</li>
+<li><strong>Use unmoderated caucuses wisely:</strong> Don't just sit with your coalition—network with other groups, gather signatories, and explore compromises.</li>
+<li><strong>Ask strategic questions:</strong> When others present resolutions, ask questions that highlight issues or reinforce your position.</li>
+</ul>
+
+<h3>Diplomatic Tips</h3>
+<ul>
+<li><strong>Stay professional:</strong> Even when debates get heated, remain courteous and diplomatic.</li>
+<li><strong>Be flexible:</strong> Compromise is essential. Know which of your positions are negotiable and which are not.</li>
+<li><strong>Play the mediator:</strong> If two groups are in conflict, offer to help find common ground. This positions you as a leader.</li>
+<li><strong>Use silence strategically:</strong> Sometimes it's better to listen first and respond thoughtfully.</li>
 </ul>
 
 <h2>Writing Resolutions</h2>
-<p>Resolutions are the final product of MUN committees. They consist of:</p>
+<p>Resolutions are the final product of your committee's work—formal documents proposing solutions to the topic at hand.</p>
 
-<h3>Header</h3>
+<h3>Working Papers</h3>
+<p>Before a resolution, you'll likely draft working papers. These are informal documents to develop and share ideas. They don't need sponsors or signatories, so feel free to experiment! Working papers are a great way to test ideas and attract collaborators.</p>
+
+<h3>Draft Resolutions</h3>
+<p>When your ideas are ready, you can formalize them into a draft resolution. You'll need:</p>
 <ul>
-<li>Committee name</li>
-<li>Topic</li>
-<li>Sponsors and signatories</li>
+<li><strong>Sponsors:</strong> The main authors of the resolution (maximum 5% of committee, rounded up). Sponsors present the resolution and can accept friendly amendments. Try to be a sponsor—it shows leadership!</li>
+<li><strong>Signatories:</strong> Delegates who want to see it debated, even if they don't fully agree (minimum 20% of committee, rounded down). Gather signatories during unmoderated caucuses.</li>
 </ul>
 
-<h3>Preambulatory Clauses</h3>
-<p>Begin with phrases like <em>"Noting," "Recognizing," "Aware of,"</em> etc. These provide context and justification.</p>
+<h3>Resolution Format</h3>
+<p>Resolutions are written as long sentences with two main parts:</p>
+<ul>
+<li><strong>Preambulatory Clauses:</strong> Introduce the resolution by outlining the issues and context. Begin with an <em>italicized</em> phrase like <em>"Noting," "Recognizing," "Aware of," "Deeply concerned,"</em> etc. Each clause ends with a comma.</li>
+<li><strong>Operative Clauses:</strong> The actual proposals and actions. Begin with an <strong>underlined</strong> phrase like <em>"Calls upon," "Recommends," "Urges," "Requests,"</em> etc. These are numbered and end with semicolons (except the last one, which ends with a period).</li>
+</ul>
 
-<h3>Operative Clauses</h3>
-<p>Begin with action-oriented phrases like <em>"Calls upon," "Recommends," "Urges,"</em> etc. These are the actual proposals.</p>
+<h3>Tips for Strong Resolutions</h3>
+<ul>
+<li><strong>Be specific:</strong> Clearly address the problem with detailed, actionable solutions.</li>
+<li><strong>Be realistic:</strong> Propose solutions that are feasible and within the UN's capabilities.</li>
+<li><strong>Build broad support:</strong> Include ideas from multiple perspectives to attract votes.</li>
+<li><strong>Respect sovereignty:</strong> Avoid solutions that infringe on national sovereignty unless absolutely necessary.</li>
+<li><strong>Consider funding:</strong> Think about how your proposals will be paid for—this is a common point of criticism.</li>
+</ul>
+
+<h3>Amendments</h3>
+<p>Want to change a draft resolution? You can propose an amendment:</p>
+<ul>
+<li><strong>Friendly amendments:</strong> If all sponsors agree, the change is automatically incorporated.</li>
+<li><strong>Unfriendly amendments:</strong> If sponsors don't all agree, the amendment needs its own sponsors and signatories, and the committee votes on it.</li>
+</ul>
+<p>Be prepared to negotiate on amendments. Know which parts of your resolution are essential and which you can compromise on.</p>
+
+<h2>Voting</h2>
+<p>There are two types of votes:</p>
+<ul>
+<li><strong>Procedural votes:</strong> Votes on motions (like starting a caucus). Everyone must vote—no abstentions allowed. Simple majority wins.</li>
+<li><strong>Substantive votes:</strong> Votes on resolutions and amendments. You may abstain if you responded "Present" during roll call. Simple majority of non-abstaining votes wins.</li>
+</ul>
+<p>Any delegate may request a roll call vote, where each country is called individually to vote "Yes," "No," "Abstain," or "Pass" (pass lets you vote at the end).</p>
 
 <h2>Delegate Conduct</h2>
+<p>Model UN simulates real diplomacy, so we ask delegates to act professionally:</p>
 <ul>
-<li>Always refer to yourself in the third person as "The delegate of [country]"</li>
-<li>Address other delegates through the Chair</li>
-<li>Maintain diplomatic decorum at all times</li>
-<li>Dress professionally (Western business attire)</li>
-<li>Be respectful of all perspectives and cultures</li>
+<li>Refer to yourself in the third person as "The delegate of [country]"</li>
+<li>Address other delegates through the Chair (e.g., "The delegate would like to ask the delegate of France...")</li>
+<li>Maintain diplomatic courtesy at all times—personal attacks are never acceptable</li>
+<li>Be respectful of all perspectives, cultures, and backgrounds</li>
+<li>Use electronic devices only with the Chair's permission</li>
 </ul>
 
-<p><strong>We wish you the best of luck at JAMUN!</strong></p>
+<h3>Dress Code</h3>
+<p>Delegates are expected to wear formal attire during committee sessions. We understand that "formal" means different things in different cultures and for students from different backgrounds. Acceptable attire includes suits, dresses, slacks, blouses, and blazers. We politely ask that you avoid clothing with distracting logos, messages, or images.</p>
+
+<h2>Awards</h2>
+<p>At JAMUN, we recognize outstanding delegates with awards. While awards aren't everything, they're a nice way to celebrate your hard work!</p>
+
+<h3>Award Categories</h3>
+<ul>
+<li><strong>Best Delegate:</strong> The top performer in the committee</li>
+<li><strong>Outstanding Delegate:</strong> Exceptional performance</li>
+<li><strong>Honorable Mention:</strong> Notable contribution to committee</li>
+<li><strong>Best Position Paper:</strong> Exceptional research and writing in your position paper</li>
+</ul>
+
+<h3>What Chairs Look For</h3>
+<ul>
+<li><strong>Preparation:</strong> Knowledge of your country's position and the topic</li>
+<li><strong>Diplomacy:</strong> Working well with others, building coalitions, and finding compromise</li>
+<li><strong>Speaking:</strong> Clear, persuasive, and confident speeches</li>
+<li><strong>Leadership:</strong> Taking initiative in writing papers and guiding debate</li>
+<li><strong>Procedure:</strong> Understanding and correctly using rules of procedure</li>
+<li><strong>Growth:</strong> Chairs love to see delegates improve throughout the conference!</li>
+</ul>
+<p>Remember: awards recognize great work, but the real reward is the skills you build and the friends you make. Focus on learning and having fun, and success will follow!</p>
+
+<h2>Final Thoughts</h2>
+<p>Model UN can feel overwhelming at first, but we promise it gets easier—and more fun—with practice. Don't be afraid to make mistakes; that's how we all learn. Your chairs and the JAMUN staff are here to support you every step of the way.</p>
+<p><strong>We can't wait to see you in committee. Good luck, and happy debating!</strong></p>
 `,
-    relatedResources: ["rules-of-procedure", "position-paper-template"],
+    relatedResources: ["rules-of-procedure", "country-research-guide"],
   },
   {
     id: "rules-of-procedure",
@@ -248,256 +417,6 @@ export const RESOURCES: ResourceData[] = [
     relatedResources: ["delegate-handbook"],
   },
   {
-    id: "position-paper-template",
-    name: "Position Paper Template",
-    shortDescription: "Official template for writing winning position papers.",
-    longDescription: "Learn how to write an effective position paper with our official template and guidelines. Position papers are essential for demonstrating your research and earning awards.",
-    category: "Writing Guides",
-    icon: "template",
-    content: `
-<h1>Position Paper Guidelines</h1>
-
-<h2>What is a Position Paper?</h2>
-<p>A position paper is a one-page document that outlines your country's stance on the committee topic. It demonstrates your research, understanding of the issue, and proposed solutions from your country's perspective.</p>
-
-<h2>Why Are Position Papers Important?</h2>
-<ol>
-<li>Shows chairs you've done your research</li>
-<li>Helps you organize your country's position</li>
-<li>Required for award consideration at many conferences</li>
-<li>Serves as a reference during committee sessions</li>
-</ol>
-
-<h2>Position Paper Format</h2>
-<ul>
-<li><strong>Length:</strong> 1 page maximum (single-spaced)</li>
-<li><strong>Font:</strong> Times New Roman, 12pt</li>
-<li><strong>Margins:</strong> 1 inch on all sides</li>
-</ul>
-
-<h2>Structure</h2>
-
-<h3>Header</h3>
-<p>Include the following information:</p>
-<ul>
-<li>Committee: [Full Committee Name]</li>
-<li>Topic: [Full Topic Title]</li>
-<li>Country: [Your Country]</li>
-<li>Delegate: [Your Name]</li>
-<li>School: [Your School Name]</li>
-</ul>
-
-<h3>Paragraph 1: Background</h3>
-<p>Provide context on the issue. Include:</p>
-<ul>
-<li>Brief history of the problem</li>
-<li>Current situation and statistics</li>
-<li>Why this issue matters internationally</li>
-<li>How your country has been affected</li>
-</ul>
-
-<h3>Paragraph 2: Your Country's Position</h3>
-<p>Explain your country's stance. Include:</p>
-<ul>
-<li>Past actions your country has taken</li>
-<li>Relevant treaties or agreements signed</li>
-<li>Voting history in the UN</li>
-<li>Key policies and perspectives</li>
-</ul>
-
-<h3>Paragraph 3: Proposed Solutions</h3>
-<p>Outline what your country wants to achieve. Include:</p>
-<ul>
-<li>Specific policy recommendations</li>
-<li>Potential bloc partners</li>
-<li>How solutions align with UN principles</li>
-<li>Realistic and actionable proposals</li>
-</ul>
-
-<hr>
-
-<h2>Sample Position Paper</h2>
-
-<p><strong>Committee:</strong> United Nations Children's Fund (UNICEF)<br>
-<strong>Topic:</strong> Access to Primary Education in Conflict Zones<br>
-<strong>Country:</strong> Federal Republic of Germany<br>
-<strong>Delegate:</strong> [Name]<br>
-<strong>School:</strong> [School Name]</p>
-
-<p>The global education crisis affects over 75 million children worldwide who have had their education disrupted by conflict and crisis. In conflict-affected areas, children are nearly three times more likely to be out of school than their peers in stable regions. The international community must take decisive action to ensure that every child, regardless of their circumstances, has access to quality primary education.</p>
-
-<p>The Federal Republic of Germany has long championed the right to education as a fundamental human right. As one of the largest contributors to humanitarian education funding, Germany has committed over €500 million annually to education initiatives in crisis-affected regions. Germany strongly supports Education Cannot Wait and has consistently advocated for increased international funding mechanisms. Furthermore, Germany co-sponsored Resolution 2601 (2021) protecting schools in conflict zones and remains committed to the Safe Schools Declaration.</p>
-
-<p>Germany proposes a multi-faceted approach to address this crisis. First, we call for the establishment of a rapid response education fund that can deploy resources within 72 hours of crisis onset. Second, we recommend expanding distance learning infrastructure in conflict-prone regions before crises occur. Third, we urge member states to strengthen enforcement of international humanitarian law protecting educational facilities. Germany stands ready to collaborate with like-minded nations in the European bloc and beyond to ensure that conflict never ends a child's education.</p>
-
-<hr>
-
-<h2>Tips for Success</h2>
-
-<h3>1. Research Thoroughly</h3>
-<ul>
-<li>Use official government websites</li>
-<li>Review UN voting records</li>
-<li>Read news from your country's perspective</li>
-</ul>
-
-<h3>2. Stay In Character</h3>
-<ul>
-<li>Write from your country's viewpoint, not your own</li>
-<li>Use official policy language</li>
-<li>Reference real treaties and agreements</li>
-</ul>
-
-<h3>3. Be Specific</h3>
-<ul>
-<li>Include statistics and data</li>
-<li>Name specific programs or initiatives</li>
-<li>Propose concrete actions</li>
-</ul>
-
-<h3>4. Format Properly</h3>
-<ul>
-<li>Follow the template exactly</li>
-<li>Check spelling and grammar</li>
-<li>Submit by the deadline</li>
-</ul>
-`,
-    relatedResources: ["delegate-handbook", "resolution-writing-guide"],
-  },
-  {
-    id: "resolution-writing-guide",
-    name: "Resolution Writing Guide",
-    shortDescription: "Learn how to draft effective UN-style resolutions.",
-    longDescription: "Master the art of resolution writing with this comprehensive guide covering preambulatory clauses, operative clauses, and formatting requirements.",
-    category: "Writing Guides",
-    icon: "document",
-    content: `
-<h1>Resolution Writing Guide</h1>
-
-<h2>What is a Resolution?</h2>
-<p>A resolution is the formal document produced by a UN committee that addresses the topic being discussed. It outlines the committee's position and proposed actions. Resolutions that pass represent the collective will of the body.</p>
-
-<h2>Structure of a Resolution</h2>
-
-<h3>1. Heading</h3>
-<ul>
-<li>Committee name</li>
-<li>Topic</li>
-<li>Sponsors (main authors)</li>
-<li>Signatories (supporters for introduction)</li>
-</ul>
-
-<h3>2. Preambulatory Clauses</h3>
-<p>These provide context and justification for the resolution. They:</p>
-<ul>
-<li>Reference past UN actions</li>
-<li>Cite relevant treaties or declarations</li>
-<li>Acknowledge the current situation</li>
-<li><em>Are not voted on individually</em></li>
-</ul>
-
-<h4>Preambulatory Phrases</h4>
-<p><em>Acknowledging, Affirming, Alarmed by, Aware of, Bearing in mind, Believing, Confident, Contemplating, Convinced, Declaring, Deeply concerned, Deeply conscious, Deeply convinced, Deeply disturbed, Deeply regretting, Desiring, Emphasizing, Expecting, Expressing its appreciation, Fulfilling, Fully aware, Guided by, Having considered, Having examined, Having received, Keeping in mind, Noting with concern, Noting with satisfaction, Observing, Reaffirming, Realizing, Recalling, Recognizing, Referring, Seeking, Taking into consideration, Taking note, Viewing with appreciation, Welcoming</em></p>
-
-<h3>3. Operative Clauses</h3>
-<p>These are the action items of the resolution. They:</p>
-<ul>
-<li>Propose specific actions</li>
-<li>Establish programs or bodies</li>
-<li>Call upon member states</li>
-<li><strong>Are voted on (can be amended)</strong></li>
-</ul>
-
-<h4>Operative Phrases</h4>
-<p><strong>Accepts, Affirms, Approves, Authorizes, Calls upon, Condemns, Confirms, Congratulates, Considers, Declares, Demands, Deplores, Designates, Draws attention, Emphasizes, Encourages, Endorses, Expresses its appreciation, Expresses its hope, Further invites, Further proclaims, Further recommends, Further requests, Further resolves, Notes, Proclaims, Reaffirms, Recommends, Regrets, Reminds, Requests, Solemnly affirms, Strongly condemns, Suggests, Supports, Takes note of, Transmits, Trusts, Urges</strong></p>
-
-<hr>
-
-<h2>Formatting Rules</h2>
-
-<h3>Preambulatory Clauses</h3>
-<ul>
-<li>Begin with an <em>italicized</em> phrase</li>
-<li>End with a <strong>comma</strong></li>
-</ul>
-
-<h3>Operative Clauses</h3>
-<ul>
-<li>Begin with a <strong>bold, underlined</strong> phrase</li>
-<li>Are numbered (1, 2, 3...)</li>
-<li>End with a <strong>semicolon</strong> (except the last, which ends with a period)</li>
-<li>May contain sub-clauses (a, b, c...) or sub-sub-clauses (i, ii, iii...)</li>
-</ul>
-
-<hr>
-
-<h2>Sample Resolution Format</h2>
-
-<p><strong>COMMITTEE:</strong> [Committee Name]<br>
-<strong>TOPIC:</strong> [Topic]<br>
-<strong>SPONSORS:</strong> [List of countries]<br>
-<strong>SIGNATORIES:</strong> [List of countries]</p>
-
-<p><em>The [Committee Name],</em></p>
-
-<p><em>Recalling</em> General Assembly resolution 70/1 of 25 September 2015, entitled "Transforming our world: the 2030 Agenda for Sustainable Development,"</p>
-
-<p><em>Deeply concerned</em> by the ongoing challenges faced by [affected populations],</p>
-
-<p><em>Recognizing</em> the efforts of member states and international organizations in addressing [issue],</p>
-
-<ol>
-<li><strong>Calls upon</strong> all member states to [specific action];</li>
-<li><strong>Encourages</strong> the international community to [specific action];</li>
-<li><strong>Requests</strong> the Secretary-General to [specific action];</li>
-<li><strong>Decides</strong> to remain actively seized of the matter.</li>
-</ol>
-
-<hr>
-
-<h2>Tips for Effective Resolutions</h2>
-
-<h3>1. Be Specific</h3>
-<ul>
-<li>Avoid vague language</li>
-<li>Include measurable outcomes</li>
-<li>Set realistic timelines</li>
-</ul>
-
-<h3>2. Build Coalitions</h3>
-<ul>
-<li>Incorporate ideas from multiple blocs</li>
-<li>Address diverse concerns</li>
-<li>Seek broad support</li>
-</ul>
-
-<h3>3. Stay Within Mandate</h3>
-<ul>
-<li>Know your committee's powers</li>
-<li>Don't propose actions beyond scope</li>
-<li>Reference appropriate bodies for referrals</li>
-</ul>
-
-<h3>4. Consider Feasibility</h3>
-<ul>
-<li>Propose realistic funding mechanisms</li>
-<li>Account for implementation challenges</li>
-<li>Build on existing frameworks</li>
-</ul>
-
-<h2>Common Mistakes to Avoid</h2>
-<ol>
-<li>Using "demands" for voluntary actions</li>
-<li>Creating new UN bodies without funding</li>
-<li>Violating national sovereignty inappropriately</li>
-<li>Using informal language</li>
-<li>Forgetting to end clauses properly</li>
-<li>Proposing legally binding actions in non-binding committees</li>
-</ol>
-`,
-    relatedResources: ["position-paper-template", "rules-of-procedure"],
-  },
-  {
     id: "country-research-guide",
     name: "Country Research Guide",
     shortDescription: "How to effectively research your assigned country.",
@@ -508,196 +427,90 @@ export const RESOURCES: ResourceData[] = [
 <h1>Country Research Guide</h1>
 
 <h2>Introduction</h2>
-<p>Effective country research is the foundation of successful Model UN participation. This guide will help you understand your assigned country's positions, interests, and behavior in the international community.</p>
+<p>Effective country research is the foundation of successful Model UN participation. This guide will help you understand your assigned country's positions, interests, and behavior in the international community. By taking the time to deeply research your country, you'll be able to represent it authentically and engage meaningfully with other delegates.</p>
 
 <h2>Step 1: Basic Country Profile</h2>
-<p>Start by gathering fundamental information:</p>
+<p>Start by gathering fundamental information about your country. This background knowledge will inform everything else you research and help you understand why your country takes certain positions.</p>
 
 <h3>Geography</h3>
-<ul>
-<li>Location and neighbors</li>
-<li>Natural resources</li>
-<li>Climate and geography challenges</li>
-<li>Strategic importance</li>
-</ul>
+<p>Begin by understanding where your country is located in the world and who its neighbors are. Examine what natural resources your country possesses, as these often drive economic and foreign policy decisions. Consider what climate and geographical challenges your country faces, such as droughts, flooding, or lack of arable land. Finally, think about your country's strategic importance—does it control important waterways, sit at a crossroads of trade routes, or border regions of conflict?</p>
 
 <h3>Demographics</h3>
-<ul>
-<li>Population size and growth</li>
-<li>Ethnic and religious composition</li>
-<li>Languages spoken</li>
-<li>Urban vs. rural distribution</li>
-</ul>
+<p>Research your country's population size and whether it is growing, shrinking, or aging. Understand the ethnic and religious composition of your country, as this often influences domestic politics and foreign relations. Learn what languages are spoken and which are official. Consider the distribution between urban and rural populations, as this affects development priorities and economic policies.</p>
 
 <h3>Economy</h3>
-<ul>
-<li>GDP and income level (developed, developing, LDC)</li>
-<li>Major industries and exports</li>
-<li>Economic challenges</li>
-<li>Trade relationships</li>
-</ul>
+<p>Determine your country's GDP and whether it is classified as developed, developing, or a Least Developed Country (LDC). Identify the major industries and primary exports, as these shape trade relationships and economic interests. Research the key economic challenges your country faces, such as unemployment, inflation, or debt. Understand your country's most important trade relationships and economic partnerships.</p>
 
 <h3>Government</h3>
-<ul>
-<li>Political system</li>
-<li>Current leadership</li>
-<li>Major political parties</li>
-<li>Stability and recent changes</li>
-</ul>
+<p>Learn about your country's political system—is it a democracy, monarchy, one-party state, or something else? Know who the current leaders are, including the head of state and head of government. Research the major political parties and their platforms if applicable. Consider how stable the government is and whether there have been recent changes in leadership or political direction.</p>
 
 <h2>Step 2: Foreign Policy Research</h2>
-<p>Understand your country's international stance:</p>
+<p>Once you understand your country's basic profile, dive deeper into how it interacts with the rest of the world. Foreign policy is shaped by geography, history, economics, and ideology.</p>
 
 <h3>Alliances and Blocs</h3>
-<ul>
-<li>Regional organizations (EU, AU, ASEAN, etc.)</li>
-<li>Military alliances (NATO, etc.)</li>
-<li>Economic partnerships</li>
-<li>Voting blocs in the UN</li>
-</ul>
+<p>Identify which regional organizations your country belongs to, such as the European Union, African Union, ASEAN, or Organization of American States. Research whether your country is part of any military alliances like NATO or collective security arrangements. Examine economic partnerships and trade agreements your country has signed. Understand which voting blocs your country aligns with in the United Nations, as this will help you identify natural allies in committee.</p>
 
 <h3>Key Relationships</h3>
-<ul>
-<li>Major allies</li>
-<li>Historical adversaries</li>
-<li>Trade partners</li>
-<li>Donor/recipient relationships</li>
-</ul>
+<p>Identify your country's major allies—which countries does it cooperate with most closely on security, economic, and diplomatic matters? Research historical adversaries and understand why tensions exist or existed. Know your country's most important trade partners and what goods and services flow between them. If your country receives foreign aid, know who the major donors are; if it provides aid, know where that assistance goes.</p>
 
 <h3>UN Engagement</h3>
-<ul>
-<li>Voting patterns in GA resolutions</li>
-<li>Treaty ratification status</li>
-<li>Contributions to UN budget</li>
-<li>Peacekeeping participation</li>
-</ul>
+<p>Research how your country has voted on General Assembly resolutions, particularly those related to your committee's topic. Examine which major treaties and conventions your country has ratified, signed but not ratified, or refused to sign. Understand your country's contributions to the UN budget and whether it is a major funder or recipient of UN programs. Learn whether your country participates in peacekeeping operations and where those missions are deployed.</p>
 
 <h2>Step 3: Topic-Specific Research</h2>
-<p>For your committee's topic, research:</p>
+<p>After building a general understanding of your country, focus on how it relates specifically to your committee's topic. This is where your research becomes most directly useful for debate.</p>
 
 <h3>Domestic Impact</h3>
-<ul>
-<li>How does this issue affect your country?</li>
-<li>What domestic policies exist?</li>
-<li>What are the statistics for your country?</li>
-</ul>
+<p>Examine how the issue your committee is discussing affects your country directly. Research what domestic policies your country has implemented to address this issue at home. Gather relevant statistics about your country—for example, if discussing climate change, know your country's emissions levels; if discussing education, know literacy rates and school enrollment figures.</p>
 
 <h3>Historical Position</h3>
-<ul>
-<li>Past votes on related resolutions</li>
-<li>Statements in UN forums</li>
-<li>Treaties signed or rejected</li>
-<li>Previous actions taken</li>
-</ul>
+<p>Research how your country has voted on past UN resolutions related to this topic, as this reveals consistent patterns in policy. Find statements your country's representatives have made in UN forums about this issue. Know which relevant treaties your country has signed or rejected and understand why. Research what actions your country has taken in the past to address this issue, both domestically and internationally.</p>
 
 <h3>Current Policy</h3>
-<ul>
-<li>Official government statements</li>
-<li>Recent initiatives</li>
-<li>Allocated resources</li>
-<li>Stated priorities</li>
-</ul>
+<p>Find official government statements about the topic from recent years. Research any recent initiatives or programs your country has launched related to the issue. Understand what resources your country has committed to addressing this problem. Identify your country's stated priorities and goals regarding this topic.</p>
 
 <h2>Step 4: Research Sources</h2>
+<p>Knowing where to find reliable information is just as important as knowing what to look for. Use a variety of sources to get a complete picture.</p>
 
 <h3>Official Sources</h3>
-<ul>
-<li><strong>UN.org</strong> (resolutions, voting records)</li>
-<li>Country's UN Mission website</li>
-<li>Government websites (.gov domains)</li>
-<li>Ministry of Foreign Affairs statements</li>
-</ul>
+<p>The United Nations website (UN.org) is your best source for resolutions, voting records, and official UN documents. Your country's Permanent Mission to the UN often has a website with statements and position papers. Government websites with .gov domains provide official policy information directly from the source. Look for statements from your country's Ministry of Foreign Affairs for diplomatic positions.</p>
 
 <h3>News Sources</h3>
-<ul>
-<li>BBC, Reuters, AP (international)</li>
-<li>Country's major newspapers</li>
-<li>Regional news sources</li>
-<li>Academic journals</li>
-</ul>
+<p>International news organizations like BBC, Reuters, and the Associated Press provide balanced coverage of global events. Reading newspapers from your assigned country helps you understand how issues are perceived domestically. Regional news sources offer perspectives that international outlets might miss. Academic journals provide in-depth analysis and historical context.</p>
 
 <h3>Data Sources</h3>
-<ul>
-<li>World Bank</li>
-<li>IMF</li>
-<li>WHO</li>
-<li>UNDP Human Development Index</li>
-</ul>
+<p>The World Bank provides comprehensive economic data and development indicators for nearly every country. The International Monetary Fund (IMF) offers detailed economic analysis and forecasts. The World Health Organization (WHO) has health statistics and policy information. The UNDP Human Development Index ranks countries by quality of life indicators beyond just economic measures.</p>
 
 <h3>Think Tanks</h3>
-<ul>
-<li>Council on Foreign Relations</li>
-<li>Chatham House</li>
-<li>Brookings Institution</li>
-<li>Regional think tanks</li>
-</ul>
+<p>The Council on Foreign Relations provides accessible analysis of international issues with a US perspective. Chatham House (the Royal Institute of International Affairs) offers British and European perspectives on global affairs. The Brookings Institution publishes in-depth policy research on a wide range of topics. Look for think tanks based in your country's region for perspectives closer to home.</p>
 
 <h2>Step 5: Understanding Positions</h2>
-<p>Consider <strong>why</strong> your country holds its positions:</p>
+<p>The most important part of research is understanding not just what your country's positions are, but why it holds them. This deeper understanding allows you to argue persuasively and respond to unexpected situations.</p>
 
 <h3>Historical Context</h3>
-<ul>
-<li>Colonial history</li>
-<li>Past conflicts</li>
-<li>Cultural influences</li>
-<li>Economic development path</li>
-</ul>
+<p>Consider how colonial history has shaped your country's worldview and relationships with other nations. Research past conflicts your country has experienced and how they influence current security concerns. Understand the cultural influences that have shaped your country's values and perspectives. Examine your country's economic development path and how it affects views on issues like trade, aid, and environmental policy.</p>
 
 <h3>National Interests</h3>
-<ul>
-<li>Security concerns</li>
-<li>Economic priorities</li>
-<li>Regional influence</li>
-<li>Domestic politics</li>
-</ul>
+<p>Identify your country's primary security concerns—what threats does it face, and how does it seek to address them? Understand your country's economic priorities, including the industries it wants to protect and the markets it wants to access. Consider how your country seeks to maintain or expand its regional influence. Think about how domestic politics shape foreign policy—leaders often take international positions that appeal to their domestic audiences.</p>
 
 <h3>Ideological Factors</h3>
-<ul>
-<li>Political ideology</li>
-<li>Religious influences</li>
-<li>Cultural values</li>
-<li>Development philosophy</li>
-</ul>
+<p>Understand your country's political ideology and how it shapes its approach to international cooperation and sovereignty. Consider how religious beliefs or the separation of church and state influence policy positions. Research the cultural values that are important in your country and how they affect views on issues like human rights, gender equality, or family policy. Understand your country's development philosophy—does it favor state-led development, free markets, or something in between?</p>
 
 <h2>Step 6: Finding Your Bloc</h2>
-<p>Identify natural allies:</p>
+<p>In Model UN, delegates rarely work alone. Understanding which countries share your interests helps you find allies and build coalitions.</p>
 
 <h3>Geographic Blocs</h3>
-<ul>
-<li>African Group</li>
-<li>Asia-Pacific Group</li>
-<li>Eastern European Group</li>
-<li>Latin American and Caribbean Group (GRULAC)</li>
-<li>Western European and Others Group (WEOG)</li>
-</ul>
+<p>The United Nations organizes countries into five regional groups for electoral and organizational purposes. The African Group includes all 54 African nations and often coordinates on development and post-colonial issues. The Asia-Pacific Group is the largest and most diverse, spanning from the Middle East to the Pacific Islands. The Eastern European Group includes former Soviet states and countries that were part of the Eastern Bloc. The Latin American and Caribbean Group (GRULAC) coordinates on regional issues and often shares perspectives on development. The Western European and Others Group (WEOG) includes Western Europe, North America, Australia, and New Zealand, and often aligns on human rights and democratic governance issues.</p>
 
 <h3>Issue-Based Groups</h3>
-<ul>
-<li>G77 + China (developing nations)</li>
-<li>European Union</li>
-<li>Arab League</li>
-<li>Small Island Developing States (SIDS)</li>
-<li>Landlocked Developing Countries</li>
-</ul>
+<p>Beyond geographic blocs, countries form coalitions around shared interests. The G77 plus China is a coalition of developing nations that often coordinate on economic and development issues. The European Union member states frequently speak and vote as a bloc on many issues. The Arab League coordinates positions on Middle Eastern affairs and issues affecting Muslim-majority countries. Small Island Developing States (SIDS) work together on climate change and ocean issues that threaten their very existence. Landlocked Developing Countries face unique challenges in trade and development and often coordinate their positions accordingly.</p>
 
 <hr>
 
 <h2>Research Checklist</h2>
-<p>Before committee, you should know:</p>
-<ul>
-<li>Basic country facts (capital, leader, population)</li>
-<li>Economic status and major challenges</li>
-<li>Political system and stability</li>
-<li>Regional alliances and relationships</li>
-<li>UN voting history on related issues</li>
-<li>Treaties ratified related to topic</li>
-<li>Domestic policies on the topic</li>
-<li>Official statements on the issue</li>
-<li>Natural bloc partners</li>
-<li>Potential areas of compromise</li>
-</ul>
+<p>Before committee begins, make sure you can confidently address all of the following areas. This checklist will help ensure you're fully prepared to represent your country.</p>
+<p>You should know your country's basic facts, including its capital city, current leader, and population. You should understand your country's economic status, including whether it is developed or developing, and what major economic challenges it faces. You should be able to describe your country's political system and assess its stability. You should know your country's regional alliances and key bilateral relationships. You should have researched your country's UN voting history on issues related to your topic. You should know which relevant treaties your country has ratified. You should understand what domestic policies your country has regarding the topic. You should be able to cite official statements your country has made on the issue. You should know which countries are your natural bloc partners and allies. Finally, you should have identified potential areas where your country might be willing to compromise in order to build broader coalitions.</p>
 `,
-    relatedResources: ["delegate-handbook", "position-paper-template"],
+    relatedResources: ["delegate-handbook", "public-speaking-tips"],
   },
   {
     id: "public-speaking-tips",
