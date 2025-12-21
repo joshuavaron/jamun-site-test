@@ -98,11 +98,17 @@ export const RESOURCES: ResourceData[] = [
 <h3>1.1 Scope</h3>
 <p>These rules apply to all JAMUN committees unless otherwise specified by the Secretariat.</p>
 
-<h3>1.2 Language</h3>
-<p>English shall be the working language of all committees.</p>
+<h3>1.2 Purpose</h3>
+<p>These Rules of Procedure are designed to facilitate orderly and productive debate, enabling delegates to engage in diplomacy, negotiation, and collaborative problem-solving in the spirit of the United Nations.</p>
 
-<h3>1.3 Quorum</h3>
-<p>A simple majority of delegates must be present for the committee to conduct business.</p>
+<h3>1.3 Authority of the Chair</h3>
+<p>The Chair shall maintain order, rule on points and motions, and exercise discretion on all procedural matters. The Chair's rulings are final unless overturned by a two-thirds majority vote.</p>
+
+<h3>1.4 Secretariat Interpretation</h3>
+<p>The Secretariat holds final authority to interpret these rules. Any disputes regarding rule interpretation shall be referred to the Secretariat, whose decisions are binding.</p>
+
+<h3>1.5 Amendments to Rules</h3>
+<p>These rules may be suspended or amended during a session by a two-thirds majority vote, subject to Secretariat approval.</p>
 
 <h2>Article II: Debate Format</h2>
 
@@ -112,13 +118,16 @@ export const RESOURCES: ResourceData[] = [
 <li>Delegates wishing to speak shall raise their placards.</li>
 <li>A delegate may speak only when recognized by the Chair.</li>
 <li>Default speaking time is <strong>90 seconds</strong> unless modified.</li>
+<li>Committee may not proceed if the speakers' list is empty.</li>
 </ol>
 
 <h3>2.2 Moderated Caucus</h3>
 <ol type="a">
 <li>Requires a motion specifying total time, individual speaking time, and topic.</li>
 <li>Requires a simple majority to pass.</li>
+<li>Maximum individual speaking time is <strong>one minute</strong>.</li>
 <li>The Chair calls on delegates who raise their placards.</li>
+<li>The moving delegate may request the first or last speaking position.</li>
 <li>Delegates may speak multiple times if time permits.</li>
 </ol>
 
@@ -130,101 +139,111 @@ export const RESOURCES: ResourceData[] = [
 <li>Delegates may move freely and negotiate informally.</li>
 </ol>
 
-<h3>2.4 Consultation of the Whole</h3>
+<h3>2.4 Yielding Time</h3>
 <ol type="a">
-<li>Similar to unmoderated caucus but delegates remain seated.</li>
-<li>Useful for smaller committees or sensitive discussions.</li>
+<li>A delegate may yield remaining speaking time to the Chair or to another delegate.</li>
+<li>Time yielded to the Chair concludes the speaker's remarks.</li>
+<li>Time yielded to another delegate may not be yielded again.</li>
 </ol>
 
 <h2>Article III: Points and Motions</h2>
 
 <h3>3.1 Points (In Order of Precedence)</h3>
 <ol type="a">
-<li><strong>Point of Order:</strong> Addresses procedural violations</li>
-<li><strong>Point of Inquiry:</strong> Questions about procedure</li>
-<li><strong>Point of Personal Privilege:</strong> Personal comfort concerns</li>
-<li><strong>Point of Information:</strong> Directed to a speaker (if yields)</li>
+<li><strong>Point of Order:</strong> Addresses procedural violations. May be raised at any time.</li>
+<li><strong>Point of Inquiry:</strong> Questions about procedure. May be raised when there is no active speaker.</li>
+<li><strong>Point of Personal Privilege:</strong> Personal comfort concerns. May be raised when there is no active speaker.</li>
+<li><strong>Point of Information:</strong> A question directed to the current speaker. May only be raised during a speech with the consent of the Chair.</li>
 </ol>
 
 <h3>3.2 Motions (In Order of Precedence)</h3>
 <ol type="a">
+<li>Motion to Appeal the Chair: Challenges a ruling by the Chair. This motion cannot be ruled dilatory and requires a two-thirds majority to pass.</li>
 <li>Motion to Adjourn: Ends the conference session</li>
 <li>Motion to Suspend: Suspends for recess</li>
+<li>Motion to Enter Voting Procedure: Moves the committee into voting on draft resolutions</li>
 <li>Motion to Close Debate: Ends debate on topic</li>
-<li>Motion to Table: Postpones discussion</li>
-<li>Motion to Set Speaking Time</li>
-<li>Motion for Moderated Caucus</li>
+<li>Motion to Open Debate: Opens debate on a new topic</li>
+<li>Motion to Open the Speakers' List: Opens or reopens the speakers' list</li>
 <li>Motion for Unmoderated Caucus</li>
+<li>Motion for Moderated Caucus</li>
 </ol>
+
+<h3>3.3 Dilatory Motions</h3>
+<p>The Chair may rule any motion dilatory if it is deemed to be obstructing the progress of debate. A motion ruled dilatory will not be entertained.</p>
+
+<h3>3.4 Order of Consideration</h3>
+<p>Motions shall be considered in order from most to least disruptive. Disruption is determined first by precedence (as listed above) and then by time (longer durations are more disruptive).</p>
 
 <h2>Article IV: Working Papers and Resolutions</h2>
 
 <h3>4.1 Working Papers</h3>
 <ol type="a">
-<li>Informal documents used to develop ideas.</li>
-<li>No sponsors or signatories required.</li>
-<li>Chair discretion for introduction.</li>
+<li>Working papers are informal documents used to develop ideas.</li>
+<li>Working papers do not require sponsors or signatories.</li>
+<li>Introduction of working papers is at the discretion of the Chair.</li>
 </ol>
 
 <h3>4.2 Draft Resolutions</h3>
 <ol type="a">
-<li>Require sponsors (authors) and signatories (supporters).</li>
-<li>Minimum signatories: <strong>20% of present delegates</strong>.</li>
-<li>Must follow proper format (preambulatory and operative clauses).</li>
+<li>Draft resolutions require sponsors (authors) and signatories (supporters).</li>
+<li>The maximum number of sponsors is <strong>5% of delegates in committee, rounded up</strong>.</li>
+<li>The minimum number of signatories is <strong>20% of present delegates, rounded down</strong>.</li>
+<li>Draft resolutions must follow proper format, including preambulatory and operative clauses.</li>
 </ol>
 
 <h3>4.3 Amendments</h3>
 <ol type="a">
-<li><strong>Friendly:</strong> Approved by all sponsors, automatically incorporated.</li>
-<li><strong>Unfriendly:</strong> Requires vote, must have own sponsors/signatories.</li>
+<li><strong>Friendly amendments</strong> are approved by all sponsors and are automatically incorporated into the draft resolution.</li>
+<li><strong>Unfriendly amendments</strong> require a vote to be incorporated and must have their own sponsors and signatories.</li>
 </ol>
 
 <h2>Article V: Voting Procedure</h2>
 
 <h3>5.1 Procedural Votes</h3>
 <ol type="a">
-<li>All delegates must vote (no abstentions).</li>
-<li>Simple majority required.</li>
-<li>Conducted by show of placards.</li>
+<li>All delegates must vote on procedural matters; abstentions are not permitted.</li>
+<li>A simple majority is required for a procedural vote to pass.</li>
+<li>Procedural votes are conducted by a show of placards.</li>
 </ol>
 
 <h3>5.2 Substantive Votes</h3>
 <ol type="a">
-<li>"Present and Voting" delegates may not abstain.</li>
-<li>"Present" delegates may abstain.</li>
-<li>Simple majority of non-abstaining votes required.</li>
+<li>Delegates who responded "Present and Voting" during roll call may not abstain on substantive votes.</li>
+<li>Delegates who responded "Present" during roll call may abstain on substantive votes.</li>
+<li>A simple majority of non-abstaining votes is required for a substantive vote to pass.</li>
 </ol>
 
 <h3>5.3 Roll Call Vote</h3>
 <ol type="a">
-<li>Any delegate may request before voting.</li>
-<li>Delegates vote "Yes," "No," "Abstain," or "Pass."</li>
-<li>"Pass" allows one opportunity to vote at end.</li>
+<li>Any delegate may request a roll call vote before voting begins.</li>
+<li>During a roll call vote, delegates may vote "Yes," "No," "Abstain," or "Pass."</li>
+<li>A delegate who votes "Pass" will have one opportunity to cast their vote at the end of the roll call.</li>
 </ol>
 
 <h2>Article VI: Conduct</h2>
 
 <h3>6.1 Decorum</h3>
 <ol type="a">
-<li>Delegates shall maintain diplomatic courtesy.</li>
+<li>Delegates shall maintain diplomatic courtesy at all times.</li>
 <li>Personal attacks are prohibited.</li>
-<li>Use of electronic devices at Chair discretion.</li>
+<li>Use of electronic devices is at the discretion of the Chair.</li>
 </ol>
 
-<h3>6.2 Dress Code</h3>
+<h3>6.2 Formal Attire</h3>
 <ol type="a">
-<li>Western business attire required.</li>
-<li>Traditional national dress is acceptable.</li>
+<li>Delegates are expected to wear formal attire during committee sessions.</li>
+<li>JAMUN staff understand that formal attire means a variety of things in different cultures and for students from different backgrounds.</li>
+<li>Acceptable attire includes suits, dresses, slacks, blouses, and blazers.</li>
+<li>Delegates are politely asked not to wear clothing with distracting logos, messages, or images.</li>
 </ol>
 
 <h3>6.3 Violations</h3>
 <ol type="a">
-<li><strong>First offense:</strong> Warning from Chair.</li>
-<li><strong>Second offense:</strong> Note sent to faculty advisor.</li>
-<li><strong>Third offense:</strong> Removal from committee.</li>
+<li>For a first offense, the delegate will receive a warning from the Chair.</li>
+<li>For a second offense, a note will be sent to the delegate's faculty advisor.</li>
+<li>For a third offense, the delegate will be removed from committee.</li>
 </ol>
-
-<p><em>These rules are subject to interpretation by the Secretariat.</em></p>
 `,
     relatedResources: ["delegate-handbook"],
   },
