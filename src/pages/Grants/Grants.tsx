@@ -201,7 +201,7 @@ const Grants: React.FC = () => {
               Fill out a short application and our team will review it within 2-3 weeks.
             </p>
             <a
-              href="https://forms.gle/YOUR_GOOGLE_FORM_ID"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSebFceytbjpIIyWJebROTfUDUrsF1JRHagu5i-WHg9zV5T74Q/viewform?usp=publish-editor"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.applyButton}

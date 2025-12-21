@@ -398,15 +398,35 @@
     flex-direction: column;
     width: 100%;
     max-width: 280px;
+    padding: 0 16px;
+    box-sizing: border-box;
   }
 
   .primaryButton,
   .secondaryButton {
     width: 100%;
     text-align: center;
+    box-sizing: border-box;
   }
 
   .floatingIcon {
     font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    padding: 32px 16px;
+  }
+
+  .actions {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    padding: 12px 24px;
+    font-size: 0.95rem;
   }
 }

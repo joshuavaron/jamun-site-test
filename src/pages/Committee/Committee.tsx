@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { useParams, Navigate } from "react-router-dom";
+import { useParams, Navigate, Link } from "react-router-dom";
 import CommonHead from "../../components/CommonHead/CommonHead";
 import NavBar from "../../components/NavBar/NavBar";
 import Footer from "../../components/Footer/Footer";
@@ -115,6 +115,13 @@ function CommitteeContent({ committee }: CommitteeContentProps) {
 
   return (
     <div className={styles.content}>
+      <Link to="/modelun/committees" className={styles.backLink}>
+        <svg viewBox="0 0 20 20" fill="currentColor" className={styles.backIcon}>
+          <path fillRule="evenodd" d="M17 10a.75.75 0 01-.75.75H5.612l4.158 3.96a.75.75 0 11-1.04 1.08l-5.5-5.25a.75.75 0 010-1.08l5.5-5.25a.75.75 0 111.04 1.08L5.612 9.25H16.25A.75.75 0 0117 10z" clipRule="evenodd" />
+        </svg>
+        All Committees
+      </Link>
+
       {/* Two Column Layout */}
       <div className={styles.twoColumn}>
         {/* Left Column */}
@@ -315,6 +322,13 @@ function AdHocCommitteeContent({ committee }: AdHocCommitteeContentProps) {
 
   return (
     <div className={styles.content}>
+      <Link to="/modelun/committees" className={styles.backLink}>
+        <svg viewBox="0 0 20 20" fill="currentColor" className={styles.backIcon}>
+          <path fillRule="evenodd" d="M17 10a.75.75 0 01-.75.75H5.612l4.158 3.96a.75.75 0 11-1.04 1.08l-5.5-5.25a.75.75 0 010-1.08l5.5-5.25a.75.75 0 111.04 1.08L5.612 9.25H16.25A.75.75 0 0117 10z" clipRule="evenodd" />
+        </svg>
+        All Committees
+      </Link>
+
       {/* Two Column Layout */}
       <div className={styles.twoColumn}>
         {/* Left Column */}

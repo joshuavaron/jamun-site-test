@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useEffect } from "react";
 import CommonHead from "./components/CommonHead/CommonHead";
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
@@ -16,6 +17,13 @@ import Donate from "./pages/Donate/Donate";
 import Grants from "./pages/Grants/Grants";
 import Privacy from "./pages/Privacy/Privacy";
 import Terms from "./pages/Terms/Terms";
+
+const RegisterRedirect: React.FC = () => {
+  useEffect(() => {
+    window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSc87SY7m32zM5lMmDW7jW1MOVeIN4rLPJuyyMf7MTmLTfT9Hg/viewform?usp=sharing&ouid=103922860105045263948";
+  }, []);
+  return null;
+};
 
 function App() {
   return (
@@ -39,6 +47,7 @@ function App() {
         <Route path="/blog/:postId" element={<BlogPost />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/terms" element={<Terms />} />
+        <Route path="/register" element={<RegisterRedirect />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>

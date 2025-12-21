@@ -248,6 +248,18 @@
 
   .ctaButton {
     width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 480px) {
+  .contentColumn {
+    padding: 40px 16px;
+  }
+
+  .ctaButton {
+    padding: 14px 24px;
+    font-size: 0.95rem;
   }
 }
 
